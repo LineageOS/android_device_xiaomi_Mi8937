@@ -25,7 +25,14 @@ LOCAL_SRC_FILES += \
         HAL3/QCamera3CropRegionMapper.cpp \
         HAL3/QCamera3StreamMem.cpp
 
+LOCAL_CFLAGS := -Wall -Wextra -Werror
+
 #HAL 1.0 source
+
+ifeq ($(TARGET_SUPPORT_HAL1),false)
+LOCAL_CFLAGS += -DQCAMERA_HAL3_SUPPORT
+else
+LOCAL_CFLAGS += -DQCAMERA_HAL1_SUPPORT
 LOCAL_SRC_FILES += \
         HAL/QCamera2HWI.cpp \
         HAL/QCameraMuxer.cpp \
@@ -38,8 +45,9 @@ LOCAL_SRC_FILES += \
         HAL/QCameraParameters.cpp \
         HAL/QCameraParametersIntf.cpp \
         HAL/QCameraThermalAdapter.cpp
+endif
 
-LOCAL_CFLAGS := -Wall -Wextra -Werror -Wno-unused-parameter -Wno-unused-variable -Wno-implicit-fallthrough
+LOCAL_CFLAGS := -Wno-unused-parameter -Wno-unused-variable -Wno-implicit-fallthrough
 
 ifeq (1,$(filter 1,$(shell echo "$$(( $(PLATFORM_SDK_VERSION) >= 31 ))" )))
 LOCAL_CFLAGS += -Wno-compound-token-split-by-macro
@@ -72,6 +80,8 @@ ifeq ($(filter OMR1 O 8.1.0, $(PLATFORM_VERSION)), )
 USE_DISPLAY_SERVICE := true
 LOCAL_CFLAGS += -DUSE_DISPLAY_SERVICE
 endif
+
+#LOCAL_CFLAGS += -std=c++11 -std=gnu++0x
 
 #HAL 1.0 Flags
 LOCAL_CFLAGS += -DDEFAULT_DENOISE_MODE_ON -DHAL3 -DQCAMERA_REDEFINE_LOG
