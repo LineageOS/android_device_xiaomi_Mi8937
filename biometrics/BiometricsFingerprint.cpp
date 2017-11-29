@@ -180,11 +180,39 @@ Return<uint64_t> BiometricsFingerprint::getAuthenticatorId() {
 }
 
 Return<RequestStatus> BiometricsFingerprint::cancel() {
-    return ErrorFilter(mDevice->cancel(mDevice));
+
+    fingerprint_msg_t msg;
+    msg.type = FINGERPRINT_ERROR;
+    msg.data.error = FINGERPRINT_ERROR_CANCELED;
+    mDevice->notify(&msg);
+
+      return ErrorFilter(mDevice->cancel(mDevice));
 }
 
+#define MAX_FINGERPRINTS 100
+
+typedef int (*enumerate_2_0)(struct fingerprint_device *dev, fingerprint_finger_id_t *results,
+        uint32_t *max_size);
+
 Return<RequestStatus> BiometricsFingerprint::enumerate()  {
-    return ErrorFilter(mDevice->enumerate(mDevice));
+    fingerprint_finger_id_t results[MAX_FINGERPRINTS];
+    uint32_t n = MAX_FINGERPRINTS;
+    enumerate_2_0 enumerate = (enumerate_2_0) mDevice->enumerate;
+    int ret = enumerate(mDevice, results, &n);
+
+    if (ret == 0 && mClientCallback != nullptr) {
+        ALOGD("Got %d enumerated templates", n);
+        for (uint32_t i = 0; i < n; i++) {
+            const uint64_t devId = reinterpret_cast<uint64_t>(mDevice);
+            const auto& fp = results[i];
+            ALOGD("onEnumerate(fid=%d, gid=%d)", fp.fid, fp.gid);
+            if (!mClientCallback->onEnumerate(devId, fp.fid, fp.gid, n - i - 1).isOk()) {
+                ALOGE("failed to invoke fingerprint onEnumerate callback");
+            }
+        }
+    }
+
+    return ErrorFilter(ret);
 }
 
 Return<RequestStatus> BiometricsFingerprint::remove(uint32_t gid, uint32_t fid) {
@@ -200,9 +228,10 @@ Return<RequestStatus> BiometricsFingerprint::setActiveGroup(uint32_t gid,
     if (access(storePath.c_str(), W_OK)) {
         return RequestStatus::SYS_EINVAL;
     }
-
-    return ErrorFilter(mDevice->set_active_group(mDevice, gid,
-                                                    storePath.c_str()));
+    int ret = mDevice->set_active_group(mDevice, gid, storePath.c_str());
+    if ((ret > 0) && is_goodix)
+        ret = 0;
+    return ErrorFilter(ret);
 }
 
 Return<RequestStatus> BiometricsFingerprint::authenticate(uint64_t operationId,
@@ -344,16 +373,7 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
             }
             break;
         case FINGERPRINT_TEMPLATE_ENUMERATING:
-            ALOGD("onEnumerate(fid=%d, gid=%d, rem=%d)",
-                msg->data.enumerated.finger.fid,
-                msg->data.enumerated.finger.gid,
-                msg->data.enumerated.remaining_templates);
-            if (!thisPtr->mClientCallback->onEnumerate(devId,
-                    msg->data.enumerated.finger.fid,
-                    msg->data.enumerated.finger.gid,
-                    msg->data.enumerated.remaining_templates).isOk()) {
-                ALOGE("failed to invoke fingerprint onEnumerate callback");
-            }
+            // ignored, won't happen for 2.0 HALs
             break;
     }
 }
