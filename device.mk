@@ -55,6 +55,7 @@ PRODUCT_COPY_FILES += \
 # Rootdir
 PRODUCT_PACKAGES += \
     init.baseband.sh \
+    init.goodix.sh \
     init.xiaomi.device.rc \
     init.xiaomi.device.sh
 

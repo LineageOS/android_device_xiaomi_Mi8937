@@ -28,3 +28,9 @@ sh_binary {
     src: "bin/init.xiaomi.device.sh",
     vendor: true,
 }
+
+sh_binary {
+    name: "init.goodix.sh",
+    src: "bin/init.goodix.sh",
+    vendor: true,
+}
