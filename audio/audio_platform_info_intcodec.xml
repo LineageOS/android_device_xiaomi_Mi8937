@@ -78,6 +78,10 @@
         <device name="SND_DEVICE_IN_HANDSET_TMIC_FLUENCE_PRO" acdb_id="125"/>
         <device name="SND_DEVICE_IN_HANDSET_TMIC" acdb_id="125"/>
         <device name="SND_DEVICE_IN_HEADSET_MIC_FLUENCE" acdb_id="8"/>
+        <device name="SND_DEVICE_IN_HANDSET_MIC" acdb_id="0"/>
+        <device name="SND_DEVICE_IN_HANDSET_MIC_EXTERNAL" acdb_id="0"/>
+        <device name="SND_DEVICE_IN_CAMCORDER_MIC" acdb_id="0"/>
+        <device name="SND_DEVICE_IN_HANDSET_STEREO_DMIC" acdb_id="0"/>
     </acdb_ids>
 
     <backend_names>
