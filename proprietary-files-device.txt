@@ -63,8 +63,8 @@ lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.land_fpc.so
 # Fingerprint (FPC) - prada - from prada
 lib64/hw/fingerprint.fpcmoudle.so:vendor/lib64/hw/fingerprint.prada_fpc.so
 
-# Fingerprint (FPC) - santoni - from santoni
-lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.santoni_fpc.so
+# Fingerprint (FPC) - santoni - from santoni 8.2.1
+lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.santoni_fpc.so|8ebf8f6bc370cec26cfcf1daebdbbb31fd66ae09
 
 # Fingerprint (FPC) - ugg - from ugg
 lib64/hw/fingerprint.msm8937.so:vendor/lib64/hw/fingerprint.ugg_fpc.so
