@@ -16,6 +16,11 @@ function blob_fixup() {
         # Camera
         odm/overlayfs/*/bin/mm-qcamera-daemon)
             sed -i 's|data/misc/camera|data/vendor/qcam|g' "${2}"
+            if [ "${1}" == "odm/overlayfs/land/bin/mm-qcamera-daemon" ]; then
+                if ! "${PATCHELF}" --print-needed "${2}" | grep "libshim_pthreadts.so" > /dev/null; then
+                    "${PATCHELF}" --add-needed "libshim_pthreadts.so" "${2}"
+                fi
+            fi
             ;;
         odm/overlayfs/*/lib/libmmcamera_ppeiscore.so)
             if ! "${PATCHELF}" --print-needed "${2}" | grep "libshims_ui.so" > /dev/null; then
