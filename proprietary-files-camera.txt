@@ -1,4 +1,5 @@
 # land Package version: land-user 6.0.1 MMB29M V10.2.2.0.MALMIXM release-keys
+# prada Package version: prada-user 6.0.1 MMB29M V10.2.2.0.MCEMIXM release-keys
 # santoni Package version: santoni-user 7.1.2 N2G47H V11.0.2.0.NAMMIXM release-keys
 # ugg Package version: ugg-user 7.1.2 N2G47H V11.0.2.0.NDKMIXM release-keys
 
@@ -50,7 +51,6 @@ vendor/lib/libmmcamera_isp_chroma_suppress40.so:odm/overlayfs/land/lib/libmmcame
 vendor/lib/libmmcamera_isp_clamp_encoder40.so:odm/overlayfs/land/lib/libmmcamera_isp_clamp_encoder40.so
 vendor/lib/libmmcamera_isp_clamp_video40.so:odm/overlayfs/land/lib/libmmcamera_isp_clamp_video40.so
 vendor/lib/libmmcamera_isp_clamp_viewfinder40.so:odm/overlayfs/land/lib/libmmcamera_isp_clamp_viewfinder40.so
-vendor/lib/libmmcamera_isp_color_correct40.so:odm/overlayfs/land/lib/libmmcamera_isp_color_correct40.so
 vendor/lib/libmmcamera_isp_color_xform_encoder40.so:odm/overlayfs/land/lib/libmmcamera_isp_color_xform_encoder40.so
 vendor/lib/libmmcamera_isp_color_xform_viewfinder40.so:odm/overlayfs/land/lib/libmmcamera_isp_color_xform_viewfinder40.so
 vendor/lib/libmmcamera_isp_cs_stats44.so:odm/overlayfs/land/lib/libmmcamera_isp_cs_stats44.so
@@ -97,6 +97,9 @@ vendor/lib/libqomx_jpegenc.so:odm/overlayfs/land/lib/libqomx_jpegenc.so
 vendor/lib/libseemore.so:odm/overlayfs/land/lib/libseemore.so
 vendor/lib/libtrueportrait.so:odm/overlayfs/land/lib/libtrueportrait.so
 vendor/lib/libubifocus.so:odm/overlayfs/land/lib/libubifocus.so
+
+# Camera stack (land) - color_correct40 - from prada
+vendor/lib/libmmcamera_isp_color_correct40.so:odm/overlayfs/land/lib/libmmcamera_isp_color_correct40.so
 
 # Camera modules (land) - from land
 etc/camera/msm8937_camera.xml:odm/overlayfs/land/etc/camera/msm8937_camera.xml
