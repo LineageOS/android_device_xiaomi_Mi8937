@@ -44,6 +44,9 @@ LOCAL_CFLAGS := -Wall -Wextra -Werror -Wno-unused-parameter -Wno-unused-variable
 # System header file path prefix
 LOCAL_CFLAGS += -DSYSTEM_HEADER_PREFIX=sys
 
+# Kernel headers
+LOCAL_CFLAGS += -DCONFIG_MACH_XIAOMI_LAND
+
 LOCAL_CFLAGS += -DHAS_MULTIMEDIA_HINTS -D_ANDROID
 
 ifeq ($(TARGET_USES_AOSP),true)
