@@ -12,6 +12,12 @@ LOCAL_CFLAGS+= -D_ANDROID_ -DQCAMERA_REDEFINE_LOG
 
 LOCAL_CFLAGS += -Wall -Wextra -Werror -Wno-unused-parameter
 
+ifneq (,$(filter $(TRINKET),$(TARGET_BOARD_PLATFORM)))
+LOCAL_C_INCLUDES += \
+        system/core/libion/kernel-headers \
+        system/core/libion/include
+endif
+
 LOCAL_HEADER_LIBRARIES := generated_kernel_headers
 
 LOCAL_C_INCLUDES += \
@@ -66,6 +72,9 @@ LOCAL_SRC_FILES := \
 
 LOCAL_MODULE           := libLmjpeg_interface
 LOCAL_SHARED_LIBRARIES := libdl libcutils liblog libLomx_core libLmcamera_interface libutils
+ifneq (,$(filter $(TRINKET),$(TARGET_BOARD_PLATFORM)))
+LOCAL_SHARED_LIBRARIES += libion
+endif
 LOCAL_MODULE_TAGS := optional
 LOCAL_ODM_MODULE := true
 
