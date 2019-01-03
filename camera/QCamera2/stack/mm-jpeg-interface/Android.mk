@@ -15,6 +15,12 @@ endif
 
 LOCAL_CFLAGS += -Wall -Wextra -Werror -Wno-unused-parameter
 
+ifneq (,$(filter $(TRINKET),$(TARGET_BOARD_PLATFORM)))
+LOCAL_C_INCLUDES += \
+        system/core/libion/kernel-headers \
+        system/core/libion/include
+endif
+
 LOCAL_HEADER_LIBRARIES += generated_kernel_headers
 
 LIB2D_ROTATION=false
@@ -79,6 +85,9 @@ LOCAL_SHARED_LIBRARIES := libdl libcutils liblog
 #ifeq ($(strip $(LIB2D_ROTATION)),true)
 #    LOCAL_SHARED_LIBRARIES += libmmlib2d_interface
 #endif
+ifneq (,$(filter $(TRINKET),$(TARGET_BOARD_PLATFORM)))
+LOCAL_SHARED_LIBRARIES += libion
+endif
 LOCAL_MODULE_TAGS := optional
 LOCAL_ODM_MODULE := true
 
