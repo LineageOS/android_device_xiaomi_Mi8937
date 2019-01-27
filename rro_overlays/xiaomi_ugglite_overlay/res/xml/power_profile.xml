@@ -2,20 +2,21 @@
 <device name="Android">
     <item name="screen.on">106</item>
     <item name="screen.full">205</item>
-    <array name="cpu.speeds">
+    <item name="cpu.clusters.cores">4</item>
+    <array name="cpu.core_speeds.cluster0">
         <value>960000</value>
         <value>1094400</value>
         <value>1248000</value>
         <value>1401000</value>
     </array>
-    <array name="cpu.active">
+    <array name="cpu.core_power.cluster0">
         <value>255</value>
         <value>310</value>
         <value>480</value>
         <value>550</value>
     </array>
-    <item name="cpu.idle">2.8</item>
-    <item name="cpu.awake">4</item>
+    <item name="cpu.suspend">2.8</item>
+    <item name="cpu.idle">4</item>
     <item name="bluetooth.active">60</item>
     <item name="bluetooth.at">1</item>
     <item name="bluetooth.on">1</item>
