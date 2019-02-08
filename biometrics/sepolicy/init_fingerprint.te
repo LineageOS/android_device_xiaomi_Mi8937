@@ -18,3 +18,6 @@ allow init_fingerprint system_data_file:file r_file_perms;
 allow init_fingerprint gx_fpd_data_file:dir { getattr read search open write rmdir remove_name };
 allow init_fingerprint gx_fpd_data_file:file r_file_perms;
 allow init_fingerprint gx_fpd_data_file:file { getattr unlink };
+
+# Don't allow dac_override for goodix script
+allow init_fingerprint self:capability chown;
