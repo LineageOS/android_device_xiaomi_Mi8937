@@ -1,4 +1,4 @@
-/* Copyright (c) 2012-2016, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2012-2016, 2019, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -1599,12 +1599,12 @@ void sort_camera_info(int num_cam)
 
     // Signifies whether system has to enable dual camera mode
     memset(prop, 0, sizeof(prop));
-    property_get("persist.camera.dual.camera", prop, "0");
+    property_get("persist.vendor.camera.dual.camera", prop, "0");
     is_dual_cam = atoi(prop);
 
     // Signifies whether AUX camera has to be exposed as physical camera
     memset(prop, 0, sizeof(prop));
-    property_get("persist.camera.aux.camera", prop, "0");
+    property_get("persist.vendor.camera.aux.camera", prop, "0");
     is_aux_cam_exposed = atoi(prop);
     LOGI("dualCamera:%d auxCamera %d",
             is_dual_cam, is_aux_cam_exposed);
