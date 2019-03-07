@@ -18,6 +18,7 @@
 
 #include <android/log.h>
 #include <android-base/properties.h>
+#include <binder/ProcessState.h>
 #include <hidl/HidlSupport.h>
 #include <hidl/HidlTransportSupport.h>
 #include <android/hardware/biometrics/fingerprint/2.1/IBiometricsFingerprint.h>
@@ -39,6 +40,12 @@ int main() {
     }
 
     android::sp<IBiometricsFingerprint> bio = BiometricsFingerprint::getInstance();
+
+    if (is_goodix) {
+        // the conventional HAL might start binder services
+        android::ProcessState::initWithDriver("/dev/binder");
+        android::ProcessState::self()->startThreadPool();
+    }
 
     configureRpcThreadpool(1, true /*callerWillJoin*/);
 
