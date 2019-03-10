@@ -42,7 +42,7 @@
 #define IOCTL_H <SYSTEM_HEADER_PREFIX/ioctl.h>
 #include IOCTL_H
 
-#define EXTRA_ENTRY 6
+#define EXTRA_ENTRY 8
 
 // Camera dependencies
 #include "mm_camera_dbg.h"
