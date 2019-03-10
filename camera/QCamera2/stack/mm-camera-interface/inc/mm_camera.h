@@ -51,7 +51,7 @@
 
 #define MM_CAMERA_DEV_NAME_LEN 32
 #define MM_CAMERA_DEV_OPEN_TRIES 20
-#define MM_CAMERA_DEV_OPEN_RETRY_SLEEP 20
+#define MM_CAMERA_DEV_OPEN_RETRY_SLEEP 40
 #define THREAD_NAME_SIZE 15
 
 /* Future frame idx, large enough to make sure capture
