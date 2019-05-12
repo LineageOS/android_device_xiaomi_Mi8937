@@ -24,8 +24,12 @@
 #include <android/hardware/biometrics/fingerprint/2.1/IBiometricsFingerprint.h>
 #include <android/hardware/biometrics/fingerprint/2.1/types.h>
 #include "BiometricsFingerprint.h"
+#include <errno.h>
+#include <unistd.h>
 
 bool is_goodix = false;
+
+static constexpr char kGoodixFpDev[] = "/dev/goodix_fp";
 
 using android::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprint;
 using android::hardware::biometrics::fingerprint::V2_1::implementation::BiometricsFingerprint;
@@ -42,6 +46,10 @@ int main() {
     android::sp<IBiometricsFingerprint> bio = BiometricsFingerprint::getInstance();
 
     if (is_goodix) {
+        if (access(kGoodixFpDev, F_OK) != 0) {
+            ALOGE("Cannot access %s (%s)", kGoodixFpDev, strerror(errno));
+            return 1;
+        }
         // the conventional HAL might start vndbinder services
         android::ProcessState::initWithDriver("/dev/vndbinder");
         android::ProcessState::self()->startThreadPool();
