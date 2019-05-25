@@ -46,8 +46,8 @@
         <value>480</value>
         <value>550</value>
     </array>
-    <item name="cpu.idle">2.8</item>
-    <item name="cpu.awake">4</item>
+    <item name="cpu.suspend">2.8</item>
+    <item name="cpu.idle">4</item>
     <item name="bluetooth.active">60</item>
     <item name="bluetooth.at">1</item>
     <item name="bluetooth.on">1</item>
