@@ -602,7 +602,7 @@ typedef struct {
 } cam_stream_img_prop_t;
 
 typedef struct {
-    uint8_t enableStream; /*0 – stop and 1-start */
+    uint8_t enableStream; /*0 \96 stop and 1-start */
 } cam_request_frames;
 
 typedef struct {
@@ -789,6 +789,8 @@ typedef struct {
     INCLUDE(CAM_INTF_META_AUTOFOCUS_DATA,               cam_auto_focus_data_t,          1);
     INCLUDE(CAM_INTF_META_CDS_DATA,                     cam_cds_data_t,                 1);
     INCLUDE(CAM_INTF_PARM_UPDATE_DEBUG_LEVEL,           uint32_t,                       1);
+    INCLUDE(CAM_INTF_XM_01,                             uint32_t,                       3);
+    INCLUDE(CAM_INTF_XM_02,                             uint32_t,                       1);
 
     /* Specific to HAl1 */
     INCLUDE(CAM_INTF_META_CROP_DATA,                    cam_crop_data_t,                1);
