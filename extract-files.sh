@@ -18,6 +18,7 @@ function blob_fixup() {
             ;;
         vendor/lib/libmmsw_platform.so|vendor/lib/libmmsw_detail_enhancement.so)
             "${PATCHELF}" --remove-needed "libbinder.so" "${2}"
+            sed -i 's|libgui.so|libwui.so|g' "${2}"
             ;;
         vendor/lib/libmmcamera2_sensor_modules.so)
             sed -i 's|/system/etc/camera/|/vendor/etc/camera/|g' "${2}"
@@ -25,7 +26,6 @@ function blob_fixup() {
             ;;
         vendor/lib/libmmcamera_tintless_bg_pca_algo.so \
         |vendor/lib/libmmcamera_pdafcamif.so \
-        |vendor/lib/libmmcamera2_stats_modules.so \
         |vendor/lib/libmmcamera2_dcrf.so \
         |vendor/lib/libmmcamera_imglib.so \
         |vendor/lib/libmmcamera_dbg.so \
@@ -41,6 +41,13 @@ function blob_fixup() {
         |vendor/lib/libmmcamera_pdaf.so \
         |vendor/bin/wingtech_mm-qcamera-daemon)
             sed -i 's|data/misc/camera|data/vendor/qcam|g' "${2}"
+            ;;
+        vendor/lib/libmmcamera2_stats_modules.so)
+            sed -i 's|data/misc/camera|data/vendor/qcam|g' "${2}"
+            sed -i 's|libgui.so|libwui.so|g' "${2}"
+            ;;
+        vendor/lib/libmmcamera_ppeiscore.so)
+            sed -i 's|libgui.so|libwui.so|g' "${2}"
             ;;
     esac
 }
