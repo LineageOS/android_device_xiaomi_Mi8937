@@ -56,6 +56,9 @@ case "$(cat /sys/firmware/devicetree/base/model)" in
 		setprop ro.vendor.xiaomi.series landtoni
 		# Audio
 		set_acdb_path_props land
+		# Camera
+		setprop persist.camera.gyro.android 0
+		setprop persist.camera.gyro.disable 1
 		# Fingerprint
 		if grep -E "S88537AC1|S88537EC1" /proc/cmdline ; then
 			setprop ro.vendor.fingerprint.supported 0
