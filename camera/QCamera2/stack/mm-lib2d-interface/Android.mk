@@ -12,7 +12,7 @@ ifeq ($(MI8937_CAM_USE_LATEST_CAMERA_STACK),true)
 LOCAL_CFLAGS += -DUSE_LATEST_CAMERA_STACK
 endif
 
-ifneq (,$(filter $(TRINKET),$(TARGET_BOARD_PLATFORM)))
+ifneq ($(TARGET_KERNEL_VERSION),$(filter $(TARGET_KERNEL_VERSION),3.18 4.4 4.9))
 LOCAL_C_INCLUDES += \
     $(TOP)/system/core/libion/include \
     $(TOP)/system/core/libion/kernel-headers
@@ -40,7 +40,7 @@ LOCAL_MODULE           := libmmlib2d_interface
 LOCAL_PRELINK_MODULE   := false
 #LOCAL_SHARED_LIBRARIES := libdl libcutils liblog libmmcamera_interface
 LOCAL_SHARED_LIBRARIES := libdl libcutils liblog
-ifneq (,$(filter $(TRINKET),$(TARGET_BOARD_PLATFORM)))
+ifneq ($(TARGET_KERNEL_VERSION),$(filter $(TARGET_KERNEL_VERSION),3.18 4.4 4.9))
 LOCAL_SHARED_LIBRARIES += libion
 endif
 LOCAL_MODULE_TAGS := optional
