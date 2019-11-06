@@ -12,7 +12,7 @@ LOCAL_CFLAGS+= -D_ANDROID_ -DQCAMERA_REDEFINE_LOG
 
 LOCAL_CFLAGS += -Wall -Wextra -Werror -Wno-unused-parameter
 
-ifneq (,$(filter $(TRINKET),$(TARGET_BOARD_PLATFORM)))
+ifneq ($(TARGET_KERNEL_VERSION),$(filter $(TARGET_KERNEL_VERSION),3.18 4.4 4.9))
 LOCAL_C_INCLUDES += \
     $(TOP)/system/core/libion/include \
     $(TOP)/system/core/libion/kernel-headers
@@ -38,7 +38,7 @@ LOCAL_SRC_FILES := \
 
 LOCAL_MODULE           := libLmlib2d_interface
 LOCAL_SHARED_LIBRARIES := libdl libcutils liblog
-ifneq (,$(filter $(TRINKET),$(TARGET_BOARD_PLATFORM)))
+ifneq ($(TARGET_KERNEL_VERSION),$(filter $(TARGET_KERNEL_VERSION),3.18 4.4 4.9))
 LOCAL_SHARED_LIBRARIES += libion
 endif
 LOCAL_MODULE_TAGS := optional
