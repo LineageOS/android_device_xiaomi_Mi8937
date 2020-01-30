@@ -71,6 +71,11 @@ PRODUCT_PACKAGES += \
     tune2fs_ramdisk \
     resize2fs_ramdisk
 
+# Enable wider inodes for project quotas
+# Later, replace with $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+PRODUCT_QUOTA_PROJID := 1
+PRODUCT_PRODUCT_PROPERTIES += ro.emulated_storage.projid=1
+
 # Fingerprint
 ifeq ($(PRODUCT_HARDWARE),Mi8937)
 PRODUCT_COPY_FILES += \
