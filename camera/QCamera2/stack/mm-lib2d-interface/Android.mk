@@ -13,9 +13,14 @@ LOCAL_CFLAGS += -DUSE_LATEST_CAMERA_STACK
 endif
 
 ifneq ($(TARGET_KERNEL_VERSION),$(filter $(TARGET_KERNEL_VERSION),3.18 4.4 4.9))
-LOCAL_C_INCLUDES += \
-    $(TOP)/system/core/libion/include \
-    $(TOP)/system/core/libion/kernel-headers
+  ifneq ($(LIBION_HEADER_PATH_WRAPPER), )
+    include $(LIBION_HEADER_PATH_WRAPPER)
+    LOCAL_C_INCLUDES += $(LIBION_HEADER_PATHS)
+  else
+    LOCAL_C_INCLUDES += \
+            $(TOP)/system/core/libion/include \
+            $(TOP)/system/core/libion/kernel-headers
+  endif
 endif
 
 IMGLIB_HEADER_PATH := $(TARGET_OUT_INTERMEDIATES)/include/mm-camera/imglib
