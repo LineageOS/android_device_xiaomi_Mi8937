@@ -77,7 +77,7 @@ QCamera2Factory::QCamera2Factory()
     int bDualCamera = 0;
     char propDefault[PROPERTY_VALUE_MAX];
     char prop[PROPERTY_VALUE_MAX];
-    property_get("persist.camera.HAL3.enabled", prop, "1");
+    property_get("persist.vendor.camera.HAL3.enabled", prop, "1");
     int isHAL3Enabled = atoi(prop);
 
     // Signifies whether system has to enable dual camera mode
