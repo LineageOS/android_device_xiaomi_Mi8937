@@ -45,6 +45,7 @@ vendor/lib64/sensors.ssc.so
 # land Package version: land-user 6.0.1 MMB29M V10.2.2.0.MALMIXM release-keys
 # santoni Package version: santoni-user 7.1.2 N2G47H V11.0.2.0.NAMMIXM release-keys
 # prada Package version: prada-user 6.0.1 MMB29M V10.2.2.0.MCEMIXM release-keys
+# vince Package version: vince-user 8.1.0 OPM1.171019.019 V11.0.2.0.OEGMIXM release-keys
 
 # ACDB (land) - from land
 etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb:vendor/etc/acdbdata/land/QRD_Bluetooth_cal.acdb
@@ -122,3 +123,13 @@ etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg.xml:vendor/etc/qdcm_calib_data_il
 # Fingerprint (FPC) - ugg - from ugg
 lib64/hw/fingerprint.msm8937.so:vendor/lib64/hw/fingerprint.msm8937.so
 lib64/lib_fpc_tac_shared.so:vendor/lib64/lib_fpc_tac_shared.so
+
+# Fingerprint (Goodix) - ugg - from vince
+etc/firmware/goodix_firmware.bin:vendor/firmware/goodix_firmware.bin
+lib64/hw/gf_fingerprint.default.so:vendor/lib64/hw/gf_fingerprint.default.so
+lib64/libgf_algo.so:vendor/lib64/libgf_algo.so
+lib64/libgf_ca.so:vendor/lib64/libgf_ca.so
+lib64/libgf_hal.so:vendor/lib64/libgf_hal.so
+lib64/libgoodixfingerprintd_binder.so:vendor/lib64/libgoodixfingerprintd_binder.so
+vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so
+vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
