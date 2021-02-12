@@ -51,6 +51,8 @@ function blob_fixup() {
             ;;
         # Fingerprint (Legacy Goodix)
         vendor/overlayfs/*/bin/gx_fpcmd|vendor/overlayfs/*/bin/gx_fpd)
+            "${PATCHELF}" --remove-needed "libbacktrace.so" "${2}"
+            "${PATCHELF}" --remove-needed "libunwind.so" "${2}"
             if ! "${PATCHELF}" --print-needed "${2}" | grep "liblog.so" > /dev/null; then
                 "${PATCHELF}" --add-needed "liblog.so" "${2}"
             fi
