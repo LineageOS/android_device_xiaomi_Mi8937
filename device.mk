@@ -103,6 +103,7 @@ PRODUCT_PACKAGES += \
 ifeq ($(PRODUCT_HARDWARE),Mi8937)
 PRODUCT_PACKAGES += \
     libbinder_shim \
+    libfakelogprint \
     libshim_mutexdestroy \
     libshim_pthreadts
 endif
