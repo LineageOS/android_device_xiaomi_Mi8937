@@ -53,8 +53,8 @@ function blob_fixup() {
         vendor/overlayfs/*/bin/gx_fpcmd|vendor/overlayfs/*/bin/gx_fpd)
             "${PATCHELF}" --remove-needed "libbacktrace.so" "${2}"
             "${PATCHELF}" --remove-needed "libunwind.so" "${2}"
-            if ! "${PATCHELF}" --print-needed "${2}" | grep "liblog.so" > /dev/null; then
-                "${PATCHELF}" --add-needed "liblog.so" "${2}"
+            if ! "${PATCHELF}" --print-needed "${2}" | grep "libfakelogprint.so" > /dev/null; then
+                "${PATCHELF}" --add-needed "libfakelogprint.so" "${2}"
             fi
             ;;
         vendor/overlayfs/*/lib64/libfpservice.so)
@@ -64,6 +64,14 @@ function blob_fixup() {
             ;;
         vendor/overlayfs/*/lib64/hw/fingerprint.*_goodix.so)
             sed -i 's|libandroid_runtime.so|libshims_android.so\x00\x00|g' "${2}"
+            if ! "${PATCHELF}" --print-needed "${2}" | grep "libfakelogprint.so" > /dev/null; then
+                "${PATCHELF}" --add-needed "libfakelogprint.so" "${2}"
+            fi
+            ;;
+        vendor/overlayfs/*/lib64/hw/gxfingerprint.*.so)
+            if ! "${PATCHELF}" --print-needed "${2}" | grep "libfakelogprint.so" > /dev/null; then
+                "${PATCHELF}" --add-needed "libfakelogprint.so" "${2}"
+            fi
             ;;
         # Fingerprint (ugg)
         vendor/lib64/lib_fpc_tac_shared.so)
