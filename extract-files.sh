@@ -20,6 +20,7 @@ function blob_fixup() {
             "${PATCHELF_0_8}" --remove-needed "libbacktrace.so" "${2}"
             "${PATCHELF_0_8}" --remove-needed "libkeystore_binder.so" "${2}"
             "${PATCHELF_0_8}" --remove-needed "libkeymaster_messages.so" "${2}"
+            "${PATCHELF_0_8}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
             "${PATCHELF_0_8}" --remove-needed "libsoftkeymaster.so" "${2}"
             "${PATCHELF_0_8}" --remove-needed "libsoftkeymasterdevice.so" "${2}"
             "${PATCHELF_0_8}" --remove-needed "libunwind.so" "${2}"
