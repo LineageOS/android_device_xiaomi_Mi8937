@@ -38,7 +38,8 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_landtoni
+    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_landtoni \
+    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ulysse
 
 # Input
 PRODUCT_COPY_FILES += \
