@@ -8,11 +8,12 @@
 /data/gf_data(/.*)?                             u:object_r:gx_fpd_data_file:s0
 /mnt/vendor/persist/data/gxfp(/.*)?		u:object_r:gx_fpd_data_file:s0
 
-# HALs
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.xiaomi_landtoni	u:object_r:hal_fingerprint_default_exec:s0
-
 # Goodix Fingerprint
 /(vendor|system/vendor)/bin/gx_fpd		u:object_r:gx_fpd_exec:s0
+
+# HALs
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.xiaomi_landtoni	u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.xiaomi_ulysse	u:object_r:hal_fingerprint_default_exec:s0
 
 # Shell Script
 /(vendor|system/vendor)/bin/init\.goodix\.sh	u:object_r:init_fingerprint_exec:s0
