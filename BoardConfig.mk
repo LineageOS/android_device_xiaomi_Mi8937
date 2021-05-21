@@ -48,6 +48,7 @@ VENDOR_SECURITY_PATCH := 2017-04-01
 
 # SELinux
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/biometrics/sepolicy
 
 # Inherit from the proprietary version
 include vendor/xiaomi/Mi8937/BoardConfigVendor.mk
