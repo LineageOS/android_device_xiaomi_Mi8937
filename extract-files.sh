@@ -16,6 +16,9 @@ function blob_fixup() {
         vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so)
             "${PATCHELF_0_8}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
             ;;
+        vendor/lib/libmmsw_platform.so|vendor/lib/libmmsw_detail_enhancement.so)
+            "${PATCHELF}" --remove-needed "libbinder.so" "${2}"
+            ;;
     esac
 }
 
