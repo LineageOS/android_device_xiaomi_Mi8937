@@ -19,6 +19,9 @@ function blob_fixup() {
         vendor/lib/libmmsw_platform.so|vendor/lib/libmmsw_detail_enhancement.so)
             "${PATCHELF}" --remove-needed "libbinder.so" "${2}"
             ;;
+        vendor/lib/libmmcamera2_sensor_modules.so)
+            sed -i 's|/system/etc/camera/|/vendor/etc/camera/|g' "${2}"
+            ;;
     esac
 }
 
