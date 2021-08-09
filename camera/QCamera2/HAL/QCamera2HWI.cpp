@@ -916,6 +916,7 @@ int QCamera2HardwareInterface::take_picture(struct camera_device *device)
         hw->m_perfLock.lock_acq();
     }
     qcamera_api_result_t apiResult;
+
    /** Added support for Retro-active Frames:
      *  takePicture() is called before preparing Snapshot to indicate the
      *  mm-camera-channel to pick up legacy frames even
@@ -2735,8 +2736,7 @@ QCameraMemory *QCamera2HardwareInterface::allocateStreamBuf(
     if (atoi(value) == 1) {
         bPoolMem = true;
     }
-    // mStride and mScanline are used for bokeh snapshot
-    if (stream_type == CAM_STREAM_TYPE_OFFLINE_PROC) {
+    if (stream_type == 3) {
         mStride = stride;
         mScanline = scanline;
     }
@@ -6509,7 +6509,6 @@ int32_t QCamera2HardwareInterface::processRetroAECUnlock()
 int32_t QCamera2HardwareInterface::processDualCameraUpdate(
         cam_reprocess_info_t repro_info) {
     int32_t rc = NO_ERROR;
-    cam_dimension_t dim;
 
     if ( msgTypeEnabled(CAMERA_MSG_META_DATA) ) {
 
@@ -6531,7 +6530,6 @@ int32_t QCamera2HardwareInterface::processDualCameraUpdate(
             LOGE("memory data ptr is NULL");
             return UNKNOWN_ERROR;
         }
-        mParameters.getStreamDimension(CAM_STREAM_TYPE_OFFLINE_PROC, dim);
         pDualCameraData[0] = CAMERA_META_DATA_DUAL;
         pDualCameraData[1] = data_len;
         pDualCameraData[2] = repro_info.frame_number;
@@ -6564,12 +6562,12 @@ int32_t QCamera2HardwareInterface::processDualCameraUpdate(
         pDualCameraData[29] = repro_info.isp_crop_info.roi_map.height;
         pDualCameraData[30] = repro_info.cpp_crop_info.crop.left;
         pDualCameraData[31] = repro_info.cpp_crop_info.crop.top;
-        pDualCameraData[32] = dim.width;
-        pDualCameraData[33] = dim.height;
+        pDualCameraData[32] = repro_info.cpp_crop_info.crop.width;
+        pDualCameraData[33] = repro_info.cpp_crop_info.crop.height;
         pDualCameraData[34] = repro_info.cpp_crop_info.roi_map.left;
         pDualCameraData[35] = repro_info.cpp_crop_info.roi_map.top;
-        pDualCameraData[36] = dim.width;
-        pDualCameraData[37] = dim.height;
+        pDualCameraData[36] = repro_info.cpp_crop_info.roi_map.width;
+        pDualCameraData[37] = repro_info.cpp_crop_info.roi_map.height;
         pDualCameraData[38] = repro_info.pipeline_flip;
         pDualCameraData[39] = repro_info.rotation_info.rotation;
         pDualCameraData[40] = repro_info.rotation_info.device_rotation;
