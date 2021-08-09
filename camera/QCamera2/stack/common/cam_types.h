@@ -1476,9 +1476,13 @@ typedef struct {
 typedef struct {
   cam_auto_scene_t      detected_scene;
   uint8_t               max_n_scenes;
+#ifdef ODM_WINGTECH
 //  xiaomi added 48 custom auto scenes or some other field with total size of 576 bytes
   cam_asd_scene_info_t  scene_info[S_MAX+48];
 //  volatile char         xiaomi_reserved1[576];
+#else
+  cam_asd_scene_info_t  scene_info[S_MAX];
+#endif
 } cam_asd_decision_t;
 
 
@@ -1957,8 +1961,10 @@ typedef enum {
 
     CAM_INTF_PARM_EZTUNE_CMD,
     CAM_INTF_PARM_INT_EVT,
+#ifdef DEVICE_ULYSSE
     CAM_INTF_XM_01,
     CAM_INTF_XM_02,
+#endif
 
     /* specific to HAL3 */
     /* Whether the metadata maps to a valid frame number */

@@ -28,6 +28,12 @@ LOCAL_SRC_FILES += \
 
 LOCAL_CFLAGS := -Wall -Wextra -Werror -Wno-unused-parameter -Wno-unused-variable
 
+ifeq ($(TARGET_DEVICE),ulysse)
+LOCAL_CFLAGS += -DDEVICE_ULYSSE
+else
+LOCAL_CFLAGS += -DODM_WINGTECH
+endif
+
 #HAL 1.0 source
 
 ifeq ($(TARGET_SUPPORT_HAL1),false)

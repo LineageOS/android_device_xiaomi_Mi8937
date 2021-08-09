@@ -789,8 +789,10 @@ typedef struct {
     INCLUDE(CAM_INTF_META_AUTOFOCUS_DATA,               cam_auto_focus_data_t,          1);
     INCLUDE(CAM_INTF_META_CDS_DATA,                     cam_cds_data_t,                 1);
     INCLUDE(CAM_INTF_PARM_UPDATE_DEBUG_LEVEL,           uint32_t,                       1);
+#ifdef DEVICE_ULYSSE
     INCLUDE(CAM_INTF_XM_01,                             uint32_t,                       3);
     INCLUDE(CAM_INTF_XM_02,                             uint32_t,                       1);
+#endif
 
     /* Specific to HAl1 */
     INCLUDE(CAM_INTF_META_CROP_DATA,                    cam_crop_data_t,                1);

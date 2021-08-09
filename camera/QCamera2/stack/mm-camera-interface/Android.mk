@@ -4,6 +4,12 @@ LOCAL_PATH := $(call my-dir)
 include $(LOCAL_PATH)/../../../common.mk
 include $(CLEAR_VARS)
 
+ifeq ($(TARGET_DEVICE),ulysse)
+LOCAL_CFLAGS += -DDEVICE_ULYSSE
+else
+LOCAL_CFLAGS += -DODM_WINGTECH
+endif
+
 LOCAL_HEADER_LIBRARIES := libhardware_headers
 LOCAL_HEADER_LIBRARIES += media_plugin_headers
 LOCAL_HEADER_LIBRARIES += camera_common_headers
