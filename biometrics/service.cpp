@@ -17,11 +17,14 @@
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service"
 
 #include <android/log.h>
+#include <android-base/properties.h>
 #include <hidl/HidlSupport.h>
 #include <hidl/HidlTransportSupport.h>
 #include <android/hardware/biometrics/fingerprint/2.1/IBiometricsFingerprint.h>
 #include <android/hardware/biometrics/fingerprint/2.1/types.h>
 #include "BiometricsFingerprint.h"
+
+bool is_goodix = false;
 
 using android::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprint;
 using android::hardware::biometrics::fingerprint::V2_1::implementation::BiometricsFingerprint;
@@ -30,6 +33,11 @@ using android::hardware::joinRpcThreadpool;
 using android::sp;
 
 int main() {
+    if (android::base::GetProperty("persist.sys.fp.vendor","") == "goodix") {
+        is_goodix = true;
+        ALOGD("Enable workarounds for goodix.");
+    }
+
     android::sp<IBiometricsFingerprint> bio = BiometricsFingerprint::getInstance();
 
     configureRpcThreadpool(1, true /*callerWillJoin*/);

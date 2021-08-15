@@ -27,6 +27,8 @@
 #include <inttypes.h>
 #include <unistd.h>
 
+extern bool is_goodix;
+
 namespace android {
 namespace hardware {
 namespace biometrics {
