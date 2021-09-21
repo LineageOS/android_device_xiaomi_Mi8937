@@ -70,3 +70,8 @@ on property:persist.sys.fp.vendor=switchf && property:ro.vendor.fingerprint.read
 on property:persist.sys.fp.vendor=goodix && property:persist.sys.fp.onstart=1 && property:ro.vendor.fingerprint.ready=1
     setprop ro.hardware.fingerprint goodix
     enable vendor.fps_hal
+
+on property:ro.vendor.fingerprint.failed=1
+    stop vendor.fps_hal
+    stop vendor.gx_fpd
+    mount none /vendor/etc/permissions/blank.xml /vendor/etc/permissions/android.hardware.fingerprint.xml bind
