@@ -17,6 +17,7 @@
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service"
 
 #include <android/log.h>
+#include <android-base/file.h>
 #include <android-base/properties.h>
 #include <binder/ProcessState.h>
 #include <hidl/HidlSupport.h>
@@ -46,6 +47,10 @@ int main() {
     if (android::base::GetProperty("vendor.fingerprint.disable_notify_cancel_hack","") == "1") {
         use_cancel_hack = false;
         ALOGD("Disable notify client on cancel hack.");
+    }
+
+    if (!android::base::WriteStringToFile("disable", "/sys/devices/soc/soc:fpc1020/compatible_all", true)) {
+        ALOGE("Failed to reset fpc1020 driver.");
     }
 
     android::sp<IBiometricsFingerprint> bio = BiometricsFingerprint::getInstance();
