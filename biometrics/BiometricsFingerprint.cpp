@@ -206,10 +206,12 @@ Return<RequestStatus> BiometricsFingerprint::enumerate()  {
     ALOGD("Got %d enumerated templates, retval = %d", n, total_templates);
 
     // Check if the function actually enumerated, or just simply sent a dummy retval.
+    /*
     if ((n == MAX_FINGERPRINTS && total_templates < MAX_FINGERPRINTS)
             || mClientCallback == nullptr) {
         return RequestStatus::SYS_EINVAL;
     }
+    */
 
     for (uint32_t i = 0; i < n; i++) {
         const uint64_t devId = reinterpret_cast<uint64_t>(mDevice);
