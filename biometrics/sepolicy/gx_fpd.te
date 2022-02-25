@@ -40,3 +40,4 @@ set_prop(gx_fpd, vendor_fingerprint_prop);
 
 # Ignore all logging requests
 dontaudit gx_fpd storage_file:dir search;
+dontaudit gx_fpd mnt_user_file:dir r_dir_perms;
