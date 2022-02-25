@@ -29,3 +29,5 @@ allow hal_fingerprint_default gx_fpd_data_file:file create_file_perms;
 
 binder_call(hal_fingerprint_default, gx_fpd)
 allow hal_fingerprint_default gx_fpd_service:service_manager find;
+
+dontaudit hal_fingerprint_default default_prop:file r_file_perms;
