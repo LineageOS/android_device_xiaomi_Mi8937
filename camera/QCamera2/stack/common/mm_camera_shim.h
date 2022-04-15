@@ -35,7 +35,13 @@
 /*
  * MCT shim layer APIs
  */
+#if defined(RENAME_BLOBS) && defined(ODM_WINGTECH)
+#define SHIMLAYER_LIB "/system/vendor/lib/libWmcamera2_mct_shimlayer.so"
+#elif defined(RENAME_BLOBS) && defined(DEVICE_ULYSSE)
+#define SHIMLAYER_LIB "/system/vendor/lib/libUmcamera2_mct_shimlayer.so"
+#else
 #define SHIMLAYER_LIB "/system/vendor/lib/libmmcamera2_mct_shimlayer.so"
+#endif
 
 struct cam_shim_packet;
 

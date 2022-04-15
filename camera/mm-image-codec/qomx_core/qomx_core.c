@@ -47,9 +47,19 @@ static int g_omxcore_cnt = 0;
 //Map the library name with the component name
 static const comp_info_t g_comp_info[] =
 {
+#if defined(RENAME_BLOBS) && defined(ODM_WINGTECH)
+  { "OMX.qcom.image.jpeg.encoder", "libWomx_jpegenc.so" },
+  { "OMX.qcom.image.jpeg.decoder", "libWomx_jpegdec.so" },
+  { "OMX.qcom.image.jpeg.encoder_pipeline", "libWomx_jpegenc_pipe.so" }
+#elif defined(RENAME_BLOBS) && defined(DEVICE_ULYSSE)
+  { "OMX.qcom.image.jpeg.encoder", "libUomx_jpegenc.so" },
+  { "OMX.qcom.image.jpeg.decoder", "libUomx_jpegdec.so" },
+  { "OMX.qcom.image.jpeg.encoder_pipeline", "libUomx_jpegenc_pipe.so" }
+#else
   { "OMX.qcom.image.jpeg.encoder", "libqomx_jpegenc.so" },
   { "OMX.qcom.image.jpeg.decoder", "libqomx_jpegdec.so" },
   { "OMX.qcom.image.jpeg.encoder_pipeline", "libqomx_jpegenc_pipe.so" }
+#endif
 };
 
 static int get_idx_from_handle(OMX_IN OMX_HANDLETYPE *ahComp, int *acompIndex,
