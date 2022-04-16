@@ -3,6 +3,10 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
+ifeq ($(MI8937_CAM_USE_RENAMED_BLOBS_L),true)
+LOCAL_CFLAGS += -DRENAME_BLOBS
+endif
+
 MM_CAM_FILES := \
         src/mm_camera_interface.c \
         src/mm_camera.c \

@@ -303,7 +303,11 @@ lib2d_error mm_lib2d_init(lib2d_mode mode, cam_format_t src_format,
   }
 
   // Open libmmcamera_imglib
+#ifdef RENAME_BLOBS
+  lib2d_obj->img_lib.ptr = dlopen("libLmcamera_imglib.so", RTLD_NOW);
+#else
   lib2d_obj->img_lib.ptr = dlopen("libmmcamera_imglib.so", RTLD_NOW);
+#endif
   if (!lib2d_obj->img_lib.ptr) {
     LOGE("ERROR: couldn't dlopen libmmcamera_imglib.so: %s",
        dlerror());

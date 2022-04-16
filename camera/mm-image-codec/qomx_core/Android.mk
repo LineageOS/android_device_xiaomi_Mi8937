@@ -10,6 +10,10 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_CFLAGS := -Werror \
                    -g -O0
 
+ifeq ($(MI8937_CAM_USE_RENAMED_BLOBS_L),true)
+LOCAL_CFLAGS += -DRENAME_BLOBS
+endif
+
 LOCAL_C_INCLUDES := frameworks/native/include/media/openmax \
                     $(LOCAL_PATH)/../qexif
 
