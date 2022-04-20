@@ -53,7 +53,6 @@ on post-fs-data
 on property:ro.vendor.fingerprint.supported=0
     stop vendor.fps_hal
     stop vendor.gx_fpd
-    mount none /vendor/etc/permissions/blank.xml /vendor/etc/permissions/android.hardware.fingerprint.xml bind
 
 on property:ro.vendor.fingerprint.supported=1
     setprop persist.sys.fp.vendor none
@@ -70,7 +69,9 @@ on property:persist.sys.fp.vendor=goodix && property:persist.sys.fp.onstart=1 &&
     setprop ro.hardware.fingerprint goodix
     enable vendor.fps_hal
 
+on property:ro.vendor.fingerprint.succeed=1
+    setprop ro.boot.product.hardware.sku fingerprint
+
 on property:ro.vendor.fingerprint.failed=1
     stop vendor.fps_hal
     stop vendor.gx_fpd
-    mount none /vendor/etc/permissions/blank.xml /vendor/etc/permissions/android.hardware.fingerprint.xml bind
