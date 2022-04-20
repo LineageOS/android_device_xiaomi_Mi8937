@@ -42,10 +42,10 @@ int main() {
     if (android::base::GetProperty("persist.sys.fp.vendor","") == "goodix") {
         is_goodix = true;
         ALOGD("Enable workarounds for goodix.");
-        if (android::base::GetProperty("vendor.fingerprint.goodix.disable_notify_cancel_hack","") == "1") {
-            use_cancel_hack = false;
-            ALOGD("Disable notify client on cancel hack for goodix.");
-        }
+    }
+    if (android::base::GetProperty("vendor.fingerprint.disable_notify_cancel_hack","") == "1") {
+        use_cancel_hack = false;
+        ALOGD("Disable notify client on cancel hack.");
     }
 
     android::sp<IBiometricsFingerprint> bio = BiometricsFingerprint::getInstance();
