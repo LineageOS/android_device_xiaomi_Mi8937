@@ -29,12 +29,11 @@ on post-fs-data
     mkdir /data/fpc 0770 system system
 
 on property:ro.vendor.xiaomi.device=ugg
+    setprop ro.boot.product.hardware.sku fingerprint
     enable vendor.fps_hal
 
 on property:ro.vendor.xiaomi.device=ugglite
     stop vendor.fps_hal
-    mount none /vendor/etc/permissions/blank.xml /vendor/etc/permissions/android.hardware.fingerprint.xml bind
 
 on property:ro.vendor.fingerprint.failed=1
     stop vendor.fps_hal
-    mount none /vendor/etc/permissions/blank.xml /vendor/etc/permissions/android.hardware.fingerprint.xml bind
