@@ -1,0 +1,120 @@
+#########################      Common     #########################
+# PAN Package version: Nokia/Panther_00WW/PAN_sprout:11/RKQ1.200928.002/00WW_3_240:user/release-keys
+# daisy Package version: daisy-user 10 QKQ1.191002.002 V11.0.21.0.QDLMIXM release-keys
+# olive Package version: Xiaomi/olive/olive:10/QKQ1.191014.001/V12.5.5.0.QCNCNXM:user/release-keys
+# ugg Package version: ugg-user 7.1.2 N2G47H V11.0.2.0.NDKMIXM release-keys
+
+# ADSP modules - Dirac - from daisy
+vendor/lib/rfsa/adsp/dirac_resource.dar
+vendor/lib/rfsa/adsp/libdirac-capiv2.so
+ 
+# Audio dirac - from ugg
+lib/libDiracAPI_SHARED.so:vendor/lib/libDiracAPI_SHARED.so|42b49679d38eca93fead05ea06ddbdc8108fd4b1
+lib/soundfx/libdirac.so:vendor/lib/soundfx/libdirac.so|e92652ab578e90bb9e9b09553c3554f27cb7c07f
+vendor/etc/diracmobile.config|b99e9492e77e52ca3a511feae0409d59f6aebb87
+
+# Charger - from daisy
+vendor/bin/hvdcp_opti
+
+# Firmware (GPU) - from PAN
+vendor/firmware/a300_pfp.fw
+vendor/firmware/a300_pm4.fw
+vendor/firmware/a506_zap.b00
+vendor/firmware/a506_zap.b01
+vendor/firmware/a506_zap.b02
+vendor/firmware/a506_zap.elf
+vendor/firmware/a506_zap.mdt
+vendor/firmware/a530_pfp.fw
+vendor/firmware/a530_pm4.fw
+
+# Gatekeeper - from olive
+vendor/lib64/hw/gatekeeper.msm8937.so
+
+# Keystore - from olive
+vendor/lib64/hw/keystore.msm8937.so
+
+# Sensors (SSC) - from daisy
+vendor/lib64/libsensor_reg.so
+vendor/lib64/sensors.ssc.so
+
+######################### Device Specific #########################
+# ugg Package version: ugg-user 7.1.2 N2G47H V11.0.2.0.NDKMIXM release-keys
+# rolex Package version: rolex-user 7.1.2 N2G47H V10.2.3.0.NCCMIXM release-keys
+# riva (Nougat) Package version: riva-user 7.1.2 N2G47H V10.1.1.0.NCKMIFI release-keys
+# riva (Oreo) Package version: Xiaomi/riva/riva:8.1.0/OPM1.171019.026/V11.0.2.0.OCKMIXM:user/release-keys
+# land Package version: land-user 6.0.1 MMB29M V10.2.2.0.MALMIXM release-keys
+# santoni Package version: santoni-user 7.1.2 N2G47H V11.0.2.0.NAMMIXM release-keys
+# prada Package version: prada-user 6.0.1 MMB29M V10.2.2.0.MCEMIXM release-keys
+
+# ACDB (land) - from land
+etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb:vendor/etc/acdbdata/land/QRD_Bluetooth_cal.acdb
+etc/acdbdata/QRD/QRD_General_cal.acdb:vendor/etc/acdbdata/land/QRD_General_cal.acdb
+etc/acdbdata/QRD/QRD_Global_cal.acdb:vendor/etc/acdbdata/land/QRD_Global_cal.acdb
+etc/acdbdata/QRD/QRD_Handset_cal.acdb:vendor/etc/acdbdata/land/QRD_Handset_cal.acdb
+etc/acdbdata/QRD/QRD_Hdmi_cal.acdb:vendor/etc/acdbdata/land/QRD_Hdmi_cal.acdb
+etc/acdbdata/QRD/QRD_Headset_cal.acdb:vendor/etc/acdbdata/land/QRD_Headset_cal.acdb
+etc/acdbdata/QRD/QRD_Speaker_cal.acdb:vendor/etc/acdbdata/land/QRD_Speaker_cal.acdb
+
+# ACDB (prada) - from prada
+etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb:vendor/etc/acdbdata/prada/MTP_Bluetooth_cal.acdb
+etc/acdbdata/MTP/MTP_General_cal.acdb:vendor/etc/acdbdata/prada/MTP_General_cal.acdb
+etc/acdbdata/MTP/MTP_Global_cal.acdb:vendor/etc/acdbdata/prada/MTP_Global_cal.acdb
+etc/acdbdata/MTP/MTP_Handset_cal.acdb:vendor/etc/acdbdata/prada/MTP_Handset_cal.acdb
+etc/acdbdata/MTP/MTP_Hdmi_cal.acdb:vendor/etc/acdbdata/prada/MTP_Hdmi_cal.acdb
+etc/acdbdata/MTP/MTP_Headset_cal.acdb:vendor/etc/acdbdata/prada/MTP_Headset_cal.acdb
+etc/acdbdata/MTP/MTP_Speaker_cal.acdb:vendor/etc/acdbdata/prada/MTP_Speaker_cal.acdb
+
+# ACDB (rova) - from riva (Oreo)
+vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb:vendor/etc/acdbdata/rova/QRD_Bluetooth_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_General_cal.acdb:vendor/etc/acdbdata/rova/QRD_General_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb:vendor/etc/acdbdata/rova/QRD_Global_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb:vendor/etc/acdbdata/rova/QRD_Handset_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb:vendor/etc/acdbdata/rova/QRD_Hdmi_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb:vendor/etc/acdbdata/rova/QRD_Headset_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb:vendor/etc/acdbdata/rova/QRD_Speaker_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp:vendor/etc/acdbdata/rova/QRD_workspaceFile.qwsp
+
+# ACDB (santoni) - from santoni
+etc/acdbdata/QRD/msm8920-sku7-snd-card/QRD_SKU7_Bluetooth_cal.acdb:vendor/etc/acdbdata/santoni/QRD_SKU7_Bluetooth_cal.acdb
+etc/acdbdata/QRD/msm8920-sku7-snd-card/QRD_SKU7_General_cal.acdb:vendor/etc/acdbdata/santoni/QRD_SKU7_General_cal.acdb
+etc/acdbdata/QRD/msm8920-sku7-snd-card/QRD_SKU7_Global_cal.acdb:vendor/etc/acdbdata/santoni/QRD_SKU7_Global_cal.acdb
+etc/acdbdata/QRD/msm8920-sku7-snd-card/QRD_SKU7_Handset_cal.acdb:vendor/etc/acdbdata/santoni/QRD_SKU7_Handset_cal.acdb
+etc/acdbdata/QRD/msm8920-sku7-snd-card/QRD_SKU7_Hdmi_cal.acdb:vendor/etc/acdbdata/santoni/QRD_SKU7_Hdmi_cal.acdb
+etc/acdbdata/QRD/msm8920-sku7-snd-card/QRD_SKU7_Headset_cal.acdb:vendor/etc/acdbdata/santoni/QRD_SKU7_Headset_cal.acdb
+etc/acdbdata/QRD/msm8920-sku7-snd-card/QRD_SKU7_Speaker_cal.acdb:vendor/etc/acdbdata/santoni/QRD_SKU7_Speaker_cal.acdb
+
+# ACDB (ulysse) - from ugg
+etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb:vendor/etc/acdbdata/ulysse/MTP_Bluetooth_cal.acdb
+etc/acdbdata/MTP/MTP_General_cal.acdb:vendor/etc/acdbdata/ulysse/MTP_General_cal.acdb
+etc/acdbdata/MTP/MTP_Global_cal.acdb:vendor/etc/acdbdata/ulysse/MTP_Global_cal.acdb
+etc/acdbdata/MTP/MTP_Handset_cal.acdb:vendor/etc/acdbdata/ulysse/MTP_Handset_cal.acdb
+etc/acdbdata/MTP/MTP_Hdmi_cal.acdb:vendor/etc/acdbdata/ulysse/MTP_Hdmi_cal.acdb
+etc/acdbdata/MTP/MTP_Headset_cal.acdb:vendor/etc/acdbdata/ulysse/MTP_Headset_cal.acdb
+etc/acdbdata/MTP/MTP_Speaker_cal.acdb:vendor/etc/acdbdata/ulysse/MTP_Speaker_cal.acdb
+
+# ConsumerIR - LED - from rolex
+lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.led.so
+
+# ConsumerIR - lirc - from ugg
+lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.lirc.so
+
+# ConsumerIR - spidev - from riva (Nougat)
+lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.spidev.so
+
+# Display calibration - from rolex
+etc/qdcm_calib_data_hx8394F_HD720p_video_BOE_c3a.xml:vendor/etc/qdcm_calib_data_hx8394F_HD720p_video_BOE_c3a.xml
+etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg_c3a.xml:vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg_c3a.xml
+etc/qdcm_calib_data_nt35521s_HD720p_video_EBBG_c3a.xml:vendor/etc/qdcm_calib_data_nt35521s_HD720p_video_EBBG_c3a.xml
+
+# Display calibration - from riva (Oreo)
+etc/qdcm_calib_data_hx8394F_HD720p_video_BOE_c3b.xml:vendor/etc/qdcm_calib_data_hx8394F_HD720p_video_BOE_c3b.xml
+etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg_c3b.xml:vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg_c3b.xml
+
+# Display calibration - from land
+etc/qdcm_calib_data_ili9881c_HD720p_video_Tianma.xml:vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_Tianma.xml|2ead0723616a9c30281bbd930206edf68fd79421
+etc/qdcm_calib_data_nt35521s_HD720p_video_EBBG.xml:vendor/etc/qdcm_calib_data_nt35521s_HD720p_video_EBBG.xml|7e9197eea621ff4661c8216a6b536e88a0488bfa
+
+# Display calibration - from santoni
+etc/qdcm_calib_data_hx8394F_HD720p_video_BOE.xml:vendor/etc/qdcm_calib_data_hx8394F_HD720p_video_BOE.xml
+etc/qdcm_calib_data_ili9881c_HD720p_video_EbbgDJN.xml:vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_EbbgDJN.xml
+etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg.xml:vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg.xml

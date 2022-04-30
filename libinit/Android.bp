@@ -1,0 +1,13 @@
+//
+// Copyright (C) 2021 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_static {
+    name: "init_xiaomi_mi8937",
+    srcs: ["init_xiaomi_mi8937.cpp"],
+    whole_static_libs: ["//device/xiaomi/mithorium-common:libinit_xiaomi_mithorium"],
+    include_dirs: ["system/core/init"],
+    recovery_available: true,
+}

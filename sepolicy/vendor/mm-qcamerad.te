@@ -1,0 +1,2 @@
+allow mm-qcamerad sysfs_camera_fusion_id:dir r_dir_perms;
+allow mm-qcamerad sysfs_camera_fusion_id:file r_file_perms;

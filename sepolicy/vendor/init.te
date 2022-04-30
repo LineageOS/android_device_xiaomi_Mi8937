@@ -1,0 +1,8 @@
+allow init fdt_model:dir r_dir_perms;
+allow init fdt_model:file r_file_perms;
+allow init proc_cmdline:file r_file_perms;
+
+# Allow init bind mounting vendor files
+allow init vendor_file:file mounton;
+allow init vendor_configs_file:dir mounton;
+allow init vendor_configs_file:file mounton;

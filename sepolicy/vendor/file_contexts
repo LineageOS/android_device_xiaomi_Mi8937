@@ -1,0 +1,6 @@
+# Camera
+/(vendor|system/vendor)/bin/[0-9a-z]+_mm-qcamera-daemon	u:object_r:mm-qcamerad_exec:s0
+
+# IR
+/dev/lirc0	u:object_r:ir_device:s0
+/dev/spidev7.1	u:object_r:ir_device:s0

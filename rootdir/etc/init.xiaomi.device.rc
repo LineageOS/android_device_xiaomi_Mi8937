@@ -1,0 +1,138 @@
+service vendor.xiaomi_device_script /vendor/bin/init.xiaomi.device.sh
+    class core
+    user root
+    group root
+    oneshot
+
+# Audio
+on property:ro.vendor.xiaomi.series=ulysse
+    setprop vendor.audio.mixer_xml.path /vendor/etc/ulysse_mixer_paths_mtp.xml
+on property:ro.vendor.xiaomi.device=land
+    setprop vendor.audio.mixer_xml.path /vendor/etc/land_mixer_paths_qrd_sku1.xml
+on property:ro.vendor.xiaomi.device=prada
+    setprop vendor.audio.mixer_xml.path /vendor/etc/prada_mixer_paths_mtp.xml
+on property:ro.vendor.xiaomi.device=riva
+    setprop vendor.audio.mixer_xml.path /vendor/etc/riva_mixer_paths_qrd_sku2.xml
+on property:ro.vendor.xiaomi.device=rolex
+    setprop vendor.audio.mixer_xml.path /vendor/etc/rolex_mixer_paths_qrd_sku2.xml
+on property:ro.vendor.xiaomi.device=santoni
+    setprop vendor.audio.mixer_xml.path /vendor/etc/santoni_mixer_paths_qrd_sku1.xml
+
+# Baseband
+on property:ro.vendor.xiaomi.device=santoni
+    enable baseband-sh
+on property:ro.vendor.xiaomi.series=rova
+    enable baseband-sh
+
+# Camera
+service vendor.land_qcamerasvr /system/vendor/bin/land_mm-qcamera-daemon
+    disabled
+    class late_start
+    user camera
+    group camera system inet input graphics
+    writepid /dev/cpuset/system-background/tasks
+
+service vendor.ulysse_qcamerasvr /system/vendor/bin/ulysse_mm-qcamera-daemon
+    disabled
+    class late_start
+    user camera
+    group camera system inet input graphics
+    writepid /dev/cpuset/system-background/tasks
+
+service vendor.wingtech_qcamerasvr /system/vendor/bin/wingtech_mm-qcamera-daemon
+    disabled
+    class late_start
+    user camera
+    group camera system inet input graphics
+    writepid /dev/cpuset/system-background/tasks
+
+on property:init.svc.vendor.land_qcamerasvr=running
+    exec /bin/sleep 1s
+    restart vendor.camera-provider-2-4
+
+on property:init.svc.vendor.ulysse_qcamerasvr=running
+    exec /bin/sleep 1s
+    restart vendor.camera-provider-2-4
+
+on property:init.svc.vendor.wingtech_qcamerasvr=running
+    exec /bin/sleep 1s
+    restart vendor.camera-provider-2-4
+
+on property:ro.vendor.xiaomi.device=riva
+    setprop ro.hardware.camera wingtech
+    stop qcamerasvr
+    mount none /vendor/etc/camera/riva_camera_config.xml /vendor/etc/camera/camera_config.xml bind
+    enable vendor.wingtech_qcamerasvr
+
+on property:ro.vendor.xiaomi.device=rolex
+    setprop ro.hardware.camera wingtech
+    stop qcamerasvr
+    mount none /vendor/etc/camera/rolex_camera_config.xml /vendor/etc/camera/camera_config.xml bind
+    enable vendor.wingtech_qcamerasvr
+
+on property:ro.vendor.xiaomi.series=ulysse
+    setprop ro.hardware.camera ulysse
+    stop qcamerasvr
+    enable vendor.ulysse_qcamerasvr
+
+on property:ro.vendor.xiaomi.device=land
+    setprop ro.hardware.camera land
+    stop qcamerasvr
+    enable vendor.land_qcamerasvr
+
+on property:ro.vendor.xiaomi.device=santoni
+    setprop ro.hardware.camera wingtech
+    stop qcamerasvr
+    mount none /vendor/etc/camera/santoni_camera_config.xml /vendor/etc/camera/camera_config.xml bind
+    enable vendor.wingtech_qcamerasvr
+
+on property:ro.vendor.xiaomi.device=prada && property:sys.boot_completed=1
+    stop vendor.camera-provider-2-4
+    stop qcamerasvr
+
+# HVDCP
+on property:ro.vendor.xiaomi.series=rova
+    stop vendor.hvdcp_opti
+on property:ro.vendor.xiaomi.series=ulysse
+    stop vendor.hvdcp_opti
+
+# IR
+on property:ro.hardware.consumerir=led
+    chown system system /sys/class/leds/infrared/transmit
+    chown system system /sys/class/leds/infrared/brightness
+    restart vendor.ir-hal-1-0
+
+on property:ro.vendor.xiaomi.series=landtoni
+    setprop ro.hardware.consumerir led
+on property:ro.vendor.xiaomi.device=prada
+    # TEMP
+    setprop ro.hardware.consumerir led
+on property:ro.vendor.xiaomi.device=rolex
+    setprop ro.hardware.consumerir led
+
+on property:ro.vendor.xiaomi.series=ulysse
+    chown system system /dev/lirc0
+    setprop ro.hardware.consumerir lirc
+    restart vendor.ir-hal-1-0
+
+on property:ro.vendor.xiaomi.device=riva
+    chown system system /dev/spidev7.1
+    setprop ro.hardware.consumerir spidev
+    restart vendor.ir-hal-1-0
+
+# Sensors
+on property:ro.vendor.xiaomi.device=prada
+    mount none /vendor/etc/sensors/prada_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
+    enable vendor.sensors.qti
+on property:ro.vendor.xiaomi.device=riva
+    mount none /vendor/etc/sensors/riva_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
+    enable vendor.sensors.qti
+on property:ro.vendor.xiaomi.device=rolex
+    mount none /vendor/etc/sensors/rolex_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
+    enable vendor.sensors.qti
+on property:ro.vendor.xiaomi.series=landtoni
+    mount none /vendor/etc/sensors/landtoni_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
+    enable vendor.sensors.qti
+on property:ro.vendor.xiaomi.series=ulysse
+    mount none /vendor/etc/sensors/ulysse_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
+    enable vendor.sensors.qti

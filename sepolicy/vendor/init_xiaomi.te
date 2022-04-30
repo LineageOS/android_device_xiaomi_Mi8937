@@ -1,0 +1,7 @@
+allow init_xiaomi sysfs_leds:dir r_dir_perms;
+allow init_xiaomi sysfs_leds:file r_file_perms;
+allow init_xiaomi vendor_configs_file:dir r_dir_perms;
+allow init_xiaomi vendor_configs_file:file r_file_perms;
+
+set_prop(init_xiaomi, camera_prop);
+set_prop(init_xiaomi, vendor_audio_prop);
