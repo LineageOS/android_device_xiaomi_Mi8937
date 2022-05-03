@@ -37,6 +37,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/blank.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config.xml
 
 PRODUCT_PACKAGES += \
+    camera.land \
     camera.ulysse \
     camera.wingtech
 

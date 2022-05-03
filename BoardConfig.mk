@@ -13,6 +13,7 @@ DEVICE_PATH := device/xiaomi/Mi8937
 TARGET_OTA_ASSERT_DEVICE := mi8937,landtoni,land,santoni,prada,ulova,ulysse,ugglite,ugg,rova,rolex,riva,Mi8937
 
 # Camera
+MI8937_CAM_USE_RENAMED_BLOBS_L := true
 MI8937_CAM_USE_RENAMED_BLOBS_U := true
 
 # Display
