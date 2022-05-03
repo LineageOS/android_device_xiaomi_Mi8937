@@ -26,7 +26,7 @@ service vendor.prada.gx_fpd /vendor/bin/prada_gx_fpd
     group system
     disabled
 
-on boot
+on init
     # Goodix
     chown system system /dev/goodix_fp
     chmod 0644 /dev/goodix_fp
