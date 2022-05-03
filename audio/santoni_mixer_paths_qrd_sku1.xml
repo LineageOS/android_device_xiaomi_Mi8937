@@ -58,9 +58,18 @@
     <ctl name="IIR1 INP2 Volume" value="84" />
     <ctl name="IIR1 INP3 Volume" value="84" />
     <ctl name="IIR1 INP4 Volume" value="84" />
+<!-- Xiaomi changes for santoni start -->
+<!--
     <ctl name="ADC1 Volume" value="6" />
     <ctl name="ADC2 Volume" value="6" />
     <ctl name="ADC3 Volume" value="6" />
+-->
+    <!-- +bug 196716,zhangjianming.wt,MODIFY,20160111,other can not reciving sound  -->
+    <ctl name="ADC1 Volume" value="4" />
+    <ctl name="ADC2 Volume" value="4" />
+    <ctl name="ADC3 Volume" value="4" />
+    <!-- +bug 196716,zhangjianming.wt,MODIFY,20160111,other can not reciving sound  -->
+<!-- Xiaomi changes for santoni end -->
     <ctl name="DEC1 Volume" value="84" />
     <ctl name="DEC2 Volume" value="84" />
     <ctl name="DEC2 MUX" value="ZERO" />
@@ -80,10 +89,19 @@
     <ctl name="EAR_S" value="ZERO" />
     <ctl name="HPHL" value="ZERO" />
     <ctl name="HPHR" value="ZERO" />
+<!-- Xiaomi changes for santoni start -->
+     <ctl name="Ext Spk Switch" value="Off"/> 
+    <ctl name="headset amp" value="DISABLE"/>
+    <ctl name="SPK DAC Switch" value="0" />
+<!-- Xiaomi changes for santoni end -->
     <ctl name="SPK" value="ZERO" />
     <ctl name="WSA Spk Switch" value="ZERO" />
     <ctl name="SpkrMono WSA_RDAC" value="ZERO" />
     <ctl name="EAR PA Gain" value="POS_6_DB" />
+<!-- Xiaomi changes for santoni start -->
+    <ctl name="MICBIAS CAPLESS Switch" value="0" />
+    <ctl name="EAR PA Boost" value="ENABLE" />
+<!-- Xiaomi changes for santoni end -->
     <ctl name="SpkrMono BOOST Switch" value="1" />
     <ctl name="EAR PA Gain" value="POS_1P5_DB" />
     <ctl name="EAR PA Boost" value="ENABLE" />
@@ -215,6 +233,9 @@
     <ctl name="MI2S_DL_HL Switch" value="1" />
     <ctl name="MultiMedia1 Mixer INTERNAL_FM_TX" value="0" />
     <ctl name="MultiMedia2 Mixer INTERNAL_FM_TX" value="0" />
+<!-- Xiaomi changes for santoni start -->
+    <ctl name="MultiMedia5 Mixer INTERNAL_FM_TX" value="0" />
+<!-- Xiaomi changes for santoni end -->
     <ctl name="INTERNAL_FM_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="INTERNAL_FM_RX Audio Mixer MultiMedia5" value="0" />
     <!-- fm end -->
@@ -1067,10 +1088,19 @@
     <!-- These are actual sound device specific mixer settings -->
     <path name="adc1">
         <ctl name="ADC1_INP1 Switch" value="1" />
+<!-- Xiaomi changes for santoni start -->
+<!-- +bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
+        <ctl name="ADC1 Volume" value="6" />
+<!-- Xiaomi changes for santoni end -->
         <ctl name="DEC1 MUX" value="ADC1" />
     </path>
 
     <path name="adc2">
+<!-- Xiaomi changes for santoni start -->
+<!-- +bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
+        <ctl name="ADC2 Volume" value="6" />
+        <ctl name="MICBIAS CAPLESS Switch" value="1" />
+<!-- Xiaomi changes for santoni end -->
         <ctl name="DEC1 MUX" value="ADC2" />
     </path>
     <path name="adc3">
@@ -1080,8 +1110,17 @@
     </path>
 
     <path name="speaker">
+<!-- Xiaomi changes for santoni start -->
+<!--
         <ctl name="RX3 MIX1 INP1" value="RX1" />
         <ctl name="SPK" value="Switch" />
+-->
+        <ctl name="MI2S_RX Channels" value="One" />
+        <ctl name="RX2 MIX1 INP1" value="RX2" />
+        <ctl name="RDAC2 MUX" value="RX2" />
+        <ctl name="HPHR" value="Switch" />
+        <ctl name="Ext Spk Switch" value="On"/>
+<!-- Xiaomi changes for santoni end -->
     </path>
 
     <path name="wsa-speaker">
@@ -1136,6 +1175,9 @@
         <ctl name="RDAC2 MUX" value="RX2" />
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
+<!-- Xiaomi changes for santoni start -->
+        <ctl name="headset amp" value="ENABLE"/>
+<!-- Xiaomi changes for santoni end -->
     </path>
 
     <path name="headset-mic">
@@ -1177,8 +1219,20 @@
         <path name="wsa-speaker" />
     </path>
 
+<!-- Xiaomi changes for santoni start -->
+    <!-- bug 212709,zhangjianming2.wt,modify,20160920,fixed is to voice voulme smaller-->
+    <path name="handfree-mic">
+	<path name="adc3" />
+	<ctl name="DEC1 MUX" value="ADC2" />
+	<ctl name="ADC2 MUX" value="INP3" />
+    </path>
+<!-- Xiaomi changes for santoni end -->
+
     <path name="voice-speaker-mic">
-        <path name="speaker-mic" />
+<!-- Xiaomi changes for santoni start -->
+        <!-- <path name="speaker-mic" /> -->
+      <path name="handfree-mic" />
+<!-- Xiaomi changes for santoni end -->
     </path>
 
     <path name="voice-headphones">
@@ -1190,7 +1244,10 @@
     </path>
 
     <path name="speaker-and-headphones">
-        <path name="speaker" />
+<!-- Xiaomi changes for santoni start -->
+        <!-- <path name="speaker" /> -->
+        <ctl name="Lineout_1 amp" value="DUALMODE"/>
+<!-- Xiaomi changes for santoni end -->
         <path name="headphones" />
     </path>
 
@@ -1236,6 +1293,11 @@
     <!-- Dual MIC devices -->
     <path name="speaker-dmic-endfire">
         <path name="adc1" />
+<!-- Xiaomi changes for santoni start -->
+<!-- +bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
+        <ctl name="ADC3 Volume" value="6" />
+<!-- -bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
+<!-- Xiaomi changes for santoni end -->
         <ctl name="DEC2 MUX" value="ADC2" />
         <ctl name="MI2S_TX Channels" value="Two" />
         <ctl name="ADC2 MUX" value="INP3" />
@@ -1253,8 +1315,22 @@
         <path name="dmic-endfire" />
     </path>
 
+<!-- Xiaomi changes for santoni start -->
+     <path name="dmic-endfire-invert">
+        <ctl name="DEC2 MUX" value="ADC1"/>
+	<ctl name="DEC1 MUX" value="ADC2"/>
+	<ctl name="MI2S_TX Channels" value="Two" />
+	<ctl name="ADC2 MUX" value="INP3" />
+	<ctl name="ADC1 Volume" value="6" />
+	<ctl name="ADC3 Volume" value="6" />
+    </path>
+<!-- Xiaomi changes for santoni end -->
+
     <path name="voice-speaker-dmic-ef">
-        <path name="dmic-endfire" />
+<!-- Xiaomi changes for santoni start -->
+        <!-- <path name="dmic-endfire" /> -->
+        <path name="dmic-endfire-invert" />
+<!-- Xiaomi changes for santoni end -->
     </path>
 
     <path name="voice-rec-dmic-ef">
