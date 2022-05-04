@@ -134,18 +134,25 @@ on property:ro.vendor.xiaomi.device=riva
     restart vendor.ir-hal-1-0
 
 # Sensors
+service vendor-sensor-sh /vendor/bin/init.qcom.sensors.sh
+    override
+    class core
+    user root
+    oneshot
+    disabled
+
 on property:ro.vendor.xiaomi.device=prada
     mount none /vendor/etc/sensors/prada_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
-    enable vendor.sensors.qti
+    enable vendor-sensor-sh
 on property:ro.vendor.xiaomi.device=riva
     mount none /vendor/etc/sensors/riva_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
-    enable vendor.sensors.qti
+    enable vendor-sensor-sh
 on property:ro.vendor.xiaomi.device=rolex
     mount none /vendor/etc/sensors/rolex_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
-    enable vendor.sensors.qti
+    enable vendor-sensor-sh
 on property:ro.vendor.xiaomi.series=landtoni
     mount none /vendor/etc/sensors/landtoni_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
-    enable vendor.sensors.qti
+    enable vendor-sensor-sh
 on property:ro.vendor.xiaomi.series=ulysse
     mount none /vendor/etc/sensors/ulysse_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
-    enable vendor.sensors.qti
+    enable vendor-sensor-sh
