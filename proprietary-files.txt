@@ -48,6 +48,9 @@ vendor/etc/perf/perfconfigstore.xml
 vendor/etc/perf/targetconfig.xml
 vendor/etc/perf/targetresourceconfigs.xml
 
+# RIL (Data) - Netmgrd - from PAN
+vendor/etc/data/netmgr_config.xml:vendor/etc/data/netmgr_config_override.xml
+
 # Sensors - from PAN
 vendor/bin/sensors.qti
 vendor/lib/libsensor1.so
