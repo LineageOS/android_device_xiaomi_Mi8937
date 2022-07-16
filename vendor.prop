@@ -1,0 +1,2 @@
+# Xiaomi Mi8937 - Encryption
+ro.crypto.volume.contents_mode=aes-256-xts
