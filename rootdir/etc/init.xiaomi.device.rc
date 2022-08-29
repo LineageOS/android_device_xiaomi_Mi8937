@@ -20,9 +20,9 @@ on property:ro.vendor.xiaomi.device=santoni
 
 # Baseband
 on property:ro.vendor.xiaomi.device=santoni
-    enable baseband-sh
+    enable vendor.baseband-sh
 on property:ro.vendor.xiaomi.series=rova
-    enable baseband-sh
+    enable vendor.baseband-sh
 
 # Camera
 service vendor.land_qcamerasvr /system/vendor/bin/land_mm-qcamera-daemon
