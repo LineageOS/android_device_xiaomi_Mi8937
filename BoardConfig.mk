@@ -19,6 +19,9 @@ include device/xiaomi/mithorium-common/BoardConfigCommon.mk
 DEVICE_PATH := device/xiaomi/Mi8937
 USES_DEVICE_XIAOMI_MI8937 := true
 
+# Android Verified Boot
+BOARD_AVB_ENABLE := false
+
 # Asserts
 ifeq ($(PRODUCT_HARDWARE),Mi8917)
 TARGET_OTA_ASSERT_DEVICE := ugglite,rolex,riva,Mi8917
