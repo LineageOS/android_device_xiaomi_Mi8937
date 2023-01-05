@@ -60,14 +60,6 @@ static const variant_info_t santoni_info = {
     .build_fingerprint = "",
 };
 
-static const variant_info_t prada_info = {
-    .brand = "Xiaomi",
-    .device = "prada",
-    .marketname = "",
-    .model = "Redmi 4",
-    .build_fingerprint = "",
-};
-
 static void determine_device_land(const std::string &proc_cmdline)
 {
     set_variant_props(land_info);
@@ -106,8 +98,6 @@ static void determine_device()
     android::base::ReadFileToString("/sys/firmware/devicetree/base/model", &fdt_model, true);
     if (fdt_model.find("MSM8917") != fdt_model.npos)
         set_variant_props(ugglite_info);
-    else if (fdt_model.find("MSM8937") != fdt_model.npos)
-        set_variant_props(prada_info);
     else if (fdt_model.find("MSM8940") != fdt_model.npos)
         set_variant_props(ugg_info);
 }

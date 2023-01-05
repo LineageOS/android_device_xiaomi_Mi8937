@@ -21,7 +21,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 PRODUCT_PACKAGES += \
     xiaomi_landtoni_overlay_lineage \
-    xiaomi_prada_overlay_lineage \
     xiaomi_riva_overlay_lineage \
     xiaomi_rolex_overlay_lineage \
     xiaomi_ulysse_overlay_lineage

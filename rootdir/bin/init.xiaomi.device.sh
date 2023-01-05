@@ -76,13 +76,6 @@ case "$(cat /sys/firmware/devicetree/base/model)" in
 		setprop vendor.fingerprint.disable_notify_cancel_hack 1
 		setprop ro.vendor.fingerprint.supported 1
 		;;
-	"Qualcomm Technologies, Inc. MSM8937-PMI8950 MTP")
-		setprop ro.vendor.xiaomi.device prada
-		# Audio
-		set_acdb_path_props prada
-		# Fingerprint
-		setprop ro.vendor.fingerprint.supported 1
-		;;
 esac
 
 exit 0

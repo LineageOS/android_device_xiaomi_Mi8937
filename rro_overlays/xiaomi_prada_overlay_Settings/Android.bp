@@ -1,5 +1,0 @@
-runtime_resource_overlay {
-    name: "xiaomi_prada_overlay_Settings",
-    sdk_version: "current",
-    vendor: true,
-}
