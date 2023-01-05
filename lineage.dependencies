@@ -2,13 +2,5 @@
   {
     "repository": "android_device_xiaomi_mithorium-common",
     "target_path": "device/xiaomi/mithorium-common"
-  },
-  {
-    "repository": "android_device_xiaomi_land-camera",
-    "target_path": "device/xiaomi/land-camera"
-  },
-  {
-    "repository": "android_device_xiaomi_mi8937-camera",
-    "target_path": "device/xiaomi/mi8937-camera"
   }
 ]
