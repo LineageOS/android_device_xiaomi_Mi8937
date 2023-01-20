@@ -1,3 +1,6 @@
+# Xiaomi Mi8937 - Bluetooth
+bluetooth.sco.disable_enhanced_connection=1
+
 # Xiaomi Mi8937 - Encryption
 ro.crypto.volume.contents_mode=aes-256-xts
 
