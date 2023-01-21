@@ -18,7 +18,9 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 PRODUCT_PACKAGES += \
     xiaomi_landtoni_overlay \
+    xiaomi_landtoni_overlay_Settings \
     xiaomi_prada_overlay \
+    xiaomi_prada_overlay_Settings \
     xiaomi_rolex_overlay \
     xiaomi_riva_overlay \
     xiaomi_ugg_overlay \
