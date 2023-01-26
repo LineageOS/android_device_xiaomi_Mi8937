@@ -99,4 +99,8 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/biometrics/sepolicy
 endif
 
 # Inherit from the proprietary version
+ifeq ($(MI8937_TARGET),Mi8917)
+include vendor/xiaomi/Mi8917/BoardConfigVendor.mk
+else ifeq ($(MI8937_TARGET),Mi8937)
 include vendor/xiaomi/Mi8937/BoardConfigVendor.mk
+endif

@@ -107,4 +107,8 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Inherit from vendor blobs
+ifeq ($(MI8937_TARGET),Mi8917)
+$(call inherit-product, vendor/xiaomi/Mi8917/Mi8917-vendor.mk)
+else ifeq ($(MI8937_TARGET),Mi8937)
 $(call inherit-product, vendor/xiaomi/Mi8937/Mi8937-vendor.mk)
+endif
