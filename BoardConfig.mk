@@ -17,9 +17,14 @@ $(foreach p, $(call to-upper, $(ALL_PARTITIONS)), \
 include device/xiaomi/mithorium-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/xiaomi/Mi8937
+USES_DEVICE_XIAOMI_MI8937 := true
 
 # Asserts
-TARGET_OTA_ASSERT_DEVICE := mi8937,land,santoni,ugglite,ugg,rolex,riva,Mi8937
+ifeq ($(MI8937_TARGET),Mi8917)
+TARGET_OTA_ASSERT_DEVICE := ugglite,rolex,riva,Mi8917
+else ifeq ($(MI8937_TARGET),Mi8937)
+TARGET_OTA_ASSERT_DEVICE := land,santoni,ugg,Mi8937
+endif
 
 # Camera
 MI8937_CAM_USE_RENAMED_BLOBS_L := true
@@ -89,7 +94,9 @@ VENDOR_SECURITY_PATCH := 2017-04-01
 
 # SELinux
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+ifeq ($(MI8937_TARGET),Mi8937)
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/biometrics/sepolicy
+endif
 
 # Inherit from the proprietary version
 include vendor/xiaomi/Mi8937/BoardConfigVendor.mk

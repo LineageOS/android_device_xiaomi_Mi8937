@@ -24,13 +24,17 @@ PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
+ifeq ($(MI8937_TARGET),Mi8917)
+PRODUCT_PACKAGES += \
+    xiaomi_rolex_overlay \
+    xiaomi_riva_overlay \
+    xiaomi_ugglite_overlay
+else ifeq ($(MI8937_TARGET),Mi8937)
 PRODUCT_PACKAGES += \
     xiaomi_landtoni_overlay \
     xiaomi_landtoni_overlay_Settings \
-    xiaomi_rolex_overlay \
-    xiaomi_riva_overlay \
-    xiaomi_ugg_overlay \
-    xiaomi_ugglite_overlay
+    xiaomi_ugg_overlay
+endif
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -45,14 +49,20 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/blank.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config.xml
 
 PRODUCT_PACKAGES += \
-    camera.land \
     camera.ulysse \
     camera.wingtech
 
+ifeq ($(MI8937_TARGET),Mi8937)
+PRODUCT_PACKAGES += \
+    camera.land
+endif
+
 # Fingerprint
+ifeq ($(MI8937_TARGET),Mi8937)
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.xiaomi_landtoni \
     android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ulysse
+endif
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -70,19 +80,27 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fstab.qcom_ramdisk \
     init.baseband.sh \
-    init.goodix.sh \
     init.xiaomi.device.rc \
     init.xiaomi.device.sh
 
+ifeq ($(MI8937_TARGET),Mi8937)
+PRODUCT_PACKAGES += \
+    init.goodix.sh
+endif
+
 # Shims
+PRODUCT_PACKAGES += \
+    libshims_android \
+    libshims_ui \
+    libwui
+
+ifeq ($(MI8937_TARGET),Mi8937)
 PRODUCT_PACKAGES += \
     fakelogprint \
     libshim_mutexdestroy \
     libshim_pthreadts \
-    libshims_android \
-    libshims_binder \
-    libshims_ui \
-    libwui
+    libshims_binder
+endif
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

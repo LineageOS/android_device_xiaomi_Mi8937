@@ -5,9 +5,13 @@
 #
 
 PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/lineage_Mi8917.mk \
     $(LOCAL_DIR)/lineage_Mi8937.mk
 
 COMMON_LUNCH_CHOICES := \
+    lineage_Mi8917-user \
+    lineage_Mi8917-userdebug \
+    lineage_Mi8917-eng \
     lineage_Mi8937-user \
     lineage_Mi8937-userdebug \
     lineage_Mi8937-eng
