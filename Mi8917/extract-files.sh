@@ -64,4 +64,6 @@ export DEVICE_PARENT=Mi8937
 export DEVICE_COMMON=mithorium-common
 export VENDOR=xiaomi
 
-"./../../../${VENDOR}/${DEVICE_COMMON}/extract-files.sh" "$@"
+MY_DIR="$(cd "$(dirname "${0}")"; pwd -P)"
+
+"${MY_DIR}/../../../${VENDOR}/${DEVICE_COMMON}/extract-files.sh" "$@"
