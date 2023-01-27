@@ -6,4 +6,3 @@ allow init_xiaomi vendor_configs_file:file r_file_perms;
 
 set_prop(init_xiaomi, camera_prop);
 set_prop(init_xiaomi, vendor_audio_prop);
-set_prop(init_xiaomi, vendor_fingerprint_prop);
