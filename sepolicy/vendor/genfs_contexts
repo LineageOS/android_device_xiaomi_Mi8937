@@ -33,3 +33,6 @@ genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0055/power_supply/bms		
 genfscon sysfs /board_properties/virtualkeys.ft5346			u:object_r:sysfs_virtualkeys:s0
 genfscon sysfs /board_properties/virtualkeys.ft5x06_720p		u:object_r:sysfs_virtualkeys:s0
 genfscon sysfs /board_properties/virtualkeys.ist30xx_ts_input		u:object_r:sysfs_virtualkeys:s0
+
+# Vibrator
+genfscon sysfs /devices/platform/soc/soc:vibrator_gpio/leds/vibrator	u:object_r:sysfs_vibrator:s0
