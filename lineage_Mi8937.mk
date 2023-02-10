@@ -13,7 +13,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit from Mi8937 device
-MI8937_TARGET := Mi8937
+PRODUCT_HARDWARE := Mi8937
 $(call inherit-product, device/xiaomi/Mi8937/device.mk)
 
 # Overlays

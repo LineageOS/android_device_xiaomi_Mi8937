@@ -24,12 +24,12 @@ PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
-ifeq ($(MI8937_TARGET),Mi8917)
+ifeq ($(PRODUCT_HARDWARE),Mi8917)
 PRODUCT_PACKAGES += \
     xiaomi_rolex_overlay \
     xiaomi_riva_overlay \
     xiaomi_ugglite_overlay
-else ifeq ($(MI8937_TARGET),Mi8937)
+else ifeq ($(PRODUCT_HARDWARE),Mi8937)
 PRODUCT_PACKAGES += \
     xiaomi_landtoni_overlay \
     xiaomi_landtoni_overlay_Settings \
@@ -52,13 +52,13 @@ PRODUCT_PACKAGES += \
     camera.ulysse \
     camera.wingtech
 
-ifeq ($(MI8937_TARGET),Mi8937)
+ifeq ($(PRODUCT_HARDWARE),Mi8937)
 PRODUCT_PACKAGES += \
     camera.land
 endif
 
 # Fingerprint
-ifeq ($(MI8937_TARGET),Mi8937)
+ifeq ($(PRODUCT_HARDWARE),Mi8937)
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.xiaomi_landtoni \
     android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ulysse
@@ -83,7 +83,7 @@ PRODUCT_PACKAGES += \
     init.xiaomi.device.rc \
     init.xiaomi.device.sh
 
-ifeq ($(MI8937_TARGET),Mi8937)
+ifeq ($(PRODUCT_HARDWARE),Mi8937)
 PRODUCT_PACKAGES += \
     init.goodix.sh
 endif
@@ -94,7 +94,7 @@ PRODUCT_PACKAGES += \
     libshims_ui \
     libwui
 
-ifeq ($(MI8937_TARGET),Mi8937)
+ifeq ($(PRODUCT_HARDWARE),Mi8937)
 PRODUCT_PACKAGES += \
     fakelogprint \
     libshim_mutexdestroy \
@@ -107,8 +107,8 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Inherit from vendor blobs
-ifeq ($(MI8937_TARGET),Mi8917)
+ifeq ($(PRODUCT_HARDWARE),Mi8917)
 $(call inherit-product, vendor/xiaomi/Mi8917/Mi8917-vendor.mk)
-else ifeq ($(MI8937_TARGET),Mi8937)
+else ifeq ($(PRODUCT_HARDWARE),Mi8937)
 $(call inherit-product, vendor/xiaomi/Mi8937/Mi8937-vendor.mk)
 endif
