@@ -42,7 +42,7 @@ TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_mi8937
 
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.android_dt_dir=/non-existent androidboot.boot_devices=soc/7824900.sdhci
-TARGET_KERNEL_CONFIG := mi8937_defconfig
+TARGET_KERNEL_CONFIG := lineageos_mi8937_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 
 # Partitions
