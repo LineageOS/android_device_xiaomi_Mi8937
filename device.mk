@@ -71,11 +71,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fts_ts.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/ft5x06_720p.kl \
     $(LOCAL_PATH)/keylayout/uinput-gf.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gf3208.kl
 
-# Sensors
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/sensors/,$(TARGET_COPY_OUT_VENDOR)/etc/sensors/)
-
 # Recovery
 ifeq ($(PRODUCT_HARDWARE),Mi8937)
 PRODUCT_COPY_FILES += \
@@ -93,6 +88,11 @@ ifeq ($(PRODUCT_HARDWARE),Mi8937)
 PRODUCT_PACKAGES += \
     init.goodix.sh
 endif
+
+# Sensors
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/sensors/,$(TARGET_COPY_OUT_VENDOR)/etc/sensors/)
 
 # Shims
 PRODUCT_PACKAGES += \
