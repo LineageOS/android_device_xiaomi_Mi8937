@@ -76,6 +76,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/sensors/,$(TARGET_COPY_OUT_VENDOR)/etc/sensors/)
 
+# Recovery
+ifeq ($(PRODUCT_HARDWARE),Mi8937)
+PRODUCT_COPY_FILES += \
+    vendor/xiaomi/Mi8937/proprietary/vendor/bin/hvdcp_opti:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/hvdcp_opti
+endif
+
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.qcom_ramdisk \
