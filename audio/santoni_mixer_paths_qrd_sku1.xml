@@ -1317,6 +1317,7 @@
 
 <!-- Xiaomi changes for santoni start -->
      <path name="dmic-endfire-invert">
+        <ctl name="ADC1_INP1 Switch" value="1" />
         <ctl name="DEC2 MUX" value="ADC1"/>
 	<ctl name="DEC1 MUX" value="ADC2"/>
 	<ctl name="MI2S_TX Channels" value="Two" />

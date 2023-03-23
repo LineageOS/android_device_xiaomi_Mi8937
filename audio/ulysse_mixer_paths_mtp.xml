@@ -1519,6 +1519,7 @@
     <path name="voice-speaker-dmic-ef">
     <!-- Xiaomi changes for ulysse start -->
     <!-- <path name="dmic-endfire" /> -->
+        <ctl name="ADC1_INP1 Switch" value="1" />
         <ctl name="ADC1 Volume" value="6" /> 
         <ctl name="DEC2 MUX" value="ADC1" /> 
         <ctl name="ADC3 Volume" value="6" /> 
