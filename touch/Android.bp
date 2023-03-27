@@ -17,7 +17,7 @@ cc_binary {
     init_rc: ["vendor.lineage.touch@1.0-service.xiaomi_mi8937.rc"],
     defaults: ["hidl_defaults"],
     relative_install_path: "hw",
-    vendor: true,
+    device_specific: true,
     srcs: [
         "KeyDisabler.cpp",
         "service.cpp"

@@ -2,5 +2,5 @@ runtime_resource_overlay {
     name: "WifiOverlay_prada",
     theme: "WifiOverlay",
     sdk_version: "current",
-    vendor: true
+    device_specific: true
 }

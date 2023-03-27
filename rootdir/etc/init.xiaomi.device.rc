@@ -6,17 +6,17 @@ service vendor.xiaomi_device_script /vendor/bin/init.xiaomi.device.sh
 
 # Audio
 on property:ro.vendor.xiaomi.series=ulysse
-    setprop vendor.audio.mixer_xml.path /vendor/etc/ulysse_mixer_paths_mtp.xml
+    setprop vendor.audio.mixer_xml.path /odm/etc/ulysse_mixer_paths_mtp.xml
 on property:ro.vendor.xiaomi.device=land
-    setprop vendor.audio.mixer_xml.path /vendor/etc/land_mixer_paths_qrd_sku1.xml
+    setprop vendor.audio.mixer_xml.path /odm/etc/land_mixer_paths_qrd_sku1.xml
 on property:ro.vendor.xiaomi.device=prada
-    setprop vendor.audio.mixer_xml.path /vendor/etc/prada_mixer_paths_mtp.xml
+    setprop vendor.audio.mixer_xml.path /odm/etc/prada_mixer_paths_mtp.xml
 on property:ro.vendor.xiaomi.device=riva
-    setprop vendor.audio.mixer_xml.path /vendor/etc/riva_mixer_paths_qrd_sku2.xml
+    setprop vendor.audio.mixer_xml.path /odm/etc/riva_mixer_paths_qrd_sku2.xml
 on property:ro.vendor.xiaomi.device=rolex
-    setprop vendor.audio.mixer_xml.path /vendor/etc/rolex_mixer_paths_qrd_sku2.xml
+    setprop vendor.audio.mixer_xml.path /odm/etc/rolex_mixer_paths_qrd_sku2.xml
 on property:ro.vendor.xiaomi.device=santoni
-    setprop vendor.audio.mixer_xml.path /vendor/etc/santoni_mixer_paths_qrd_sku1.xml
+    setprop vendor.audio.mixer_xml.path /odm/etc/santoni_mixer_paths_qrd_sku1.xml
 
 # Baseband
 on property:ro.vendor.xiaomi.device=santoni

@@ -1,0 +1,2 @@
+# HALs
+/(odm|vendor/odm)/bin/hw/vendor\.lineage\.touch@1\.0-service\.xiaomi_mi8937	u:object_r:hal_lineage_touch_default_exec:s0

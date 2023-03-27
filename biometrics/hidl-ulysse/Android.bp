@@ -3,7 +3,7 @@ cc_binary {
     defaults: ["hidl_defaults"],
     init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ulysse.rc"],
     vintf_fragments: ["android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ulysse.xml"],
-    vendor: true,
+    device_specific: true,
     relative_install_path: "hw",
     srcs: [
         "BiometricsFingerprint.cpp",
