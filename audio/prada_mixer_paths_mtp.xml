@@ -1295,7 +1295,7 @@
         <ctl name="RDAC2 MUX" value="RX2" />
         <ctl name="HPHR" value="Switch" />
         <ctl name="RX2 Digital Volume" value="83" />
-        <ctl name="Ext Spk Switch" value="On" />
+        <ctl name="SPK PA GPIO" value="ENABLE"/>
     </path>
 
     <path name="speaker-and-hdmi">
@@ -1361,6 +1361,7 @@
         <ctl name="HPHR" value="Switch" />
         <ctl name="RX1 Digital Volume" value="84" />
         <ctl name="RX2 Digital Volume" value="84" />
+        <ctl name="HPH PA GPIO" value="ENABLE"/>
     </path>
 
     <path name="headset-mic-default">
@@ -1408,7 +1409,7 @@
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="RDAC2 MUX" value="RX2" />
         <ctl name="HPHR" value="Switch" />
-        <ctl name="Ext Spk Switch" value="On" />
+        <ctl name="SPK PA GPIO" value="ENABLE"/>
     </path>
 
     <path name="wsa-voice-speaker">
@@ -1430,6 +1431,7 @@
         <ctl name="RDAC2 MUX" value="RX2" />
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
+        <ctl name="HPH PA GPIO" value="ENABLE"/>
     </path>
 
     <path name="voice-speaker-and-voice-headphones">
@@ -1450,7 +1452,10 @@
         <ctl name="HPHR" value="Switch" />
         <ctl name="RX1 Digital Volume" value="83" />
         <ctl name="RX2 Digital Volume" value="83" />
-        <ctl name="Ext Spk Switch" value="On" />
+        <!-- This device uses Left Headphone output for Speaker.
+             Can we enable both PA GPIO sets simultaneously? -->
+        <ctl name="HPH PA GPIO" value="ENABLE"/>
+        <ctl name="SPK PA GPIO" value="ENABLE"/>
     </path>
 
     <path name="usb-headphones">
