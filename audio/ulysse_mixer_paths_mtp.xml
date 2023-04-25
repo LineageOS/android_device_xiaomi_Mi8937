@@ -1301,7 +1301,7 @@
         <ctl name="RX3 MIX1 INP1" value="RX1" />
         <ctl name="SPK" value="Switch" />
     -->
-        <ctl name="Speaker PA Open" value="BOTH" />
+        <ctl name="SPK PA GPIO" value="ENABLE" />
         <ctl name="MI2S_RX Channels" value="One" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RX2 MIX1 INP1" value="RX2" />

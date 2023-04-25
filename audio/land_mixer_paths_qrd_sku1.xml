@@ -88,8 +88,8 @@
     <ctl name="HPHL" value="ZERO" />
     <ctl name="HPHR" value="ZERO" />
 <!-- Xiaomi changes for land start -->
-    <ctl name="Lineout_1 amp" value="DISABLE"/>
-    <ctl name="headset amp" value="DISABLE"/>
+    <ctl name="SPK PA GPIO" value="DISABLE"/>
+    <ctl name="HPH PA GPIO" value="DISABLE"/>
     <ctl name="SPK DAC Switch" value="0" />
 <!-- Xiaomi changes for land end -->
     <ctl name="SPK" value="ZERO" />
@@ -1114,7 +1114,7 @@
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="RDAC2 MUX" value="RX2" />
         <ctl name="HPHR" value="Switch" />
-        <ctl name="Lineout_1 amp" value="ENABLE"/>
+        <ctl name="SPK PA GPIO" value="ENABLE"/>
 <!-- Xiaomi changes for land end -->
     </path>
 
@@ -1171,7 +1171,7 @@
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
 <!-- Xiaomi changes for land start -->
-        <ctl name="headset amp" value="ENABLE"/>
+        <ctl name="HPH PA GPIO" value="ENABLE"/>
 <!-- Xiaomi changes for land end -->
     </path>
 

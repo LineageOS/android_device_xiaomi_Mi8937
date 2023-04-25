@@ -91,7 +91,7 @@
     <ctl name="HPHR" value="ZERO" />
 <!-- Xiaomi changes for santoni start -->
      <ctl name="Ext Spk Switch" value="Off"/> 
-    <ctl name="headset amp" value="DISABLE"/>
+    <ctl name="HPH PA GPIO" value="DISABLE"/>
     <ctl name="SPK DAC Switch" value="0" />
 <!-- Xiaomi changes for santoni end -->
     <ctl name="SPK" value="ZERO" />
@@ -1176,7 +1176,7 @@
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
 <!-- Xiaomi changes for santoni start -->
-        <ctl name="headset amp" value="ENABLE"/>
+        <ctl name="HPH PA GPIO" value="ENABLE"/>
 <!-- Xiaomi changes for santoni end -->
     </path>
 

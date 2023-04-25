@@ -94,7 +94,7 @@
     <ctl name="HPHR" value="ZERO" />
 <!-- Xiaomi changes for riva start -->
     <ctl name="Ext Spk Switch" value="Off"/> 
-    <ctl name="headset amp" value="DISABLE"/>
+    <ctl name="HPH PA GPIO" value="DISABLE"/>
 <!-- Xiaomi changes for riva end -->
     <ctl name="SPK" value="ZERO" />
     <ctl name="WSA Spk Switch" value="ZERO" />
@@ -1167,7 +1167,7 @@
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
 <!-- Xiaomi changes for rova start -->
-        <ctl name="headset amp" value="ENABLE"/>
+        <ctl name="HPH PA GPIO" value="ENABLE"/>
 <!-- Xiaomi changes for rova end -->
     </path>
 
@@ -1243,7 +1243,7 @@
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
         <ctl name="Ext Spk Switch" value="On"/>
-        <ctl name="headset amp" value="ENABLE"/>
+        <ctl name="HPH PA GPIO" value="ENABLE"/>
 <!-- Xiaomi changes for riva end -->
     </path>
 
