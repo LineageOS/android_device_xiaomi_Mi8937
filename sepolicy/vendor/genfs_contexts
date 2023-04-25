@@ -8,28 +8,26 @@ genfscon sysfs /devices/platform/soc/soc:gpio-leds/leds	u:object_r:sysfs_leds:s0
 # LEDs
 genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-0045/leds		u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0045/leds		u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/platform/soc/soc:flashlight_back/leds/flashlight	u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/platform/soc/soc:flashlight/leds/flashlight-front	u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/soc:flashlight/leds/flashlight		u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/soc:flashlight-front/leds/flashlight-front	u:object_r:sysfs_leds:s0
+
+# Power
+genfscon sysfs /devices/platform/soc/soc:usb_power_supply/power_supply/usb		u:object_r:sysfs_usb_supply:s0
 
 # Power - ulysse
 genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-0055/power_supply/bms		u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-006b/power_supply/battery	u:object_r:sysfs_battery_supply:s0
-genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-006b/power_supply/usb		u:object_r:sysfs_usb_supply:s0
 
 # Power - rolex
 genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0057/power_supply/battery	u:object_r:sysfs_battery_supply:s0
-genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0057/power_supply/usb		u:object_r:sysfs_usb_supply:s0
-genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0062/power_supply/rk-bat	u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0062/power_supply/bms		u:object_r:sysfs_battery_supply:s0
 
 # Power - riva
 genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-006b/power_supply/battery	u:object_r:sysfs_battery_supply:s0
-genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-006b/power_supply/usb		u:object_r:sysfs_usb_supply:s0
 genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0055/power_supply/bms		u:object_r:sysfs_battery_supply:s0
 
 # Touchscreen
 genfscon proc  /sys/dev/xiaomi_msm8937_touchscreen			u:object_r:sysctl_mi8937_ts:s0
-genfscon sysfs /board_properties/virtualkeys.ft5346			u:object_r:sysfs_virtualkeys:s0
-genfscon sysfs /board_properties/virtualkeys.ft5x06_720p		u:object_r:sysfs_virtualkeys:s0
 genfscon sysfs /board_properties/virtualkeys.ist30xx_ts_input		u:object_r:sysfs_virtualkeys:s0
 
 # Vibrator
