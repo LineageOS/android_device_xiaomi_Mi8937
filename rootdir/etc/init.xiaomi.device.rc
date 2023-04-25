@@ -117,11 +117,13 @@ on property:ro.hardware.consumerir=led
 
 on property:ro.vendor.xiaomi.series=landtoni
     setprop ro.hardware.consumerir led
-on property:ro.vendor.xiaomi.device=prada
-    # TEMP
-    setprop ro.hardware.consumerir led
 on property:ro.vendor.xiaomi.device=rolex
     setprop ro.hardware.consumerir led
+
+on property:ro.vendor.xiaomi.device=prada
+    chown system system /dev/lirc0
+    setprop ro.hardware.consumerir lirc
+    restart vendor.ir-hal-1-0
 
 on property:ro.vendor.xiaomi.series=ulysse
     chown system system /dev/lirc0
