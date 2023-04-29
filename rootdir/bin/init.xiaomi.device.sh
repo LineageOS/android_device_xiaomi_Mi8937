@@ -80,6 +80,10 @@ case "$(cat /sys/firmware/devicetree/base/model)" in
 		setprop ro.vendor.xiaomi.device prada
 		# Audio
 		set_acdb_path_props prada
+		# Camera
+		setprop persist.camera.gyro.android 0
+		setprop persist.camera.gyro.disable 1
+		setprop persist.camera.is_type 1
 		# Fingerprint
 		setprop ro.vendor.fingerprint.supported 1
 		;;
