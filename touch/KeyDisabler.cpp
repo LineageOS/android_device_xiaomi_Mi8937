@@ -30,7 +30,7 @@ namespace touch {
 namespace V1_0 {
 namespace implementation {
 
-constexpr const char kControlPath[] = "/proc/touchpanel/capacitive_keys_enable";
+constexpr const char kControlPath[] = "/proc/sys/dev/xiaomi_msm8937_touchscreen/disable_keys";
 
 KeyDisabler::KeyDisabler() {
     has_key_disabler_ = !access(kControlPath, F_OK);
@@ -53,7 +53,7 @@ Return<bool> KeyDisabler::isEnabled() {
 Return<bool> KeyDisabler::setEnabled(bool enabled) {
     if (!has_key_disabler_) return false;
 
-    if (!WriteStringToFile(enabled ? "0" : "1", kControlPath, true)) {
+    if (!WriteStringToFile(enabled ? "1" : "0", kControlPath, true)) {
         LOG(ERROR) << "Failed to write to " << kControlPath;
         return false;
     }
