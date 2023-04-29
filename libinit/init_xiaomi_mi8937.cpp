@@ -68,48 +68,50 @@ static const variant_info_t prada_info = {
     .build_fingerprint = "",
 };
 
-static void determine_device_land(const std::string &proc_cmdline)
-{
-    set_variant_props(land_info);
-
-    if (proc_cmdline.find("S88537AB1") != proc_cmdline.npos)
-        set_ro_build_prop("model", "Redmi 3X", true);
-}
-
-static void determine_device_santoni(const std::string &proc_cmdline)
-{
-    set_variant_props(santoni_info);
-
-    if (proc_cmdline.find("S88536CA2") != proc_cmdline.npos)
-        set_ro_build_prop("model", "Redmi 4", true);
-}
-
 static void determine_device()
 {
-    std::string fdt_model, proc_cmdline;
+    std::string codename;
 
-    android::base::ReadFileToString("/proc/cmdline", &proc_cmdline, true);
-    if (proc_cmdline.find("S88503") != proc_cmdline.npos) {
+    android::base::ReadFileToString("/sys/xiaomi-msm8937-mach/codename", &codename, true);
+    if (codename.empty())
+        return;
+    codename.pop_back();
+
+    if (codename == "rolex") {
         set_variant_props(rolex_info);
-        return;
-    } else if (proc_cmdline.find("S88505") != proc_cmdline.npos) {
+    } else if (codename == "riva") {
         set_variant_props(riva_info);
-        return;
-    } else if (proc_cmdline.find("S88537") != proc_cmdline.npos) {
-        determine_device_land(proc_cmdline);
-        return;
-    } else if (proc_cmdline.find("S88536") != proc_cmdline.npos) {
-        determine_device_santoni(proc_cmdline);
-        return;
+    } else if (codename == "land") {
+        set_variant_props(land_info);
+        goto read_wingtech_board_id;
+    } else if (codename == "santoni") {
+        set_variant_props(santoni_info);
+        goto read_wingtech_board_id;
+    } else if (codename == "ugglite") {
+        set_variant_props(ugglite_info);
+    } else if (codename == "prada") {
+        set_variant_props(prada_info);
+    } else if (codename == "ugg") {
+        set_variant_props(ugg_info);
     }
 
-    android::base::ReadFileToString("/sys/firmware/devicetree/base/model", &fdt_model, true);
-    if (fdt_model.find("MSM8917") != fdt_model.npos)
-        set_variant_props(ugglite_info);
-    else if (fdt_model.find("MSM8937") != fdt_model.npos)
-        set_variant_props(prada_info);
-    else if (fdt_model.find("MSM8940") != fdt_model.npos)
-        set_variant_props(ugg_info);
+    return;
+
+read_wingtech_board_id:
+    std::string wingtech_board_id;
+
+    android::base::ReadFileToString("/sys/xiaomi-msm8937-mach/wingtech_board_id", &wingtech_board_id, true);
+    if (wingtech_board_id.empty())
+        return;
+    wingtech_board_id.pop_back();
+
+    if (codename == "land" && wingtech_board_id == "S88537AB1") {
+        set_ro_build_prop("model", "Redmi 3X", true);
+    } else if (codename == "santoni" && wingtech_board_id == "S88536CA2") {
+        set_ro_build_prop("model", "Redmi 4", true);
+    }
+
+    return;
 }
 
 void vendor_load_properties() {
