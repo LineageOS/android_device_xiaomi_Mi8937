@@ -43,7 +43,14 @@ TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_mi8937
 
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/7824900.sdhci
-TARGET_KERNEL_CONFIG := lineageos_mi8937_defconfig
+TARGET_KERNEL_CONFIG := \
+    vendor/msm8937-perf_defconfig \
+    vendor/xiaomi-msm8937/common.config \
+    vendor/xiaomi-msm8937/mi8937.config \
+    vendor/xiaomi-msm8937/feature/android-12.config \
+    vendor/xiaomi-msm8937/feature/lineageos.config \
+    vendor/xiaomi-msm8937/feature/lmkd.config
+
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 
 # Partitions
