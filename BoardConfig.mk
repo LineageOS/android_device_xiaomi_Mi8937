@@ -28,6 +28,7 @@ endif
 
 # Camera
 MI8937_CAM_USE_RENAMED_BLOBS_L := true
+MI8937_CAM_USE_RENAMED_BLOBS_P := true
 MI8937_CAM_USE_RENAMED_BLOBS_U := true
 
 # Display
