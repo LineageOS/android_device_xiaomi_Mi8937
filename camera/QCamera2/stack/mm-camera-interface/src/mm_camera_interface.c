@@ -36,7 +36,7 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <linux/media.h>
-#include <media/msm_cam_sensor-land.h>
+#include <media/msm_cam_sensor-legacy-m.h>
 #include <unistd.h>
 #define IOCTL_H <SYSTEM_HEADER_PREFIX/ioctl.h>
 #include IOCTL_H
