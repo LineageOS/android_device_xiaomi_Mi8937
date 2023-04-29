@@ -20,7 +20,6 @@ cc_binary {
     vendor: true,
     srcs: [
         "KeyDisabler.cpp",
-        "KeySwapper.cpp",
         "service.cpp"
     ],
     shared_libs: [
