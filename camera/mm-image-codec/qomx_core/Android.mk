@@ -23,7 +23,7 @@ LOCAL_INC_FILES := qomx_core.h \
 LOCAL_SRC_FILES := qomx_core.c
 
 LOCAL_MODULE           := libLomx_core
-LOCAL_VENDOR_MODULE := true
+LOCAL_ODM_MODULE := true
 LOCAL_SHARED_LIBRARIES := libcutils libdl liblog libutils
 
 LOCAL_32_BIT_ONLY := true

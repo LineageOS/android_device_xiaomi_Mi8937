@@ -67,7 +67,7 @@ LOCAL_SRC_FILES := \
 LOCAL_MODULE           := libLmjpeg_interface
 LOCAL_SHARED_LIBRARIES := libdl libcutils liblog libLomx_core libLmcamera_interface libutils
 LOCAL_MODULE_TAGS := optional
-LOCAL_VENDOR_MODULE := true
+LOCAL_ODM_MODULE := true
 
 LOCAL_32_BIT_ONLY := $(BOARD_QTI_CAMERA_32BIT_ONLY)
 include $(BUILD_SHARED_LIBRARY)

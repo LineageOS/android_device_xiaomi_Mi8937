@@ -20,7 +20,7 @@ LOCAL_SRC_FILES := \
     bionic/pthread_mutex_destroy.cpp
 LOCAL_SHARED_LIBRARIES := libc
 LOCAL_MODULE := libshim_mutexdestroy
-LOCAL_VENDOR_MODULE := true
+LOCAL_ODM_MODULE := true
 LOCAL_CXX_STL := none
 LOCAL_SANITIZE := never
 LOCAL_MODULE_TAGS := optional
@@ -33,7 +33,7 @@ LOCAL_SRC_FILES := \
     bionic/pthread_cond_timedwait.cpp
 LOCAL_SHARED_LIBRARIES := libc
 LOCAL_MODULE := libshim_pthreadts
-LOCAL_VENDOR_MODULE := true
+LOCAL_ODM_MODULE := true
 LOCAL_MODULE_TAGS := optional
 LOCAL_32_BIT_ONLY := true
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES

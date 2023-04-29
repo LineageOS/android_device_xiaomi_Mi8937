@@ -60,7 +60,7 @@ LOCAL_HEADER_LIBRARIES += land_camera_common_headers
 LOCAL_HEADER_LIBRARIES += media_plugin_headers
 LOCAL_HEADER_LIBRARIES += generated_kernel_headers
 LOCAL_MODULE_TAGS := optional
-LOCAL_VENDOR_MODULE := true
+LOCAL_ODM_MODULE := true
 
 LOCAL_32_BIT_ONLY := $(BOARD_QTI_CAMERA_32BIT_ONLY)
 include $(BUILD_SHARED_LIBRARY)
