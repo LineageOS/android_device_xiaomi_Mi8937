@@ -1,6 +1,3 @@
-# DT2W
-genfscon proc /sys/dev/dt2w u:object_r:dt2w_ctrl:s0
-
 # Camera
 genfscon sysfs /camera_fusion_id_back  u:object_r:sysfs_camera_fusion_id:s0
 genfscon sysfs /camera_fusion_id_front u:object_r:sysfs_camera_fusion_id:s0
@@ -30,6 +27,7 @@ genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-006b/power_supply/usb		
 genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0055/power_supply/bms		u:object_r:sysfs_battery_supply:s0
 
 # Touchscreen
+genfscon proc  /sys/dev/xiaomi_msm8937_touchscreen			u:object_r:sysctl_mi8937_ts:s0
 genfscon sysfs /board_properties/virtualkeys.ft5346			u:object_r:sysfs_virtualkeys:s0
 genfscon sysfs /board_properties/virtualkeys.ft5x06_720p		u:object_r:sysfs_virtualkeys:s0
 genfscon sysfs /board_properties/virtualkeys.ist30xx_ts_input		u:object_r:sysfs_virtualkeys:s0

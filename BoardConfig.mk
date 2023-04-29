@@ -95,7 +95,7 @@ BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 838860800 # 800 MB
 endif
 
 # Power
-TARGET_TAP_TO_WAKE_NODE := "/proc/sys/dev/dt2w"
+TARGET_TAP_TO_WAKE_NODE := "/proc/sys/dev/xiaomi_msm8937_touchscreen/enable_dt2w"
 
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
