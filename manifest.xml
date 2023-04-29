@@ -4,4 +4,13 @@
         <transport>hwbinder</transport>
         <fqname>@1.0::IRadioConfig/default</fqname>
     </hal>
+    <hal format="hidl">
+        <name>vendor.lineage.touch</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IKeyDisabler</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </manifest>
