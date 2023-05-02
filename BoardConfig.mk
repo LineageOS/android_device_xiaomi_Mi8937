@@ -27,6 +27,7 @@ TARGET_OTA_ASSERT_DEVICE := land,prada,santoni,ugg,Mi8937
 endif
 
 # Camera
+#MI8937_CAM_USE_LATEST_CAMERA_STACK := true
 MI8937_CAM_USE_RENAMED_BLOBS_L := true
 MI8937_CAM_USE_RENAMED_BLOBS_P := true
 MI8937_CAM_USE_RENAMED_BLOBS_U := true
@@ -51,6 +52,10 @@ TARGET_KERNEL_CONFIG := \
     vendor/xiaomi/feature/android-12.config \
     vendor/xiaomi/feature/lineageos.config \
     vendor/xiaomi/feature/lmkd.config
+
+ifeq ($(MI8937_CAM_USE_LATEST_CAMERA_STACK),true)
+TARGET_KERNEL_CONFIG += vendor/xiaomi-msm8937/optional/latest-camera-stack.config
+endif
 
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 
