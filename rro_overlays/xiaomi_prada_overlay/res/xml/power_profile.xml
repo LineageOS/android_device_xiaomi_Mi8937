@@ -1,38 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <device name="Android">
-    <item name="screen.on">100</item>
-    <item name="screen.full">205</item>
+    <item name="screen.on.display0">100</item>
+    <item name="screen.full.display0">205</item>
     <array name="cpu.clusters.cores">
         <value>4</value>
         <value>4</value>
     </array>
     <array name="cpu.core_speeds.cluster0">
+        <value>960000</value>
+        <value>1094400</value>
+        <value>1248000</value>
+        <value>1344000</value>
+        <value>1401000</value>
+    </array>
+    <array name="cpu.core_power.cluster0">
+        <value>59</value>
+        <value>75</value>
+        <value>94</value>
+        <value>108</value>
+        <value>111</value>
+    </array>
+    <array name="cpu.core_speeds.cluster1">
         <value>768000</value>
         <value>902400</value>
         <value>998400</value>
         <value>1094400</value>
     </array>
-    <array name="cpu.core_power.cluster0">
+    <array name="cpu.core_power.cluster1">
         <value>43</value>
         <value>54</value>
         <value>64</value>
         <value>79</value>
-    </array>
-    <array name="cpu.core_speeds.cluster1">
-        <value>960000</value>
-        <value>1094400</value>
-        <value>1209600</value>
-        <value>1248000</value>
-        <value>1344000</value>
-        <value>1401000</value>
-    </array>
-    <array name="cpu.core_power.cluster1">
-        <value>59</value>
-        <value>75</value>
-        <value>91</value>
-        <value>94</value>
-        <value>108</value>
-        <value>111</value>
     </array>
     <array name="cpu.speeds">
         <value>960000</value>
@@ -66,4 +64,5 @@
         <value>6</value>
     </array>
     <item name="battery.capacity">4000</item>
+    <item name="bluetooth.controller.voltage">3300</item>
 </device>
