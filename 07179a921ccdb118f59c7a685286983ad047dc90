@@ -16,6 +16,24 @@
       "message": "This is stupid.",
       "revId": "07179a921ccdb118f59c7a685286983ad047dc90",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b5d95c1_59dac7b0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2023-05-03T21:22:39Z",
+      "side": 1,
+      "message": "Why?\n\nI\u0027m familiar with pushing files via adb and labeling them using chcon manually by hand though, Just finding it complicated especially when testing stuff that requires replacing multiple files at once",
+      "parentUuid": "b1cbdbb0_e456855b",
+      "revId": "07179a921ccdb118f59c7a685286983ad047dc90",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
