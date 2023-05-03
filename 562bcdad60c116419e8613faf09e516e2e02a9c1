@@ -16,6 +16,24 @@
       "message": "What\u0027s the point of naming it xiaomi_mi?",
       "revId": "562bcdad60c116419e8613faf09e516e2e02a9c1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6cbffc98_8877c33b",
+        "filename": "touch/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2023-05-03T21:09:48Z",
+      "side": 1,
+      "message": "I prefer keep using this naming scheme: VENDOR_CODENAME",
+      "parentUuid": "b236489a_58408556",
+      "revId": "562bcdad60c116419e8613faf09e516e2e02a9c1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
