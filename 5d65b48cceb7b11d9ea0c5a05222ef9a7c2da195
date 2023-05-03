@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74faf3dc_0aa5d918",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2023-05-03T16:35:51Z",
+      "side": 1,
+      "message": "For sure, I\u0027ll submit this device in normal way, before pushing this",
+      "revId": "5d65b48cceb7b11d9ea0c5a05222ef9a7c2da195",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
