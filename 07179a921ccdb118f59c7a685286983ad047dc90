@@ -70,6 +70,24 @@
       "parentUuid": "a3c26157_816fac6b",
       "revId": "07179a921ccdb118f59c7a685286983ad047dc90",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac4f07ce_fa673a56",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2023-05-03T21:35:49Z",
+      "side": 1,
+      "message": "I hope you know that you don\u0027t need to flash a whole image when you can just build and push single modules. Example:\n\n\u003e  mmp android.hardware.biometrics.fingerprint@2.1-service.xiaomi_landtoni\n\nThis will push the new HAL, provided that you changed something. You don\u0027t need to touch selinux contexts.",
+      "parentUuid": "a3c26157_816fac6b",
+      "revId": "07179a921ccdb118f59c7a685286983ad047dc90",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
