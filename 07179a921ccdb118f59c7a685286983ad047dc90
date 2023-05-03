@@ -34,6 +34,24 @@
       "parentUuid": "b1cbdbb0_e456855b",
       "revId": "07179a921ccdb118f59c7a685286983ad047dc90",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3c26157_816fac6b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2023-05-03T21:26:20Z",
+      "side": 1,
+      "message": "It\u0027s real quick to simply just reflash the image, as it\u0027s just 2MB (including camera hals)",
+      "parentUuid": "9b5d95c1_59dac7b0",
+      "revId": "07179a921ccdb118f59c7a685286983ad047dc90",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
