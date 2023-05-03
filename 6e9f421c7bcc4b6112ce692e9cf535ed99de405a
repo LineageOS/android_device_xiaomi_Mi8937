@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dcff50fc_e068d790",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2023-05-03T20:27:14Z",
+      "side": 1,
+      "message": "https://github.com/LineageOS/android_device_xiaomi_msm8996-common/commits/lineage-20/touch.\n\nWhat\u0027s the point of squash importing everything except this particular commit?",
+      "revId": "6e9f421c7bcc4b6112ce692e9cf535ed99de405a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
