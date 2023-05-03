@@ -20,6 +20,10 @@ else
 LOCAL_CFLAGS += -DDAEMON_PRESENT
 endif
 
+ifeq ($(MI8937_CAM_USE_LATEST_CAMERA_STACK),true)
+LOCAL_CFLAGS += -DUSE_LATEST_CAMERA_STACK
+endif
+
 # System header file path prefix
 LOCAL_CFLAGS += -DSYSTEM_HEADER_PREFIX=sys
 
