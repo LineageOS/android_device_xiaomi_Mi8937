@@ -20,6 +20,12 @@ service vendor.santoni.gx_fpd /vendor/bin/santoni_gx_fpd
     group system
     disabled
 
+service vendor.prada.gx_fpd /vendor/bin/prada_gx_fpd
+    class main
+    user system
+    group system
+    disabled
+
 on init
     # Goodix
     chown system system /dev/goodix_fp

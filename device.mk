@@ -33,6 +33,8 @@ else ifeq ($(PRODUCT_HARDWARE),Mi8937)
 PRODUCT_PACKAGES += \
     xiaomi_landtoni_overlay \
     xiaomi_landtoni_overlay_Settings \
+    xiaomi_prada_overlay \
+    xiaomi_prada_overlay_Settings \
     xiaomi_ugg_overlay
 endif
 
@@ -111,6 +113,10 @@ endif
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
+
+# Wifi
+PRODUCT_PACKAGES += \
+    WifiOverlay_prada
 
 # Inherit from vendor blobs
 ifeq ($(PRODUCT_HARDWARE),Mi8917)

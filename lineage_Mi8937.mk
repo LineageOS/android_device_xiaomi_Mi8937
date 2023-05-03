@@ -22,6 +22,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 PRODUCT_PACKAGES += \
     xiaomi_landtoni_overlay_lineage \
+    xiaomi_prada_overlay_lineage \
     xiaomi_ulysse_overlay_lineage
 
 # Device identifier. This must come after all inclusions
