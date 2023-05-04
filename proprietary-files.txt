@@ -859,7 +859,6 @@ vendor/lib/libPmcamera2_q3a_core.so
 vendor/lib/libPmcamera2_sensor_modules.so
 vendor/lib/libPmcamera2_stats_algorithm.so
 vendor/lib/libPmcamera2_stats_modules.so
-vendor/lib/libPmcamera_cac3_lib.so
 vendor/lib/libPmcamera_chromaflash_lib.so
 vendor/lib/libPmcamera_csidtg.so
 vendor/lib/libPmcamera_dbg.so
