@@ -151,6 +151,10 @@ on property:ro.vendor.xiaomi.device=riva
 on post-fs
     mount none /vendor/etc/data/netmgr_config_override.xml /vendor/etc/data/netmgr_config.xml bind
 
+# Power
+on property:ro.vendor.xiaomi.device=prada
+    write /sys/module/qpnp_fg_mi8937/parameters/restart 1
+
 # Sensors
 service vendor-sensor-sh /vendor/bin/init.qcom.sensors.sh
     override

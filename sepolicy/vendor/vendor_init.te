@@ -1,0 +1,2 @@
+allow vendor_init sysfs_qpnp_fg_param:dir r_dir_perms;
+allow vendor_init sysfs_qpnp_fg_param:file rw_file_perms;

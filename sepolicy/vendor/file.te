@@ -6,3 +6,6 @@ type sysctl_mi8937_ts, fs_type, proc_type;
 
 # Mach
 type sysfs_mi8937_mach, fs_type, sysfs_type;
+
+# Power
+type sysfs_qpnp_fg_param, fs_type, sysfs_type;

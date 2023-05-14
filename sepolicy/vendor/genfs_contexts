@@ -16,6 +16,7 @@ genfscon sysfs /xiaomi-msm8937-mach	u:object_r:sysfs_mi8937_mach:s0
 
 # Power
 genfscon sysfs /devices/platform/soc/soc:usb_power_supply/power_supply/usb		u:object_r:sysfs_usb_supply:s0
+genfscon sysfs /module/qpnp_fg_mi8937/parameters					u:object_r:sysfs_qpnp_fg_param:s0
 
 # Power - ulysse
 genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-0055/power_supply/bms		u:object_r:sysfs_battery_supply:s0
