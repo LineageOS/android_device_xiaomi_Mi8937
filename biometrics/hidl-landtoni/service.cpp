@@ -25,6 +25,7 @@
 #include <android/hardware/biometrics/fingerprint/2.1/IBiometricsFingerprint.h>
 #include <android/hardware/biometrics/fingerprint/2.1/types.h>
 #include "BiometricsFingerprint.h"
+#include "gf_ioctl.h"
 #include <errno.h>
 #include <unistd.h>
 
@@ -40,6 +41,8 @@ using android::hardware::joinRpcThreadpool;
 using android::sp;
 
 int main() {
+    int fd, val;
+
     if (android::base::GetProperty("persist.sys.fp.vendor","") == "goodix") {
         is_goodix = true;
         ALOGD("Enable workarounds for goodix.");
@@ -47,6 +50,23 @@ int main() {
     if (android::base::GetProperty("vendor.fingerprint.disable_notify_cancel_hack","") == "1") {
         use_cancel_hack = false;
         ALOGD("Disable notify client on cancel hack.");
+    }
+
+    if (!is_goodix) {
+        fd = open(kGoodixFpDev, 0);
+        if (fd < 0) {
+            ALOGE("Failed to open goodix fp device for cleanup.");
+        } else {
+            val = 1;
+            if (ioctl(fd, GF_IOC_RESET, &val) < 0)
+                ALOGE("Failed to ioctl GF_IOC_RESET on goodix fp device.");
+            if (ioctl(fd, GF_IOC_DISABLE_IRQ, &val) < 0)
+                ALOGE("Failed to ioctl GF_IOC_DISABLE_IRQ on goodix fp device.");
+            if (ioctl(fd, GF_IOC_RELEASE_GPIO, &val) < 0)
+                ALOGE("Failed to ioctl GF_IOC_RELEASE_GPIO on goodix fp device.");
+
+            close(fd);
+        }
     }
 
     if (!android::base::WriteStringToFile("disable", "/sys/devices/soc/soc:fpc1020/compatible_all", true)) {
