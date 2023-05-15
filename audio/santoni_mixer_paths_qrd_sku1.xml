@@ -90,8 +90,7 @@
     <ctl name="HPHL" value="ZERO" />
     <ctl name="HPHR" value="ZERO" />
 <!-- Xiaomi changes for santoni start -->
-     <ctl name="Ext Spk Switch" value="Off"/> 
-    <ctl name="headset amp" value="DISABLE"/>
+    <ctl name="HPH PA GPIO Switch" value="0"/>
     <ctl name="SPK DAC Switch" value="0" />
 <!-- Xiaomi changes for santoni end -->
     <ctl name="SPK" value="ZERO" />
@@ -1119,7 +1118,7 @@
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="RDAC2 MUX" value="RX2" />
         <ctl name="HPHR" value="Switch" />
-        <ctl name="Ext Spk Switch" value="On"/>
+        <ctl name="MI8937 AW87319 PA Switch" value="1"/>
 <!-- Xiaomi changes for santoni end -->
     </path>
 
@@ -1176,7 +1175,7 @@
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
 <!-- Xiaomi changes for santoni start -->
-        <ctl name="headset amp" value="ENABLE"/>
+        <ctl name="HPH PA GPIO Switch" value="1"/>
 <!-- Xiaomi changes for santoni end -->
     </path>
 
@@ -1246,7 +1245,7 @@
     <path name="speaker-and-headphones">
 <!-- Xiaomi changes for santoni start -->
         <!-- <path name="speaker" /> -->
-        <ctl name="Lineout_1 amp" value="DUALMODE"/>
+        <ctl name="MI8937 AW87319 PA Switch" value="1"/>
 <!-- Xiaomi changes for santoni end -->
         <path name="headphones" />
     </path>
