@@ -93,8 +93,8 @@
     <ctl name="HPHL" value="ZERO" />
     <ctl name="HPHR" value="ZERO" />
 <!-- Xiaomi changes for rolex start -->
-    <ctl name="Lineout_1 amp" value="DISABLE"/> 
-    <ctl name="headset amp" value="DISABLE"/>
+    <ctl name="SPK PA GPIO Switch" value="0"/> 
+    <ctl name="HPH PA GPIO Switch" value="0"/>
 <!-- Xiaomi changes for rolex end -->
     <ctl name="SPK" value="ZERO" />
     <ctl name="WSA Spk Switch" value="ZERO" />
@@ -1110,7 +1110,7 @@
         <ctl name="RDAC2 MUX" value="RX2" />
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
-        <ctl name="Lineout_1 amp" value="ENABLE"/>
+        <ctl name="SPK PA GPIO Switch" value="1"/>
 <!-- Xiaomi changes for rolex end -->
     </path>
 
@@ -1167,7 +1167,7 @@
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
 <!-- Xiaomi changes for rova start -->
-        <ctl name="headset amp" value="ENABLE"/>
+        <ctl name="HPH PA GPIO Switch" value="1"/>
 <!-- Xiaomi changes for rova end -->
     </path>
 
@@ -1242,8 +1242,8 @@
         <ctl name="RDAC2 MUX" value="RX2" />
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
-        <ctl name="Lineout_1 amp" value="ENABLE"/>
-        <ctl name="headset amp" value="ENABLE"/>
+        <ctl name="SPK PA GPIO Switch" value="1"/>
+        <ctl name="HPH PA GPIO Switch" value="1"/>
 <!-- Xiaomi changes for rolex end -->
     </path>
 
