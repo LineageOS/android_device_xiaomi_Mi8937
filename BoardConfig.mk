@@ -23,7 +23,7 @@ USES_DEVICE_XIAOMI_MI8937 := true
 ifeq ($(PRODUCT_HARDWARE),Mi8917)
 TARGET_OTA_ASSERT_DEVICE := ugglite,rolex,riva,Mi8917
 else ifeq ($(PRODUCT_HARDWARE),Mi8937)
-TARGET_OTA_ASSERT_DEVICE := land,prada,santoni,ugg,Mi8937
+TARGET_OTA_ASSERT_DEVICE := land,santoni,ugg,Mi8937
 endif
 
 # Camera
