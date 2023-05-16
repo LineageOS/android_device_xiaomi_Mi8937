@@ -16,6 +16,23 @@
       "message": "For sure, I\u0027ll submit this device in normal way, before pushing this",
       "revId": "5d65b48cceb7b11d9ea0c5a05222ef9a7c2da195",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4235ce23_6c3e2b48",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2023-05-16T21:34:59Z",
+      "side": 1,
+      "message": "Still unsupported (yet)",
+      "revId": "5d65b48cceb7b11d9ea0c5a05222ef9a7c2da195",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
