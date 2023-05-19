@@ -29,8 +29,11 @@
 #include <errno.h>
 #include <unistd.h>
 
+#define FPC_ATTR(attr)  "/sys/devices/soc/soc:fpc1020/" attr
+
 bool is_goodix = false;
 bool use_cancel_hack = true;
+std::string fp_vendor;
 
 static constexpr char kGoodixFpDev[] = "/dev/goodix_fp";
 
@@ -40,10 +43,28 @@ using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
 using android::sp;
 
+static void fpc_enable(bool enable)
+{
+    if (enable) {
+        if (!android::base::WriteStringToFile("enable", FPC_ATTR("compatible_all"), true))
+            ALOGE("Failed to enable fpc1020 driver.");
+        else
+            if (!android::base::WriteStringToFile("enable", FPC_ATTR("spi_prepare"), true))
+                ALOGE("Failed to prepare spi for fpc1020.");
+    } else {
+        if (!android::base::WriteStringToFile("disable", FPC_ATTR("spi_prepare"), true))
+            ALOGE("Failed to unprepare spi for fpc1020.");
+        if (!android::base::WriteStringToFile("disable", FPC_ATTR("compatible_all"), true))
+            ALOGE("Failed to disable fpc1020 driver.");
+    }
+}
+
 int main() {
     int fd, val;
 
-    if (android::base::GetProperty("persist.sys.fp.vendor","") == "goodix") {
+    fp_vendor = android::base::GetProperty("persist.sys.fp.vendor","");
+
+    if (fp_vendor == "goodix") {
         is_goodix = true;
         ALOGD("Enable workarounds for goodix.");
     }
@@ -69,9 +90,10 @@ int main() {
         }
     }
 
-    if (!android::base::WriteStringToFile("disable", "/sys/devices/soc/soc:fpc1020/compatible_all", true)) {
-        ALOGE("Failed to reset fpc1020 driver.");
-    }
+    if (fp_vendor == "switchf")
+        fpc_enable(true);
+    else
+        fpc_enable(false);
 
     android::sp<IBiometricsFingerprint> bio = BiometricsFingerprint::getInstance();
 
