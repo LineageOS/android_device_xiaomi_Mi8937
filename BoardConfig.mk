@@ -50,6 +50,7 @@ TARGET_KERNEL_CONFIG := \
     vendor/xiaomi/common.config \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/mi8937.config \
+    vendor/xiaomi/msm8937/optional/mainline-drivers.config
     vendor/xiaomi/feature/android-12.config \
     vendor/xiaomi/feature/lineageos.config \
     vendor/xiaomi/feature/lmkd.config
