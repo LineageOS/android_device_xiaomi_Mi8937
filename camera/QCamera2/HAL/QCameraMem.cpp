@@ -494,7 +494,7 @@ int QCameraMemory::allocOneBuffer(QCameraMemInfo &memInfo,
     alloc.heap_id_mask = heap_id;
     if (secure_mode == SECURE) {
         LOGD("Allocate secure buffer\n");
-        alloc.flags = ION_SECURE;
+        alloc.flags = ION_FLAG_SECURE;
         alloc.heap_id_mask = ION_HEAP(ION_CP_MM_HEAP_ID);
         alloc.align = 1048576; // 1 MiB alignment to be able to protect later
         alloc.len = (alloc.len + 1048575U) & (~1048575U);
