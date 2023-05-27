@@ -134,7 +134,7 @@ ifeq ($(TARGET_TS_MAKEUP),true)
 LOCAL_SHARED_LIBRARIES += libts_face_beautify_hal libts_detected_face_hal
 endif
 LOCAL_HEADER_LIBRARIES += display_headers
-LOCAL_HEADER_LIBRARIES += camera_common_headers
+LOCAL_HEADER_LIBRARIES += land_camera_common_headers
 LOCAL_HEADER_LIBRARIES += media_plugin_headers
 
 LOCAL_STATIC_LIBRARIES := android.hardware.camera.common@1.0-helper
@@ -143,14 +143,14 @@ LOCAL_HEADER_LIBRARIES += libandroid_sensor_headers
 
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_MODULE := camera.land
-LOCAL_VENDOR_MODULE := true
+LOCAL_ODM_MODULE := true
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_32_BIT_ONLY := $(BOARD_QTI_CAMERA_32BIT_ONLY)
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := camera_common_headers
+LOCAL_MODULE := land_camera_common_headers
 LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/stack/common
 include $(BUILD_HEADER_LIBRARY)
 
