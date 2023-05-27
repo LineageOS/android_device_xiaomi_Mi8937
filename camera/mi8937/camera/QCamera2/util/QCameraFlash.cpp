@@ -30,7 +30,11 @@
 // System dependencies
 #include <stdio.h>
 #include <fcntl.h>
+#ifdef USE_LATEST_CAMERA_STACK
+#include <media/msm_cam_sensor.h>
+#else
 #include <media/msm_cam_sensor-legacy.h>
+#endif
 
 // Camera dependencies
 #include "HAL3/QCamera3HWI.h"

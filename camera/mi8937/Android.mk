@@ -6,7 +6,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),Mi8937)
+ifeq ($(USES_DEVICE_XIAOMI_MI8937),true)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 endif

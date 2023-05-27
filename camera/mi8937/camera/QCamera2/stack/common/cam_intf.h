@@ -32,7 +32,11 @@
 
 // System dependencies
 #include <string.h>
+#ifdef USE_LATEST_CAMERA_STACK
+#include <media/msmb_isp.h>
+#else
 #include <media/msmb_isp-legacy.h>
+#endif
 
 // Camera dependencies
 #include "cam_types.h"
