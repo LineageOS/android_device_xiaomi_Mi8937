@@ -56,8 +56,7 @@ PRODUCT_PACKAGES += \
 
 ifeq ($(PRODUCT_HARDWARE),Mi8937)
 PRODUCT_PACKAGES += \
-    camera.land \
-    camera.prada
+    camera.land
 endif
 
 # Fingerprint
