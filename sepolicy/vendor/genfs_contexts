@@ -38,3 +38,46 @@ genfscon sysfs /board_properties/virtualkeys.ist30xx_ts_input		u:object_r:sysfs_
 
 # Vibrator
 genfscon sysfs /devices/platform/soc/soc:vibrator_gpio/leds/vibrator	u:object_r:sysfs_vibrator:s0
+
+# Kernel 4.19 - Wakeup - Camera
+genfscon sysfs /devices/platform/soc/1b0c000.qcom,cci/1b0c000.qcom,cci:qcom,camera@0/video4linux/video2/wakeup	u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1b0c000.qcom,cci/1b0c000.qcom,cci:qcom,camera@2/video4linux/video1/wakeup	u:object_r:sysfs_wakeup:s0
+
+# Kernel 4.19 - Wakeup - Misc
+genfscon sysfs /devices/platform/soc/7900000.qcom,ipa/wakeup/wakeup1			u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:fpc1020/wakeup/wakeup				u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:usb_power_supply/power_supply/usb/wakeup	u:object_r:sysfs_wakeup:s0
+
+# Kernel 4.19 - Wakeup - Power supply - ulysse
+genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-0055/power_supply/bms/wakeup		u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-0055/wakeup/wakeup			u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-006b/power_supply/battery/wakeup	u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-006b/wakeup/wakeup			u:object_r:sysfs_wakeup:s0
+
+# Kernel 4.19 - Wakeup - Power supply - rolex
+genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0057/power_supply/battery/wakeup	u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0057/wakeup/wakeup			u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0062/power_supply/bms/wakeup		u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0062/wakeup/wakeup			u:object_r:sysfs_wakeup:s0
+
+# Kernel 4.19 - Wakeup - Power supply - riva
+genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0055/power_supply/bms/wakeup		u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0055/wakeup/wakeup			u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-006b/power_supply/battery/wakeup	u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-006b/wakeup/wakeup			u:object_r:sysfs_wakeup:s0
+
+# Kernel 4.19 - Wakeup - PM8937
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:qcom,pm8937@0:qcom,pm8937_rtc/rtc/rtc0/wakeup			u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:qcom,pm8937@0:qcom,pm8937_rtc/wakeup/wakeup			u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:qcom,pm8937@0:qcom,power-on@800/wakeup/wakeup			u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-01/200f000.qcom,spmi:qcom,pm8937@1:anlg-cdc@f000/msm_digital_codec/wakeup/wakeup	u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-01/200f000.qcom,spmi:qcom,pm8937@1:anlg-cdc@f000/wakeup/wakeup			u:object_r:sysfs_wakeup:s0
+
+# Kernel 4.19 - Wakeup - PMI8950
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:bcl@4200/power_supply/fg_adc/wakeup			u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/power_supply/bms/wakeup				u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/wakeup/wakeup					u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,power-on@800/wakeup/wakeup				u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,qpnp-smbcharger/power_supply/battery/wakeup	u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,qpnp-smbcharger/power_supply/usb/wakeup		u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,qpnp-smbcharger/wakeup/wakeup			u:object_r:sysfs_wakeup:s0
