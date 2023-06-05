@@ -29,6 +29,9 @@ genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0062/power_supply/bms		
 genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-006b/power_supply/battery	u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0055/power_supply/bms		u:object_r:sysfs_battery_supply:s0
 
+# Power - Misc
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:bcl@4200/power_supply/fg_adc	u:object_r:sysfs_battery_supply:s0
+
 # Touchscreen
 genfscon proc  /sys/dev/xiaomi_msm8937_touchscreen			u:object_r:sysctl_mi8937_ts:s0
 genfscon sysfs /board_properties/virtualkeys.ist30xx_ts_input		u:object_r:sysfs_virtualkeys:s0
