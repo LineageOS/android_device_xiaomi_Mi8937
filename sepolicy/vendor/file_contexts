@@ -1,3 +1,6 @@
+# Backlight
+/sys/devices(/platform)?/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d800/backlight/panel0-backlight(/.*)?	u:object_r:sysfs_graphics:s0
+
 # Camera
 /(vendor|system/vendor)/bin/[0-9a-z]+_mm-qcamera-daemon	u:object_r:mm-qcamerad_exec:s0
 
