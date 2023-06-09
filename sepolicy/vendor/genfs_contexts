@@ -2,6 +2,11 @@
 genfscon sysfs /camera_fusion_id_back  u:object_r:sysfs_camera_fusion_id:s0
 genfscon sysfs /camera_fusion_id_front u:object_r:sysfs_camera_fusion_id:s0
 
+# Extcon
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,qpnp-smbcharger/extcon	u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,mdss_wb_panel/extcon/extcon0	u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:usb_power_supply/extcon		u:object_r:sysfs_extcon:s0
+
 # IR
 genfscon sysfs /devices/platform/soc/soc:gpio-leds/leds	u:object_r:sysfs_leds:s0
 
