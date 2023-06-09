@@ -32,7 +32,10 @@
 
 // System dependencies
 #include <linux/msm_ion.h>
-
+#if TARGET_ION_ABI_VERSION >= 2
+#include <ion/ion.h>
+#include <linux/dma-buf.h>
+#endif //TARGET_ION_ABI_VERSION
 // JPEG dependencies
 #include "mm_jpeg_dbg.h"
 
