@@ -35,6 +35,9 @@ MI8937_CAM_USE_RENAMED_BLOBS_U := true
 # Display
 TARGET_SCREEN_DENSITY := 280
 
+# Health
+TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/power_supply/battery/battery_charging_enabled
+
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
