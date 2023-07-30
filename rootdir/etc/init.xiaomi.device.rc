@@ -1,5 +1,5 @@
 service vendor.xiaomi_device_script /vendor/bin/init.xiaomi.device.sh
-    class core
+    class early_hal
     user root
     group root
     oneshot
