@@ -1,3 +1,8 @@
+# Xiaomi Mi8937 - Audio fluence
+persist.vendor.audio.fluence.voicecomm=false
+ro.vendor.audio.sdk.fluencetype=fluence
+vendor.audio.feature.fluence.enable=true
+
 # Xiaomi Mi8937 - Bluetooth
 bluetooth.le.disable_apcf_extended_features=1
 bluetooth.sco.disable_enhanced_connection=1
