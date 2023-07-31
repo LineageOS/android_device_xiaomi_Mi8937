@@ -14,6 +14,9 @@ case "$(cat /sys/xiaomi-msm8937-mach/codename)" in
 		setprop ro.vendor.xiaomi.device rolex
 		setprop ro.vendor.xiaomi.series rova
 		# Audio
+		setprop persist.vendor.audio.fluence.speaker false
+		setprop persist.vendor.audio.fluence.voicecall true
+		setprop persist.vendor.audio.fluence.voicerec false
 		set_acdb_path_props rova
 		# Fingerprint
 		setprop ro.vendor.fingerprint.supported 0
@@ -23,6 +26,9 @@ case "$(cat /sys/xiaomi-msm8937-mach/codename)" in
 		setprop ro.vendor.xiaomi.device riva
 		setprop ro.vendor.xiaomi.series rova
 		# Audio
+		setprop persist.vendor.audio.fluence.speaker false
+		setprop persist.vendor.audio.fluence.voicecall true
+		setprop persist.vendor.audio.fluence.voicerec false
 		set_acdb_path_props rova
 		# Fingerprint
 		setprop ro.vendor.fingerprint.supported 0
@@ -32,6 +38,9 @@ case "$(cat /sys/xiaomi-msm8937-mach/codename)" in
 		setprop ro.vendor.xiaomi.device ugglite
 		setprop ro.vendor.xiaomi.series ulysse
 		# Audio
+		setprop persist.vendor.audio.fluence.speaker true
+		setprop persist.vendor.audio.fluence.voicecall true
+		setprop persist.vendor.audio.fluence.voicerec false
 		set_acdb_path_props ulysse
 		# Fingerprint
 		setprop ro.vendor.fingerprint.supported 0
@@ -41,6 +50,9 @@ case "$(cat /sys/xiaomi-msm8937-mach/codename)" in
 		setprop ro.vendor.xiaomi.device ugg
 		setprop ro.vendor.xiaomi.series ulysse
 		# Audio
+		setprop persist.vendor.audio.fluence.speaker true
+		setprop persist.vendor.audio.fluence.voicecall true
+		setprop persist.vendor.audio.fluence.voicerec false
 		set_acdb_path_props ulysse
 		# Camera
 		setprop persist.s5k3p8sp.flash.low 320
@@ -55,6 +67,9 @@ case "$(cat /sys/xiaomi-msm8937-mach/codename)" in
 		setprop ro.vendor.xiaomi.device land
 		setprop ro.vendor.xiaomi.series landtoni
 		# Audio
+		setprop persist.vendor.audio.fluence.speaker false
+		setprop persist.vendor.audio.fluence.voicecall true
+		setprop persist.vendor.audio.fluence.voicerec false
 		set_acdb_path_props land
 		# Camera
 		setprop persist.camera.gyro.android 0
@@ -71,6 +86,9 @@ case "$(cat /sys/xiaomi-msm8937-mach/codename)" in
 		setprop ro.vendor.xiaomi.device santoni
 		setprop ro.vendor.xiaomi.series landtoni
 		# Audio
+		setprop persist.vendor.audio.fluence.speaker false
+		setprop persist.vendor.audio.fluence.voicecall true
+		setprop persist.vendor.audio.fluence.voicerec false
 		set_acdb_path_props santoni
 		# Fingerprint
 		setprop vendor.fingerprint.disable_notify_cancel_hack 1
@@ -79,6 +97,9 @@ case "$(cat /sys/xiaomi-msm8937-mach/codename)" in
 	"prada")
 		setprop ro.vendor.xiaomi.device prada
 		# Audio
+		setprop persist.vendor.audio.fluence.speaker true
+		setprop persist.vendor.audio.fluence.voicecall true
+		setprop persist.vendor.audio.fluence.voicerec false
 		set_acdb_path_props prada
 		# Camera
 		setprop persist.camera.gyro.android 0
