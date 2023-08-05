@@ -43,21 +43,14 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_mi8937
 TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_mi8937
 
 # Kernel
-BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/7824900.sdhci
-TARGET_KERNEL_CONFIG := \
-    vendor/msm8937-perf_defconfig \
-    vendor/xiaomi/common.config \
+TARGET_KERNEL_CONFIG += \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/mi8937.config \
-    vendor/xiaomi/feature/android-12.config \
-    vendor/xiaomi/feature/lineageos.config \
-    vendor/xiaomi/feature/lmkd.config
+    vendor/xiaomi/feature/lineageos.config
 
 ifeq ($(MI8937_CAM_USE_LATEST_CAMERA_STACK),true)
 TARGET_KERNEL_CONFIG += vendor/xiaomi-msm8937/optional/latest-camera-stack.config
 endif
-
-TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 
 # Partitions
 BOARD_USES_METADATA_PARTITION := true
