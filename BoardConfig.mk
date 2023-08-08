@@ -49,7 +49,7 @@ TARGET_KERNEL_CONFIG += \
     vendor/xiaomi/feature/lineageos.config
 
 ifeq ($(MI8937_CAM_USE_LATEST_CAMERA_STACK),true)
-TARGET_KERNEL_CONFIG += vendor/xiaomi-msm8937/optional/latest-camera-stack.config
+TARGET_KERNEL_CONFIG += vendor/xiaomi/msm8937/optional/latest-camera-stack.config
 endif
 
 # Partitions
