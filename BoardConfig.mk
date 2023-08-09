@@ -46,7 +46,7 @@ TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_mi8937
 TARGET_KERNEL_CONFIG += \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/mi8937.config \
-    vendor/xiaomi/feature/lineageos.config
+    vendor/feature/lineageos.config
 
 ifeq ($(MI8937_CAM_USE_LATEST_CAMERA_STACK),true)
 TARGET_KERNEL_CONFIG += vendor/xiaomi/msm8937/optional/latest-camera-stack.config
