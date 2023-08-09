@@ -47,12 +47,12 @@ ifeq ($(PRODUCT_HARDWARE),Mi8917)
 TARGET_KERNEL_CONFIG += \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/mi8917.config \
-    vendor/xiaomi/feature/lineageos.config
+    vendor/feature/lineageos.config
 else
 TARGET_KERNEL_CONFIG += \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/mi8937_exclude_mi8917.config \
-    vendor/xiaomi/feature/lineageos.config
+    vendor/feature/lineageos.config
 endif
 
 ifeq ($(MI8937_CAM_USE_LATEST_CAMERA_STACK),true)
