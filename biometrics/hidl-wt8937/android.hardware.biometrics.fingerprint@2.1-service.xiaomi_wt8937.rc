@@ -1,4 +1,4 @@
-service vendor.fps_hal.landtoni /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.xiaomi_landtoni
+service vendor.fps_hal.wt8937 /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.xiaomi_wt8937
     # "class hal" causes a race condition on some devices due to files created
     # in /data. As a workaround, postpone startup until later in boot once
     # /data is mounted.
@@ -63,7 +63,7 @@ on post-fs-data
     mkdir /data/fpcd 0770 system system
 
 on property:ro.vendor.fingerprint.supported=0
-    stop vendor.fps_hal.landtoni
+    stop vendor.fps_hal.wt8937
     stop vendor.${ro.vendor.xiaomi.device}.gx_fpd
 
 on property:ro.vendor.fingerprint.supported=1
@@ -76,15 +76,15 @@ on property:ro.vendor.fingerprint.supported=1
 on property:persist.sys.fp.vendor=switchf && property:ro.vendor.fingerprint.ready=1 && property:ro.vendor.fingerprint.supported=1
     stop vendor.${ro.vendor.xiaomi.device}.gx_fpd
     setprop ro.hardware.fingerprint ${ro.vendor.xiaomi.device}_fpc
-    enable vendor.fps_hal.landtoni
+    enable vendor.fps_hal.wt8937
 
 on property:persist.sys.fp.vendor=goodix && property:persist.sys.fp.onstart=1 && property:ro.vendor.fingerprint.ready=1 && property:ro.vendor.fingerprint.supported=1
     setprop ro.hardware.fingerprint ${ro.vendor.xiaomi.device}_goodix
-    enable vendor.fps_hal.landtoni
+    enable vendor.fps_hal.wt8937
 
 on property:ro.vendor.fingerprint.succeed=1 && property:ro.vendor.fingerprint.supported=1
     setprop ro.boot.product.hardware.sku fingerprint
 
 on property:ro.vendor.fingerprint.failed=1 && property:ro.vendor.fingerprint.supported=1
-    stop vendor.fps_hal.landtoni
+    stop vendor.fps_hal.wt8937
     stop vendor.${ro.vendor.xiaomi.device}.gx_fpd

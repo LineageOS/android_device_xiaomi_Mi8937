@@ -1,5 +1,5 @@
 runtime_resource_overlay {
-    name: "xiaomi_landtoni_overlay_Settings",
+    name: "xiaomi_wt8937_overlay_Settings",
     sdk_version: "current",
     vendor: true,
 }

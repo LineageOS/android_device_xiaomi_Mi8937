@@ -31,11 +31,11 @@ PRODUCT_PACKAGES += \
     xiaomi_ugglite_overlay
 else ifeq ($(PRODUCT_HARDWARE),Mi8937)
 PRODUCT_PACKAGES += \
-    xiaomi_landtoni_overlay \
-    xiaomi_landtoni_overlay_Settings \
     xiaomi_prada_overlay \
     xiaomi_prada_overlay_Settings \
-    xiaomi_ugg_overlay
+    xiaomi_ugg_overlay \
+    xiaomi_wt8937_overlay \
+    xiaomi_wt8937_overlay_Settings
 endif
 
 # Permissions
@@ -63,8 +63,8 @@ endif
 # Fingerprint
 ifeq ($(PRODUCT_HARDWARE),Mi8937)
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_landtoni \
-    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ulysse
+    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ulysse \
+    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_wt8937
 endif
 
 # Input

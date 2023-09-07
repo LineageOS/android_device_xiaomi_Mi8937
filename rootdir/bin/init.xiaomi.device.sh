@@ -12,24 +12,24 @@ case "$(cat /sys/xiaomi-msm8937-mach/codename)" in
 	"rolex")
 		# Device Info
 		setprop ro.vendor.xiaomi.device rolex
-		setprop ro.vendor.xiaomi.series rova
+		setprop ro.vendor.xiaomi.series wt8917
 		# Audio
 		setprop persist.vendor.audio.fluence.speaker false
 		setprop persist.vendor.audio.fluence.voicecall true
 		setprop persist.vendor.audio.fluence.voicerec false
-		set_acdb_path_props rova
+		set_acdb_path_props wt8917
 		# Fingerprint
 		setprop ro.vendor.fingerprint.supported 0
 		;;
 	"riva")
 		# Device Info
 		setprop ro.vendor.xiaomi.device riva
-		setprop ro.vendor.xiaomi.series rova
+		setprop ro.vendor.xiaomi.series wt8917
 		# Audio
 		setprop persist.vendor.audio.fluence.speaker false
 		setprop persist.vendor.audio.fluence.voicecall true
 		setprop persist.vendor.audio.fluence.voicerec false
-		set_acdb_path_props rova
+		set_acdb_path_props wt8917
 		# Fingerprint
 		setprop ro.vendor.fingerprint.supported 0
 		;;
@@ -65,7 +65,7 @@ case "$(cat /sys/xiaomi-msm8937-mach/codename)" in
 	"land")
 		# Device Info
 		setprop ro.vendor.xiaomi.device land
-		setprop ro.vendor.xiaomi.series landtoni
+		setprop ro.vendor.xiaomi.series wt8937
 		# Audio
 		setprop persist.vendor.audio.fluence.speaker false
 		setprop persist.vendor.audio.fluence.voicecall true
@@ -84,7 +84,7 @@ case "$(cat /sys/xiaomi-msm8937-mach/codename)" in
 	"santoni")
 		# Device Info
 		setprop ro.vendor.xiaomi.device santoni
-		setprop ro.vendor.xiaomi.series landtoni
+		setprop ro.vendor.xiaomi.series wt8937
 		# Audio
 		setprop persist.vendor.audio.fluence.speaker false
 		setprop persist.vendor.audio.fluence.voicecall true

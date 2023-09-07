@@ -54,7 +54,7 @@
     <ctl name="RX1 Digital Volume" value="84" />
     <ctl name="RX2 Digital Volume" value="84" />
     <ctl name="RX3 Digital Volume" value="84" />
-<!-- Xiaomi changes for rova start -->
+<!-- Xiaomi changes for wt8917 start -->
 <!--
     <ctl name="IIR1 INP1 Volume" value="84" />
     <ctl name="IIR1 INP2 Volume" value="84" />
@@ -72,7 +72,7 @@
     <ctl name="ADC1 Volume" value="4" />
     <ctl name="ADC2 Volume" value="4" />
     <ctl name="ADC3 Volume" value="4" />
-<!-- Xiaomi changes for rova end -->
+<!-- Xiaomi changes for wt8917 end -->
     <ctl name="DEC1 Volume" value="84" />
     <ctl name="DEC2 Volume" value="84" />
     <ctl name="DEC2 MUX" value="ZERO" />
@@ -1080,16 +1080,16 @@
     <!-- These are actual sound device specific mixer settings -->
     <path name="adc1">
         <ctl name="ADC1_INP1 Switch" value="1" />
-<!-- Xiaomi changes for rova start -->
+<!-- Xiaomi changes for wt8917 start -->
     	<ctl name="ADC1 Volume" value="6" />
-<!-- Xiaomi changes for rova end -->
+<!-- Xiaomi changes for wt8917 end -->
         <ctl name="DEC1 MUX" value="ADC1" />
     </path>
 
     <path name="adc2">
-<!-- Xiaomi changes for rova start -->
+<!-- Xiaomi changes for wt8917 start -->
     	<ctl name="ADC2 Volume" value="6" />
-<!-- Xiaomi changes for rova end -->
+<!-- Xiaomi changes for wt8917 end -->
         <ctl name="DEC1 MUX" value="ADC2" />
     </path>
     <path name="adc3">
@@ -1166,9 +1166,9 @@
         <ctl name="RDAC2 MUX" value="RX2" />
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
-<!-- Xiaomi changes for rova start -->
+<!-- Xiaomi changes for wt8917 start -->
         <ctl name="HPH PA GPIO Switch" value="1"/>
-<!-- Xiaomi changes for rova end -->
+<!-- Xiaomi changes for wt8917 end -->
     </path>
 
     <path name="headset-mic">
@@ -1215,11 +1215,11 @@
     </path>
 
     <path name="voice-speaker-mic">
-<!-- Xiaomi changes for rova start -->
+<!-- Xiaomi changes for wt8917 start -->
         <!-- <path name="speaker-mic" /> -->
     <!-- voice handfree use second mic chengong.wt 20170504 -->
         <path name="handfree-mic" />
-<!-- Xiaomi changes for rova end -->
+<!-- Xiaomi changes for wt8917 end -->
     </path>
 
     <path name="voice-headphones">
@@ -1289,9 +1289,9 @@
     <!-- Dual MIC devices -->
     <path name="speaker-dmic-endfire">
         <path name="adc1" />
-<!-- Xiaomi changes for rova start -->
+<!-- Xiaomi changes for wt8917 start -->
     	<ctl name="ADC3 Volume" value="4" />
-<!-- Xiaomi changes for rova end -->
+<!-- Xiaomi changes for wt8917 end -->
         <ctl name="DEC2 MUX" value="ADC2" />
         <ctl name="MI2S_TX Channels" value="Two" />
         <ctl name="ADC2 MUX" value="INP3" />

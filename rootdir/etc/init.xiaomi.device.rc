@@ -27,7 +27,7 @@ on property:ro.vendor.xiaomi.device=santoni
 # Baseband
 on property:ro.vendor.xiaomi.device=santoni
     enable vendor.baseband-sh
-on property:ro.vendor.xiaomi.series=rova
+on property:ro.vendor.xiaomi.series=wt8917
     enable vendor.baseband-sh
 
 # Camera
@@ -116,13 +116,13 @@ service vendor.goodix_script /vendor/bin/init.goodix.sh
     oneshot
     disabled
 
-on property:ro.vendor.xiaomi.series=landtoni
+on property:ro.vendor.xiaomi.series=wt8937
     enable vendor.goodix_script
 on property:ro.vendor.xiaomi.device=prada
     enable vendor.goodix_script
 
 # HVDCP
-on property:ro.vendor.xiaomi.series=rova
+on property:ro.vendor.xiaomi.series=wt8917
     stop vendor.hvdcp_opti
 on property:ro.vendor.xiaomi.series=ulysse
     stop vendor.hvdcp_opti
@@ -133,7 +133,7 @@ on property:ro.hardware.consumerir=led
     chown system system /sys/class/leds/infrared/brightness
     restart vendor.ir-hal-1-0
 
-on property:ro.vendor.xiaomi.series=landtoni
+on property:ro.vendor.xiaomi.series=wt8937
     setprop ro.hardware.consumerir led
 on property:ro.vendor.xiaomi.device=rolex
     setprop ro.hardware.consumerir led
@@ -179,8 +179,8 @@ on property:ro.vendor.xiaomi.device=riva
 on property:ro.vendor.xiaomi.device=rolex
     mount none /vendor/etc/sensors/rolex_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
     enable vendor-sensor-sh
-on property:ro.vendor.xiaomi.series=landtoni
-    mount none /vendor/etc/sensors/landtoni_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
+on property:ro.vendor.xiaomi.series=wt8937
+    mount none /vendor/etc/sensors/wt8937_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
     enable vendor-sensor-sh
 on property:ro.vendor.xiaomi.series=ulysse
     mount none /vendor/etc/sensors/ulysse_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
