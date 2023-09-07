@@ -46,7 +46,7 @@ vendor/etc/perf/targetconfig.xml
 vendor/etc/perf/targetresourceconfigs.xml
 
 # RIL (Data) - Netmgrd - from PAN
-vendor/etc/data/netmgr_config.xml:vendor/etc/data/netmgr_config_override.xml|cc780730f939411b463d2c9cb660e46385e65e8b|4620dcab8486eb0e1317771bbc077092ee5a32de
+vendor/etc/data/netmgr_config.xml:vendor/overlayfs/common/etc/data/netmgr_config.xml|cc780730f939411b463d2c9cb660e46385e65e8b|4620dcab8486eb0e1317771bbc077092ee5a32de
 
 # Sensors - from PAN
 vendor/bin/sensors.qti
