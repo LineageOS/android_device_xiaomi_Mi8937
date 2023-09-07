@@ -158,30 +158,41 @@ on boot
     chown root root /sys/devices/virtual/graphics/fb0/hbm
     chmod 0000 /sys/devices/virtual/graphics/fb0/hbm
 
-# Netmgrd
+# OverlayFS
 on post-fs
-    mount none /vendor/etc/data/netmgr_config_override.xml /vendor/etc/data/netmgr_config.xml bind
+    # Netmgrd
+    mount overlay overlay /vendor/etc/data ro lowerdir=/vendor/overlayfs/common/etc/data/:/vendor/etc/data
 
-# Sensors
-service vendor-sensor-sh /vendor/bin/init.qcom.sensors.sh
-    override
-    class core
-    user root
-    oneshot
-    disabled
+on property:ro.vendor.xiaomi.device=land
+    # Sensor
+    mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/wt8937/etc/sensors/:/vendor/etc/sensors
 
 on property:ro.vendor.xiaomi.device=prada
-    mount none /vendor/etc/sensors/prada_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
-    enable vendor-sensor-sh
+    # Sensor
+    mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/prada/etc/sensors/:/vendor/etc/sensors
+
 on property:ro.vendor.xiaomi.device=riva
-    mount none /vendor/etc/sensors/riva_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
-    enable vendor-sensor-sh
+    # Camera
+    mount overlay overlay /vendor/etc/camera ro lowerdir=/vendor/overlayfs/riva/etc/camera/:/vendor/etc/camera
+    # Sensor
+    mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/riva/etc/sensors/:/vendor/etc/sensors
+
 on property:ro.vendor.xiaomi.device=rolex
-    mount none /vendor/etc/sensors/rolex_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
-    enable vendor-sensor-sh
-on property:ro.vendor.xiaomi.series=wt8937
-    mount none /vendor/etc/sensors/wt8937_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
-    enable vendor-sensor-sh
-on property:ro.vendor.xiaomi.series=ulysse
-    mount none /vendor/etc/sensors/ulysse_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
-    enable vendor-sensor-sh
+    # Camera
+    mount overlay overlay /vendor/etc/camera ro lowerdir=/vendor/overlayfs/rolex/etc/camera/:/vendor/etc/camera
+    # Sensor
+    mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/rolex/etc/sensors/:/vendor/etc/sensors
+
+on property:ro.vendor.xiaomi.device=santoni
+    # Camera
+    mount overlay overlay /vendor/etc/camera ro lowerdir=/vendor/overlayfs/santoni/etc/camera/:/vendor/etc/camera
+    # Sensor
+    mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/wt8937/etc/sensors/:/vendor/etc/sensors
+
+on property:ro.vendor.xiaomi.device=ugg
+    # Sensor
+    mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/ulysse/etc/sensors/:/vendor/etc/sensors
+
+on property:ro.vendor.xiaomi.device=ugglite
+    # Sensor
+    mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/ulysse/etc/sensors/:/vendor/etc/sensors

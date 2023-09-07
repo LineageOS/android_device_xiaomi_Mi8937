@@ -100,11 +100,11 @@ vendor/lib/libremosaic_daemon.so
 vendor/lib/libseemore.so
 
 # Camera modules - from santoni
-etc/camera/camera_config.xml:vendor/etc/camera/santoni_camera_config.xml
-etc/camera/ov13855_sunny_chromatix.xml:vendor/etc/camera/ov13855_sunny_chromatix.xml
-etc/camera/ov5675_ofilm_chromatix.xml:vendor/etc/camera/ov5675_ofilm_chromatix.xml
-etc/camera/s5k3l8_ofilm_chromatix.xml:vendor/etc/camera/s5k3l8_ofilm_chromatix.xml
-etc/camera/s5k5e8_sunny_chromatix.xml:vendor/etc/camera/s5k5e8_sunny_chromatix.xml
+etc/camera/camera_config.xml:vendor/overlayfs/santoni/etc/camera/camera_config.xml
+etc/camera/ov13855_sunny_chromatix.xml:vendor/overlayfs/santoni/etc/camera/ov13855_sunny_chromatix.xml
+etc/camera/ov5675_ofilm_chromatix.xml:vendor/overlayfs/santoni/etc/camera/ov5675_ofilm_chromatix.xml
+etc/camera/s5k3l8_ofilm_chromatix.xml:vendor/overlayfs/santoni/etc/camera/s5k3l8_ofilm_chromatix.xml
+etc/camera/s5k5e8_sunny_chromatix.xml:vendor/overlayfs/santoni/etc/camera/s5k5e8_sunny_chromatix.xml
 vendor/lib/libactuator_dw9763_ov13855.so
 vendor/lib/libactuator_dw9763.so
 vendor/lib/libchromatix_ov13855_sunny_common.so
