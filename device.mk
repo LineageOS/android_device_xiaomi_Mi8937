@@ -119,8 +119,10 @@ PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.xiaomi_mi8937
 
 # Wifi
+ifeq ($(PRODUCT_HARDWARE),Mi8937)
 PRODUCT_PACKAGES += \
     WifiOverlay_prada
+endif
 
 # Inherit from vendor blobs
 ifeq ($(PRODUCT_HARDWARE),Mi8917)
