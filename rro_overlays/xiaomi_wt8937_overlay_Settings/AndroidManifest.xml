@@ -1,10 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="android.overlay.lineage.xiaomi.landtoni"
+        package="android.overlay.xiaomi.wt8937.settings"
         android:versionCode="1"
         android:versionName="1.0">
-        <overlay android:targetPackage="lineageos.platform"
+        <overlay android:targetPackage="com.android.settings"
                 android:requiredSystemPropertyName="ro.vendor.xiaomi.series"
-		android:requiredSystemPropertyValue="landtoni"
+		android:requiredSystemPropertyValue="wt8937"
 		android:priority="800"
 		android:isStatic="true" />
 </manifest>
