@@ -8,6 +8,8 @@ service vendor.fps_hal.ulysse /vendor/bin/hw/android.hardware.biometrics.fingerp
     disabled
 
 on property:ro.vendor.xiaomi.device=ugg
+    setprop ro.hardware.fingerprint ugg_fpc
+    setprop ro.hardware.gf_fingerprint ugg
     setprop ro.boot.product.hardware.sku fingerprint
     enable vendor.fps_hal.ulysse
 

@@ -58,7 +58,7 @@ etc/qdcm_calib_data_ili9881c_HD720p_video_EbbgDJN.xml:vendor/etc/qdcm_calib_data
 etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg.xml:vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg.xml
 
 # Fingerprint (FPC) - ugg - from ugg
-lib64/hw/fingerprint.msm8937.so:vendor/lib64/hw/fingerprint.msm8937.so
+lib64/hw/fingerprint.msm8937.so:vendor/lib64/hw/fingerprint.ugg_fpc.so
 lib64/lib_fpc_tac_shared.so:vendor/lib64/lib_fpc_tac_shared.so
 
 # Fingerprint (Goodix) - ugg - from vince
@@ -68,7 +68,7 @@ lib64/libgf_ca.so:vendor/lib64/libgf_ca.so
 lib64/libgf_hal.so:vendor/lib64/libgf_hal.so
 
 # Fingerprint (Goodix HAL) - ugg - from daisy
-vendor/lib64/hw/gf_fingerprint.default.so|b09aba758c469f3e3ff04197a723a15fbdfafea1
+vendor/lib64/hw/gf_fingerprint.default.so:vendor/lib64/hw/gf_fingerprint.ugg.so|b09aba758c469f3e3ff04197a723a15fbdfafea1
 vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so|4b3e658f52dfe31d7883f19bbeb8e05d323ba607|feee131f714ed9a7dd93e7ba9bfc768cbf651426
 vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so|c9d0251df63d8e34b6d70a59ad7b774c9f640fa1
 
