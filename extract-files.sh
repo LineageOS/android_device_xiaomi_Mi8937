@@ -56,8 +56,8 @@ function blob_fixup() {
             fi
             ;;
         vendor/overlayfs/*/lib64/libfpservice.so)
-            if ! "${PATCHELF}" --print-needed "${2}" | grep "libshims_binder.so" > /dev/null; then
-                "${PATCHELF}" --add-needed "libshims_binder.so" "${2}"
+            if ! "${PATCHELF}" --print-needed "${2}" | grep "libbinder_shim.so" > /dev/null; then
+                "${PATCHELF}" --add-needed "libbinder_shim.so" "${2}"
             fi
             ;;
         vendor/overlayfs/*/lib64/hw/fingerprint.*_goodix.so)
@@ -65,8 +65,8 @@ function blob_fixup() {
             ;;
         # Fingerprint (ugg)
         vendor/lib64/lib_fpc_tac_shared.so)
-            if ! "${PATCHELF}" --print-needed "${2}" | grep "libshims_binder.so" >/dev/null; then
-                "${PATCHELF}" --add-needed "libshims_binder.so" "${2}"
+            if ! "${PATCHELF}" --print-needed "${2}" | grep "libbinder_shim.so" >/dev/null; then
+                "${PATCHELF}" --add-needed "libbinder_shim.so" "${2}"
             fi
             ;;
         vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so)
