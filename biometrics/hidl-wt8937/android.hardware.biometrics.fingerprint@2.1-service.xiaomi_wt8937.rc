@@ -8,7 +8,7 @@ service vendor.fps_hal.wt8937 /vendor/bin/hw/android.hardware.biometrics.fingerp
     group system input uhid sdcard_rw
     disabled
 
-service vendor.gx_fpd /vendor/bin/gx_fpd
+service vendor.gx_fpd /odm/bin/gx_fpd
     class main
     user system
     group system
