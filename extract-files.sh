@@ -49,6 +49,20 @@ function blob_fixup() {
         vendor/lib/libmpbase.so)
             "${PATCHELF}" --replace-needed "libandroid.so" "libshims_android.so" "${2}"
             ;;
+        # Fingerprint (Legacy Goodix)
+        vendor/overlayfs/*/bin/gx_fpcmd|vendor/overlayfs/*/bin/gx_fpd)
+            if ! "${PATCHELF}" --print-needed "${2}" | grep "liblog.so" > /dev/null; then
+                "${PATCHELF}" --add-needed "liblog.so" "${2}"
+            fi
+            ;;
+        vendor/overlayfs/*/lib64/libfpservice.so)
+            if ! "${PATCHELF}" --print-needed "${2}" | grep "libshims_binder.so" > /dev/null; then
+                "${PATCHELF}" --add-needed "libshims_binder.so" "${2}"
+            fi
+            ;;
+        vendor/overlayfs/*/lib64/hw/fingerprint.*_goodix.so)
+            sed -i 's|libandroid_runtime.so|libshims_android.so\x00\x00|g' "${2}"
+            ;;
         # Fingerprint (ugg)
         vendor/lib64/lib_fpc_tac_shared.so)
             if ! "${PATCHELF}" --print-needed "${2}" | grep "libshims_binder.so" >/dev/null; then
