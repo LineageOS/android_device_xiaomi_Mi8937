@@ -103,9 +103,9 @@ PRODUCT_PACKAGES += \
 ifeq ($(PRODUCT_HARDWARE),Mi8937)
 PRODUCT_PACKAGES += \
     fakelogprint \
+    libbinder_shim \
     libshim_mutexdestroy \
-    libshim_pthreadts \
-    libshims_binder
+    libshim_pthreadts
 endif
 
 # Soong namespaces
