@@ -57,9 +57,43 @@ etc/qdcm_calib_data_hx8394F_HD720p_video_BOE.xml:vendor/etc/qdcm_calib_data_hx83
 etc/qdcm_calib_data_ili9881c_HD720p_video_EbbgDJN.xml:vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_EbbgDJN.xml
 etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg.xml:vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg.xml
 
+# Fingerprint (FPC) - land - from land
+lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.land_fpc.so
+
+# Fingerprint (FPC) - prada - from prada
+lib64/hw/fingerprint.fpcmoudle.so:vendor/lib64/hw/fingerprint.prada_fpc.so
+
+# Fingerprint (FPC) - santoni - from santoni
+lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.santoni_fpc.so
+
 # Fingerprint (FPC) - ugg - from ugg
 lib64/hw/fingerprint.msm8937.so:vendor/lib64/hw/fingerprint.ugg_fpc.so
 lib64/lib_fpc_tac_shared.so:vendor/lib64/lib_fpc_tac_shared.so
+
+# Fingerprint (Goodix) - land - from land
+bin/gx_fpcmd:vendor/overlayfs/land/bin/gx_fpcmd
+bin/gx_fpd:vendor/overlayfs/land/bin/gx_fpd
+lib64/hw/fingerprint.goodix.so:vendor/overlayfs/land/lib64/hw/fingerprint.land_goodix.so
+lib64/hw/gxfingerprint.default.so:vendor/overlayfs/land/lib64/hw/gxfingerprint.land.so
+lib64/libfp_client.so:vendor/overlayfs/land/lib64/libfp_client.so
+lib64/libfpnav.so:vendor/overlayfs/land/lib64/libfpnav.so
+lib64/libfpservice.so:vendor/overlayfs/land/lib64/libfpservice.so
+
+# Fingerprint (Goodix) - prada - from prada
+bin/gx_fpd:vendor/overlayfs/prada/bin/gx_fpd
+lib64/hw/fingerprint.default.so:vendor/overlayfs/prada/lib64/hw/fingerprint.prada_goodix.so
+lib64/hw/gxfingerprint.default.so:vendor/overlayfs/prada/lib64/hw/gxfingerprint.prada.so
+lib64/libfp_client.so:vendor/overlayfs/prada/lib64/libfp_client.so
+lib64/libfpnav.so:vendor/overlayfs/prada/lib64/libfpnav.so
+lib64/libfpservice.so:vendor/overlayfs/prada/lib64/libfpservice.so
+
+# Fingerprint (Goodix) - santoni - from santoni
+bin/gx_fpcmd:vendor/overlayfs/santoni/bin/gx_fpcmd
+bin/gx_fpd:vendor/overlayfs/santoni/bin/gx_fpd
+lib64/hw/fingerprint.goodix.so:vendor/overlayfs/santoni/lib64/hw/fingerprint.santoni_goodix.so
+lib64/hw/gxfingerprint.default.so:vendor/overlayfs/santoni/lib64/hw/gxfingerprint.santoni.so
+lib64/libfp_client.so:vendor/overlayfs/santoni/lib64/libfp_client.so
+lib64/libfpservice.so:vendor/overlayfs/santoni/lib64/libfpservice.so
 
 # Fingerprint (Goodix) - ugg - from vince
 etc/firmware/goodix_firmware.bin:vendor/firmware/goodix_firmware.bin
