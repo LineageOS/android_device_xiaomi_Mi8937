@@ -50,36 +50,36 @@ function blob_fixup() {
             "${PATCHELF}" --replace-needed "libandroid.so" "libshims_android.so" "${2}"
             ;;
         # Fingerprint (Legacy Goodix)
-        vendor/overlayfs/*/bin/gx_fpcmd|vendor/overlayfs/*/bin/gx_fpd)
+        odm/overlayfs/*/bin/gx_fpcmd|odm/overlayfs/*/bin/gx_fpd)
             "${PATCHELF}" --remove-needed "libbacktrace.so" "${2}"
             "${PATCHELF}" --remove-needed "libunwind.so" "${2}"
             if ! "${PATCHELF}" --print-needed "${2}" | grep "libfakelogprint.so" > /dev/null; then
                 "${PATCHELF}" --add-needed "libfakelogprint.so" "${2}"
             fi
             ;;
-        vendor/overlayfs/*/lib64/libfpservice.so)
+        odm/overlayfs/*/lib64/libfpservice.so)
             if ! "${PATCHELF}" --print-needed "${2}" | grep "libbinder_shim.so" > /dev/null; then
                 "${PATCHELF}" --add-needed "libbinder_shim.so" "${2}"
             fi
             ;;
-        vendor/overlayfs/*/lib64/hw/fingerprint.*_goodix.so)
+        odm/overlayfs/*/lib64/hw/fingerprint.*_goodix.so)
             sed -i 's|libandroid_runtime.so|libshims_android.so\x00\x00|g' "${2}"
             if ! "${PATCHELF}" --print-needed "${2}" | grep "libfakelogprint.so" > /dev/null; then
                 "${PATCHELF}" --add-needed "libfakelogprint.so" "${2}"
             fi
             ;;
-        vendor/overlayfs/*/lib64/hw/gxfingerprint.*.so)
+        odm/overlayfs/*/lib64/hw/gxfingerprint.*.so)
             if ! "${PATCHELF}" --print-needed "${2}" | grep "libfakelogprint.so" > /dev/null; then
                 "${PATCHELF}" --add-needed "libfakelogprint.so" "${2}"
             fi
             ;;
         # Fingerprint (ugg)
-        vendor/lib64/lib_fpc_tac_shared.so)
+        odm/lib64/lib_fpc_tac_shared.so)
             if ! "${PATCHELF}" --print-needed "${2}" | grep "libbinder_shim.so" > /dev/null; then
                 "${PATCHELF}" --add-needed "libbinder_shim.so" "${2}"
             fi
             ;;
-        vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so)
+        odm/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so)
             "${PATCHELF_0_8}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
             ;;
     esac
