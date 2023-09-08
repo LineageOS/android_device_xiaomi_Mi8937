@@ -8,19 +8,7 @@ service vendor.fps_hal.wt8937 /vendor/bin/hw/android.hardware.biometrics.fingerp
     group system input uhid sdcard_rw
     disabled
 
-service vendor.land.gx_fpd /vendor/bin/land_gx_fpd
-    class main
-    user system
-    group system
-    disabled
-
-service vendor.santoni.gx_fpd /vendor/bin/santoni_gx_fpd
-    class main
-    user system
-    group system
-    disabled
-
-service vendor.prada.gx_fpd /vendor/bin/prada_gx_fpd
+service vendor.gx_fpd /vendor/bin/gx_fpd
     class main
     user system
     group system
@@ -64,17 +52,17 @@ on post-fs-data
 
 on property:ro.vendor.fingerprint.supported=0
     stop vendor.fps_hal.wt8937
-    stop vendor.${ro.vendor.xiaomi.device}.gx_fpd
+    stop vendor.gx_fpd
 
 on property:ro.vendor.fingerprint.supported=1
     setprop persist.sys.fp.vendor none
     setprop persist.sys.fp.onstart 0
     setprop ro.hardware.gxfingerprint ${ro.vendor.xiaomi.device}
     setprop ro.vendor.fingerprint.ready 1
-    enable vendor.${ro.vendor.xiaomi.device}.gx_fpd
+    enable vendor.gx_fpd
 
 on property:persist.sys.fp.vendor=switchf && property:ro.vendor.fingerprint.ready=1 && property:ro.vendor.fingerprint.supported=1
-    stop vendor.${ro.vendor.xiaomi.device}.gx_fpd
+    stop vendor.gx_fpd
     setprop ro.hardware.fingerprint ${ro.vendor.xiaomi.device}_fpc
     enable vendor.fps_hal.wt8937
 
@@ -87,4 +75,4 @@ on property:ro.vendor.fingerprint.succeed=1 && property:ro.vendor.fingerprint.su
 
 on property:ro.vendor.fingerprint.failed=1 && property:ro.vendor.fingerprint.supported=1
     stop vendor.fps_hal.wt8937
-    stop vendor.${ro.vendor.xiaomi.device}.gx_fpd
+    stop vendor.gx_fpd
