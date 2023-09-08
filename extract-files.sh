@@ -8,14 +8,7 @@
 
 function blob_fixup() {
     case "${1}" in
-        vendor/lib64/lib_fpc_tac_shared.so)
-            if ! "${PATCHELF}" --print-needed "${2}" | grep "libshims_binder.so" >/dev/null; then
-                "${PATCHELF}" --add-needed "libshims_binder.so" "${2}"
-            fi
-            ;;
-        vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so)
-            "${PATCHELF_0_8}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
-            ;;
+        # Camera (Wingtech Nougat)
         vendor/lib/libmmsw_platform.so|vendor/lib/libmmsw_detail_enhancement.so)
             "${PATCHELF}" --remove-needed "libbinder.so" "${2}"
             sed -i 's|libgui.so|libwui.so|g' "${2}"
@@ -55,6 +48,15 @@ function blob_fixup() {
             ;;
         vendor/lib/libmpbase.so)
             "${PATCHELF}" --replace-needed "libandroid.so" "libshims_android.so" "${2}"
+            ;;
+        # Fingerprint (ugg)
+        vendor/lib64/lib_fpc_tac_shared.so)
+            if ! "${PATCHELF}" --print-needed "${2}" | grep "libshims_binder.so" >/dev/null; then
+                "${PATCHELF}" --add-needed "libshims_binder.so" "${2}"
+            fi
+            ;;
+        vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so)
+            "${PATCHELF_0_8}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
             ;;
     esac
 }
