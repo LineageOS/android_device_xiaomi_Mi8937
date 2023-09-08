@@ -9,6 +9,7 @@
 /dev/spidev7.1	u:object_r:ir_device:s0
 
 # OverlayFS
+/(odm|vendor/odm)/overlayfs/[0-9a-z]+/lib64(/.*)?					u:object_r:vendor_file:s0
 /(vendor|system/vendor)/overlayfs/common/etc/data/netmgr_config.xml			u:object_r:vendor_configs_file:s0
 /(vendor|system/vendor)/overlayfs/[0-9a-z]+/etc/camera(/.*)?				u:object_r:vendor_configs_file:s0
 /(vendor|system/vendor)/overlayfs/[0-9a-z]+/etc/sensors/sensor_def_qcomdev.conf		u:object_r:vendor_configs_file:s0

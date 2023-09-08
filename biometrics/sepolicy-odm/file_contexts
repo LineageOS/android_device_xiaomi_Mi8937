@@ -1,0 +1,3 @@
+# Goodix Fingerprint
+/(odm|vendor/odm)/bin/gx_fpd				u:object_r:gx_fpd_exec:s0
+/(odm|vendor/odm)/overlayfs/[0-9a-z]+/bin/gx_fpd	u:object_r:gx_fpd_exec:s0

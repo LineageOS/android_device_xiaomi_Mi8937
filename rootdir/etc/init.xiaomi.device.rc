@@ -162,15 +162,15 @@ on post-fs
 
 on property:ro.vendor.xiaomi.device=land
     # General
-    mount overlay overlay /vendor/bin ro lowerdir=/vendor/overlayfs/land/bin/:/vendor/bin
-    mount overlay overlay /vendor/lib64 ro lowerdir=/vendor/overlayfs/land/lib64/:/vendor/lib64
+    mount overlay overlay /odm/bin ro lowerdir=/odm/overlayfs/land/bin/:/odm/bin
+    mount overlay overlay /odm/lib64 ro lowerdir=/odm/overlayfs/land/lib64/:/odm/lib64
     # Sensor
     mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/wt8937/etc/sensors/:/vendor/etc/sensors
 
 on property:ro.vendor.xiaomi.device=prada
     # General
-    mount overlay overlay /vendor/bin ro lowerdir=/vendor/overlayfs/prada/bin/:/vendor/bin
-    mount overlay overlay /vendor/lib64 ro lowerdir=/vendor/overlayfs/prada/lib64/:/vendor/lib64
+    mount overlay overlay /odm/bin ro lowerdir=/odm/overlayfs/prada/bin/:/odm/bin
+    mount overlay overlay /odm/lib64 ro lowerdir=/odm/overlayfs/prada/lib64/:/odm/lib64
     # Sensor
     mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/prada/etc/sensors/:/vendor/etc/sensors
 
@@ -188,8 +188,8 @@ on property:ro.vendor.xiaomi.device=rolex
 
 on property:ro.vendor.xiaomi.device=santoni
     # General
-    mount overlay overlay /vendor/bin ro lowerdir=/vendor/overlayfs/santoni/bin/:/vendor/bin
-    mount overlay overlay /vendor/lib64 ro lowerdir=/vendor/overlayfs/santoni/lib64/:/vendor/lib64
+    mount overlay overlay /odm/bin ro lowerdir=/odm/overlayfs/santoni/bin/:/odm/bin
+    mount overlay overlay /odm/lib64 ro lowerdir=/odm/overlayfs/santoni/lib64/:/odm/lib64
     # Camera
     mount overlay overlay /vendor/etc/camera ro lowerdir=/vendor/overlayfs/santoni/etc/camera/
     # Sensor
