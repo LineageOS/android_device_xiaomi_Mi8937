@@ -62,6 +62,9 @@ endif
 
 # Fingerprint
 ifeq ($(PRODUCT_HARDWARE),Mi8937)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_VENDOR)/bin/gx_fpd
+
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ulysse \
     android.hardware.biometrics.fingerprint@2.1-service.xiaomi_wt8937
