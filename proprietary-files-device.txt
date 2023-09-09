@@ -3,7 +3,7 @@
 # land Package version: land-user 6.0.1 MMB29M V10.2.2.0.MALMIXM release-keys
 # santoni Package version: santoni-user 7.1.2 N2G47H V11.0.2.0.NAMMIXM release-keys
 # prada Package version: prada-user 6.0.1 MMB29M V10.2.2.0.MCEMIXM release-keys
-# vince Package version: vince-user 8.1.0 OPM1.171019.019 V11.0.2.0.OEGMIXM release-keys
+# vince Package version: vince-user 8.1.0 OPM1.171019.019 V11.0.3.0.OEGCNXM release-keys
 # daisy Package version: daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM release-keys
 
 # ACDB (land) - from land
