@@ -1,6 +1,3 @@
-# Camera
-/(vendor|system/vendor)/bin/[0-9a-z]+_mm-qcamera-daemon	u:object_r:mm-qcamerad_exec:s0
-
 # HALs
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.xiaomi_mi8937	u:object_r:hal_lineage_touch_default_exec:s0
 
@@ -9,9 +6,11 @@
 /dev/spidev7.1	u:object_r:ir_device:s0
 
 # OverlayFS
+/(odm|vendor/odm)/overlayfs/[0-9a-z]+/bin/mm-qcamera-daemon				u:object_r:mm-qcamerad_exec:s0
+/(odm|vendor/odm)/overlayfs/[0-9a-z]+/etc/camera(/.*)?					u:object_r:vendor_configs_file:s0
+/(odm|vendor/odm)/overlayfs/[0-9a-z]+/lib(/.*)?						u:object_r:vendor_file:s0
 /(odm|vendor/odm)/overlayfs/[0-9a-z]+/lib64(/.*)?					u:object_r:vendor_file:s0
 /(vendor|system/vendor)/overlayfs/common/etc/data/netmgr_config.xml			u:object_r:vendor_configs_file:s0
-/(vendor|system/vendor)/overlayfs/[0-9a-z]+/etc/camera(/.*)?				u:object_r:vendor_configs_file:s0
 /(vendor|system/vendor)/overlayfs/[0-9a-z]+/etc/sensors/sensor_def_qcomdev.conf		u:object_r:vendor_configs_file:s0
 
 # Partitions
