@@ -31,79 +31,22 @@ on property:ro.vendor.xiaomi.series=wt8917
     enable vendor.baseband-sh
 
 # Camera
-service vendor.land_qcamerasvr /system/vendor/bin/land_mm-qcamera-daemon
-    disabled
+service vendor.qcamerasvr /odm/bin/mm-qcamera-daemon
+    override
     class late_start
     user camera
     group camera system inet input graphics
-    writepid /dev/cpuset/system-background/tasks
-
-service vendor.prada_qcamerasvr /system/vendor/bin/prada_mm-qcamera-daemon
-    disabled
-    class late_start
-    user camera
-    group camera system inet input graphics
-    writepid /dev/cpuset/system-background/tasks
-
-service vendor.ulysse_qcamerasvr /system/vendor/bin/ulysse_mm-qcamera-daemon
-    disabled
-    class late_start
-    user camera
-    group camera system inet input graphics
-    writepid /dev/cpuset/system-background/tasks
-
-service vendor.wingtech_qcamerasvr /system/vendor/bin/wingtech_mm-qcamera-daemon
-    disabled
-    class late_start
-    user camera
-    group camera system inet input graphics
-    writepid /dev/cpuset/system-background/tasks
-
-on property:init.svc.vendor.land_qcamerasvr=running
-    exec /bin/sleep 1s
-    restart vendor.camera-provider-2-4
-
-on property:init.svc.vendor.prada_qcamerasvr=running
-    exec /bin/sleep 1s
-    restart vendor.camera-provider-2-4
-
-on property:init.svc.vendor.ulysse_qcamerasvr=running
-    exec /bin/sleep 1s
-    restart vendor.camera-provider-2-4
-
-on property:init.svc.vendor.wingtech_qcamerasvr=running
-    exec /bin/sleep 1s
-    restart vendor.camera-provider-2-4
-
-on property:ro.vendor.xiaomi.device=riva
-    setprop ro.hardware.camera wingtech
-    stop qcamerasvr
-    enable vendor.wingtech_qcamerasvr
-
-on property:ro.vendor.xiaomi.device=rolex
-    setprop ro.hardware.camera wingtech
-    stop qcamerasvr
-    enable vendor.wingtech_qcamerasvr
-
-on property:ro.vendor.xiaomi.series=ulysse
-    setprop ro.hardware.camera ulysse
-    stop qcamerasvr
-    enable vendor.ulysse_qcamerasvr
 
 on property:ro.vendor.xiaomi.device=land
     setprop ro.hardware.camera land
-    stop qcamerasvr
-    enable vendor.land_qcamerasvr
-
 on property:ro.vendor.xiaomi.device=prada
     setprop ro.hardware.camera prada
-    stop qcamerasvr
-    enable vendor.prada_qcamerasvr
-
 on property:ro.vendor.xiaomi.device=santoni
     setprop ro.hardware.camera wingtech
-    stop qcamerasvr
-    enable vendor.wingtech_qcamerasvr
+on property:ro.vendor.xiaomi.series=ulysse
+    setprop ro.hardware.camera ulysse
+on property:ro.vendor.xiaomi.series=wt8917
+    setprop ro.hardware.camera wingtech
 
 # Fingerprint
 service vendor.goodix_script /vendor/bin/init.goodix.sh
@@ -175,23 +118,30 @@ on property:ro.vendor.xiaomi.device=prada
     mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/prada/etc/sensors/:/vendor/etc/sensors
 
 on property:ro.vendor.xiaomi.device=riva
+    # General
+    mount overlay overlay /odm/bin ro lowerdir=/odm/overlayfs/wt8937-n-camera/bin/:/odm/bin
+    mount overlay overlay /odm/lib ro lowerdir=/odm/overlayfs/riva/lib/:/odm/overlayfs/wt8937-n-camera/lib/:/odm/lib
     # Camera
-    mount overlay overlay /vendor/etc/camera ro lowerdir=/vendor/overlayfs/riva/etc/camera/
+    mount overlay overlay /odm/etc/camera ro lowerdir=/odm/overlayfs/riva/etc/camera/
     # Sensor
     mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/riva/etc/sensors/:/vendor/etc/sensors
 
 on property:ro.vendor.xiaomi.device=rolex
+    # General
+    mount overlay overlay /odm/bin ro lowerdir=/odm/overlayfs/wt8937-n-camera/bin/:/odm/bin
+    mount overlay overlay /odm/lib ro lowerdir=/odm/overlayfs/rolex/lib/:/odm/overlayfs/wt8937-n-camera/lib/:/odm/lib
     # Camera
-    mount overlay overlay /vendor/etc/camera ro lowerdir=/vendor/overlayfs/rolex/etc/camera/
+    mount overlay overlay /odm/etc/camera ro lowerdir=/odm/overlayfs/rolex/etc/camera/
     # Sensor
     mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/rolex/etc/sensors/:/vendor/etc/sensors
 
 on property:ro.vendor.xiaomi.device=santoni
     # General
-    mount overlay overlay /odm/bin ro lowerdir=/odm/overlayfs/santoni/bin/:/odm/bin
+    mount overlay overlay /odm/bin ro lowerdir=/odm/overlayfs/santoni/bin/:/odm/overlayfs/wt8937-n-camera/bin/:/odm/bin
+    mount overlay overlay /odm/lib ro lowerdir=/odm/overlayfs/santoni/lib/:/odm/overlayfs/wt8937-n-camera/lib/:/odm/lib
     mount overlay overlay /odm/lib64 ro lowerdir=/odm/overlayfs/santoni/lib64/:/odm/lib64
     # Camera
-    mount overlay overlay /vendor/etc/camera ro lowerdir=/vendor/overlayfs/santoni/etc/camera/
+    mount overlay overlay /odm/etc/camera ro lowerdir=/odm/overlayfs/santoni/etc/camera/
     # Sensor
     mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/wt8937/etc/sensors/:/vendor/etc/sensors
 
