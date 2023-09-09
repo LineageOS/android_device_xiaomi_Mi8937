@@ -1,5 +1,5 @@
 # Camera
-/(vendor|system/vendor)/bin/[0-9a-z]+_mm-qcamera-daemon	u:object_r:mm-qcamerad_exec:s0
+/(odm|vendor/odm)/bin/mm-qcamera-daemon		u:object_r:mm-qcamerad_exec:s0
 
 # HALs
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.xiaomi_mi8937	u:object_r:hal_lineage_touch_default_exec:s0
