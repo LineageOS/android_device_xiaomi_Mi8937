@@ -116,7 +116,10 @@ on property:ro.vendor.xiaomi.device=land
 on property:ro.vendor.xiaomi.device=prada
     # General
     mount overlay overlay /odm/bin ro lowerdir=/odm/overlayfs/prada/bin/:/odm/bin
+    mount overlay overlay /odm/lib ro lowerdir=/odm/overlayfs/prada/lib/:/odm/lib
     mount overlay overlay /odm/lib64 ro lowerdir=/odm/overlayfs/prada/lib64/:/odm/lib64
+    # Camera
+    mount overlay overlay /odm/etc/camera ro lowerdir=/odm/overlayfs/prada/etc/camera/
     # Sensor
     mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/prada/etc/sensors/:/vendor/etc/sensors
 

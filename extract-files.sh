@@ -16,7 +16,7 @@ function blob_fixup() {
         # Camera
         odm/overlayfs/*/bin/mm-qcamera-daemon)
             sed -i 's|data/misc/camera|data/vendor/qcam|g' "${2}"
-            if [ "${1}" == "odm/overlayfs/land/bin/mm-qcamera-daemon" ]; then
+            if [[ "${1}" =~ ^odm/overlayfs/(land|prada)/bin/mm-qcamera-daemon$ ]]; then
                 if ! "${PATCHELF}" --print-needed "${2}" | grep "libshim_mutexdestroy.so" > /dev/null; then
                     "${PATCHELF}" --add-needed "libshim_mutexdestroy.so" "${2}"
                 fi
