@@ -5,9 +5,6 @@ service vendor.xiaomi_device_script /vendor/bin/init.xiaomi.device.sh
     oneshot
 
 # Audio
-on property:ro.vendor.xiaomi.series=ulysse
-    setprop vendor.audio.mixer_xml.path /vendor/etc/ulysse_mixer_paths_mtp.xml
-    setprop vendor.audio.platform_info_xml.path /vendor/etc/ulysse_audio_platform_info_intcodec.xml
 on property:ro.vendor.xiaomi.device=land
     setprop vendor.audio.mixer_xml.path /vendor/etc/land_mixer_paths_qrd_sku1.xml
     setprop vendor.audio.platform_info_xml.path /vendor/etc/land_audio_platform_info_intcodec.xml
@@ -23,6 +20,9 @@ on property:ro.vendor.xiaomi.device=rolex
 on property:ro.vendor.xiaomi.device=santoni
     setprop vendor.audio.mixer_xml.path /vendor/etc/santoni_mixer_paths_qrd_sku1.xml
     setprop vendor.audio.platform_info_xml.path /vendor/etc/santoni_audio_platform_info_intcodec.xml
+on property:ro.vendor.xiaomi.series=ulysse
+    setprop vendor.audio.mixer_xml.path /vendor/etc/ulysse_mixer_paths_mtp.xml
+    setprop vendor.audio.platform_info_xml.path /vendor/etc/ulysse_audio_platform_info_intcodec.xml
 
 # Baseband
 on property:ro.vendor.xiaomi.device=santoni
@@ -56,9 +56,9 @@ service vendor.goodix_script /vendor/bin/init.goodix.sh
     oneshot
     disabled
 
-on property:ro.vendor.xiaomi.series=wt8937
-    enable vendor.goodix_script
 on property:ro.vendor.xiaomi.device=prada
+    enable vendor.goodix_script
+on property:ro.vendor.xiaomi.series=wt8937
     enable vendor.goodix_script
 
 # HVDCP
@@ -68,30 +68,25 @@ on property:ro.vendor.xiaomi.series=ulysse
     stop vendor.hvdcp_opti
 
 # IR
-on property:ro.hardware.consumerir=led
+on init
+    # LED
     chown system system /sys/class/leds/infrared/transmit
     chown system system /sys/class/leds/infrared/brightness
-    restart vendor.ir-hal-1-0
+    # lirc
+    chown system system /dev/lirc0
+    # spidev
+    chown system system /dev/spidev7.1
 
-on property:ro.vendor.xiaomi.series=wt8937
-    setprop ro.hardware.consumerir led
 on property:ro.vendor.xiaomi.device=rolex
     setprop ro.hardware.consumerir led
-
+on property:ro.vendor.xiaomi.series=wt8937
+    setprop ro.hardware.consumerir led
 on property:ro.vendor.xiaomi.device=prada
-    chown system system /dev/lirc0
     setprop ro.hardware.consumerir lirc
-    restart vendor.ir-hal-1-0
-
 on property:ro.vendor.xiaomi.series=ulysse
-    chown system system /dev/lirc0
     setprop ro.hardware.consumerir lirc
-    restart vendor.ir-hal-1-0
-
 on property:ro.vendor.xiaomi.device=riva
-    chown system system /dev/spidev7.1
     setprop ro.hardware.consumerir spidev
-    restart vendor.ir-hal-1-0
 
 # LiveDisplay
 on boot
