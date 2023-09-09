@@ -146,9 +146,19 @@ on property:ro.vendor.xiaomi.device=santoni
     mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/wt8937/etc/sensors/:/vendor/etc/sensors
 
 on property:ro.vendor.xiaomi.device=ugg
+    # General
+    mount overlay overlay /odm/bin ro lowerdir=/odm/overlayfs/ulysse/bin/:/odm/bin
+    mount overlay overlay /odm/lib ro lowerdir=/odm/overlayfs/ugg/lib/:/odm/overlayfs/ulysse/lib/:/odm/lib
+    # Camera
+    mount overlay overlay /odm/etc/camera ro lowerdir=/odm/overlayfs/ugg/etc/camera/:/odm/overlayfs/ulysse/etc/camera/
     # Sensor
     mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/ulysse/etc/sensors/:/vendor/etc/sensors
 
 on property:ro.vendor.xiaomi.device=ugglite
+    # General
+    mount overlay overlay /odm/bin ro lowerdir=/odm/overlayfs/ulysse/bin/:/odm/bin
+    mount overlay overlay /odm/lib ro lowerdir=/odm/overlayfs/ugglite/lib/:/odm/overlayfs/ulysse/lib/:/odm/lib
+    # Camera
+    mount overlay overlay /odm/etc/camera ro lowerdir=/odm/overlayfs/ugglite/etc/camera/:/odm/overlayfs/ulysse/etc/camera/
     # Sensor
     mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/ulysse/etc/sensors/:/vendor/etc/sensors
