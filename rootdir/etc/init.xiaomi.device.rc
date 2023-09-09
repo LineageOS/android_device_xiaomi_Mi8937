@@ -106,7 +106,10 @@ on post-fs
 on property:ro.vendor.xiaomi.device=land
     # General
     mount overlay overlay /odm/bin ro lowerdir=/odm/overlayfs/land/bin/:/odm/bin
+    mount overlay overlay /odm/lib ro lowerdir=/odm/overlayfs/land/lib/:/odm/lib
     mount overlay overlay /odm/lib64 ro lowerdir=/odm/overlayfs/land/lib64/:/odm/lib64
+    # Camera
+    mount overlay overlay /odm/etc/camera ro lowerdir=/odm/overlayfs/land/etc/camera/
     # Sensor
     mount overlay overlay /vendor/etc/sensors ro lowerdir=/vendor/overlayfs/wt8937/etc/sensors/:/vendor/etc/sensors
 
