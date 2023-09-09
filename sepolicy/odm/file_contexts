@@ -1,0 +1,6 @@
+# Camera
+/(odm|vendor/odm)/bin/mm-qcamera-daemon	u:object_r:mm-qcamerad_exec:s0
+
+# OverlayFS
+/(odm|vendor/odm)/overlayfs/[0-9a-z-_]+/bin/mm-qcamera-daemon		u:object_r:mm-qcamerad_exec:s0
+/(odm|vendor/odm)/overlayfs/[0-9a-z-_]+/etc/camera(/.*)?		u:object_r:vendor_configs_file:s0
