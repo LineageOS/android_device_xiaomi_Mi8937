@@ -71,29 +71,29 @@ lib64/hw/fingerprint.msm8937.so:odm/lib64/hw/fingerprint.ugg_fpc.so
 lib64/lib_fpc_tac_shared.so:odm/lib64/lib_fpc_tac_shared.so
 
 # Fingerprint (Goodix) - land - from land
-bin/gx_fpcmd:odm/overlayfs/land/bin/gx_fpcmd
-bin/gx_fpd:odm/overlayfs/land/bin/gx_fpd
-lib64/hw/fingerprint.goodix.so:odm/overlayfs/land/lib64/hw/fingerprint.land_goodix.so
-lib64/hw/gxfingerprint.default.so:odm/overlayfs/land/lib64/hw/gxfingerprint.land.so
-lib64/libfp_client.so:odm/overlayfs/land/lib64/libfp_client.so
-lib64/libfpnav.so:odm/overlayfs/land/lib64/libfpnav.so
-lib64/libfpservice.so:odm/overlayfs/land/lib64/libfpservice.so
+bin/gx_fpcmd:odm/overlayfs/land/bin/gx_fpcmd|d9f79847413017db14492cf8f74150aeda6b66ad
+bin/gx_fpd:odm/overlayfs/land/bin/gx_fpd|b3e82247bfd106c121dff92e3bf2204d9bc2c8e4
+lib64/hw/fingerprint.goodix.so:odm/overlayfs/land/lib64/hw/fingerprint.land_goodix.so|62a8c6edce8204b727dddd0d826c0141d66b3d77
+lib64/hw/gxfingerprint.default.so:odm/overlayfs/land/lib64/hw/gxfingerprint.land.so|d5c0bede7b1706f22bf128b523ed604a03dd7a7f
+lib64/libfp_client.so:odm/overlayfs/land/lib64/libfp_client.so|1300e5d4c25504eb29f27e8d3467eaa0825acbef
+lib64/libfpnav.so:odm/overlayfs/land/lib64/libfpnav.so|588301735456b31b09aa0779a7f46481056868dd
+lib64/libfpservice.so:odm/overlayfs/land/lib64/libfpservice.so|394d3b98d6120ae78c943896014bad244e838d6c
 
 # Fingerprint (Goodix) - prada - from prada
-bin/gx_fpd:odm/overlayfs/prada/bin/gx_fpd
-lib64/hw/fingerprint.default.so:odm/overlayfs/prada/lib64/hw/fingerprint.prada_goodix.so
-lib64/hw/gxfingerprint.default.so:odm/overlayfs/prada/lib64/hw/gxfingerprint.prada.so
-lib64/libfp_client.so:odm/overlayfs/prada/lib64/libfp_client.so
-lib64/libfpnav.so:odm/overlayfs/prada/lib64/libfpnav.so
-lib64/libfpservice.so:odm/overlayfs/prada/lib64/libfpservice.so
+bin/gx_fpd:odm/overlayfs/prada/bin/gx_fpd|99564c189a809aa6af7c7d7014363a2f4902b32a
+lib64/hw/fingerprint.default.so:odm/overlayfs/prada/lib64/hw/fingerprint.prada_goodix.so|69370b3b489f7a40bcb83c2c6b8ca2d2f3523746
+lib64/hw/gxfingerprint.default.so:odm/overlayfs/prada/lib64/hw/gxfingerprint.prada.so|a6ec78f71ffbcaeccd2be3d0ed59a70a5ab4cff9
+lib64/libfp_client.so:odm/overlayfs/prada/lib64/libfp_client.so|d304bb66a6595d8ae35bd27e2858bc614168d74d
+lib64/libfpnav.so:odm/overlayfs/prada/lib64/libfpnav.so|588301735456b31b09aa0779a7f46481056868dd
+lib64/libfpservice.so:odm/overlayfs/prada/lib64/libfpservice.so|fe0f7b7e160d640c2c7a5da7549fe697f6f798d9
 
 # Fingerprint (Goodix) - santoni - from santoni
-bin/gx_fpcmd:odm/overlayfs/santoni/bin/gx_fpcmd
-bin/gx_fpd:odm/overlayfs/santoni/bin/gx_fpd
-lib64/hw/fingerprint.goodix.so:odm/overlayfs/santoni/lib64/hw/fingerprint.santoni_goodix.so
-lib64/hw/gxfingerprint.default.so:odm/overlayfs/santoni/lib64/hw/gxfingerprint.santoni.so
-lib64/libfp_client.so:odm/overlayfs/santoni/lib64/libfp_client.so
-lib64/libfpservice.so:odm/overlayfs/santoni/lib64/libfpservice.so
+bin/gx_fpcmd:odm/overlayfs/santoni/bin/gx_fpcmd|1e4fc1a64b483eb0961faebb6c8eaeefcb1161a0
+bin/gx_fpd:odm/overlayfs/santoni/bin/gx_fpd|a98090a8dbc471197c97e17a795a772fc2112ab1
+lib64/hw/fingerprint.goodix.so:odm/overlayfs/santoni/lib64/hw/fingerprint.santoni_goodix.so|6570a4da231a60f6724f30f4988fe73d26746a24
+lib64/hw/gxfingerprint.default.so:odm/overlayfs/santoni/lib64/hw/gxfingerprint.santoni.so|226ce7edffdc4e8c7fbc1e49c3ccacaf6f0ec6bf
+lib64/libfp_client.so:odm/overlayfs/santoni/lib64/libfp_client.so|2851208e79ff8885b42552e6761a4bac76a3ebb0
+lib64/libfpservice.so:odm/overlayfs/santoni/lib64/libfpservice.so|41ae72b5becc99210d490680810a6f73dd4faa25
 
 # Fingerprint (Goodix) - ugg - from vince
 etc/firmware/goodix_firmware.bin:odm/firmware/goodix_firmware.bin
