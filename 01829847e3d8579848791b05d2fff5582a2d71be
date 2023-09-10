@@ -16,6 +16,24 @@
       "message": "Mind placing this in hw/lineage/compat? Convert to Android.bp while at it",
       "revId": "01829847e3d8579848791b05d2fff5582a2d71be",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "907d88b6_3f725e7e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2023-09-10T07:25:39Z",
+      "side": 1,
+      "message": "okay. shall I squash the commit chain or not?",
+      "parentUuid": "3d5e60ac_b593cbdf",
+      "revId": "01829847e3d8579848791b05d2fff5582a2d71be",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
