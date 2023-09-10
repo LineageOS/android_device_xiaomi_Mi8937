@@ -35,6 +35,9 @@ MI8937_CAM_USE_RENAMED_BLOBS_U := true
 # Display
 TARGET_SCREEN_DENSITY := 280
 
+# Filesystem
+TARGET_FS_CONFIG_GEN += $(DEVICE_PATH)/config.fs
+
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
