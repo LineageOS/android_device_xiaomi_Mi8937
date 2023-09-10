@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d5e60ac_b593cbdf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-09-10T06:03:39Z",
+      "side": 1,
+      "message": "Mind placing this in hw/lineage/compat? Convert to Android.bp while at it",
+      "revId": "01829847e3d8579848791b05d2fff5582a2d71be",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
