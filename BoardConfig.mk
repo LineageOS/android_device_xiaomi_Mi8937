@@ -47,11 +47,13 @@ ifeq ($(PRODUCT_HARDWARE),Mi8917)
 TARGET_KERNEL_CONFIG += \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/mi8917.config \
+    vendor/xiaomi/feature/squashfs.config \
     vendor/xiaomi/feature/lineageos.config
 else
 TARGET_KERNEL_CONFIG += \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/mi8937_exclude_mi8917.config \
+    vendor/xiaomi/feature/squashfs.config \
     vendor/xiaomi/feature/lineageos.config
 endif
 
@@ -87,12 +89,18 @@ $(foreach p, $(call to-upper, $(TREBLE_PARTITIONS)), \
 
 $(foreach p, $(call to-upper, $(SSI_PARTITIONS)), \
     $(eval BOARD_$(p)IMAGE_PARTITION_RESERVED_SIZE := 83886080)) # 80 MB
-$(foreach p, $(call to-upper, $(TREBLE_PARTITIONS)), \
+$(foreach p, $(call to-upper, vendor), \
     $(eval BOARD_$(p)IMAGE_PARTITION_RESERVED_SIZE := 41943040)) # 40 MB
 
 ifneq ($(WITH_GMS),true)
 BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 838860800 # 800 MB
 endif
+
+# Partitions - SquashFS
+$(foreach p, $(call to-upper, odm), \
+    $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := squashfs) \
+    $(eval BOARD_$(p)IMAGE_JOURNAL_SIZE := 0) \
+    $(eval BOARD_$(p)IMAGE_SQUASHFS_COMPRESSOR := lz4))
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/proc/sys/dev/xiaomi_msm8937_touchscreen/enable_dt2w"
