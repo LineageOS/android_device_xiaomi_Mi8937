@@ -18,6 +18,7 @@ static const variant_info_t ugglite_info = {
     .marketname = "",
     .model = "Redmi Note 5A",
     .build_fingerprint = "",
+    .dpi = 260,
 };
 
 static const variant_info_t ugg_info = {
@@ -26,6 +27,7 @@ static const variant_info_t ugg_info = {
     .marketname = "",
     .model = "Redmi Note 5A",
     .build_fingerprint = "",
+    .dpi = 260,
 };
 
 static const variant_info_t rolex_info = {
@@ -34,6 +36,7 @@ static const variant_info_t rolex_info = {
     .marketname = "",
     .model = "Redmi 4A",
     .build_fingerprint = "",
+    .dpi = 280,
 };
 
 static const variant_info_t riva_info = {
@@ -42,6 +45,7 @@ static const variant_info_t riva_info = {
     .marketname = "",
     .model = "Redmi 5A",
     .build_fingerprint = "",
+    .dpi = 280,
 };
 
 static const variant_info_t land_info = {
@@ -50,6 +54,7 @@ static const variant_info_t land_info = {
     .marketname = "",
     .model = "Redmi 3S",
     .build_fingerprint = "",
+    .dpi = 280,
 };
 
 static const variant_info_t santoni_info = {
@@ -58,6 +63,7 @@ static const variant_info_t santoni_info = {
     .marketname = "",
     .model = "Redmi 4X",
     .build_fingerprint = "",
+    .dpi = 280,
 };
 
 static const variant_info_t prada_info = {
@@ -66,6 +72,7 @@ static const variant_info_t prada_info = {
     .marketname = "",
     .model = "Redmi 4",
     .build_fingerprint = "",
+    .dpi = 280,
 };
 
 static void determine_device()
