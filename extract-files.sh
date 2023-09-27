@@ -64,6 +64,9 @@ function blob_fixup() {
         odm/lib64/lib_fpc_tac_shared.so)
             patchelf_add_needed "libbinder_shim.so" "${2}"
             ;;
+        odm/lib64/libvendor.goodix.hardware.fingerprint@1.0.so)
+            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+            ;;
         odm/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so)
             "${PATCHELF_0_8}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
             ;;
