@@ -6,6 +6,12 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+function patchelf_add_needed() {
+    if ! "${PATCHELF}" --print-needed "${2}" | grep -q "${1}"; then
+        "${PATCHELF}" --add-needed "${1}" "${2}"
+    fi
+}
+
 function blob_fixup() {
     # Camera
     if [[ "${1}" =~ ^odm/overlayfs/.*/lib/libmmcamera.*\.so$ ]]; then
@@ -17,18 +23,12 @@ function blob_fixup() {
         odm/overlayfs/*/bin/mm-qcamera-daemon)
             sed -i 's|data/misc/camera|data/vendor/qcam|g' "${2}"
             if [ "${1}" == "odm/overlayfs/land/bin/mm-qcamera-daemon" ]; then
-                if ! "${PATCHELF}" --print-needed "${2}" | grep "libc_mutexdestroy_shim.so" > /dev/null; then
-                    "${PATCHELF}" --add-needed "libc_mutexdestroy_shim.so" "${2}"
-                fi
-                if ! "${PATCHELF}" --print-needed "${2}" | grep "libc_pthreadts_shim.so" > /dev/null; then
-                    "${PATCHELF}" --add-needed "libc_pthreadts_shim.so" "${2}"
-                fi
+                patchelf_add_needed "libshim_mutexdestroy.so" "${2}"
+                patchelf_add_needed "libshim_pthreadts.so" "${2}"
             fi
             ;;
         odm/overlayfs/*/lib/libmmcamera_ppeiscore.so)
-            if ! "${PATCHELF}" --print-needed "${2}" | grep "libshims_ui.so" > /dev/null; then
-                "${PATCHELF}" --add-needed "libshims_ui.so" "${2}"
-            fi
+            patchelf_add_needed "libshims_ui.so"
             ;;
         odm/overlayfs/*/lib/libmmcamera2_sensor_modules.so)
             sed -i 's|/system/etc/camera/|////odm/etc/camera/|g' "${2}"
@@ -48,31 +48,21 @@ function blob_fixup() {
         odm/overlayfs/*/bin/gx_fpcmd|odm/overlayfs/*/bin/gx_fpd)
             patchelf --remove-needed "libbacktrace.so" "${2}"
             patchelf --remove-needed "libunwind.so" "${2}"
-            if ! patchelf --print-needed "${2}" | grep "libfakelogprint.so" > /dev/null; then
-                patchelf --add-needed "libfakelogprint.so" "${2}"
-            fi
+            patchelf_add_needed "libfakelogprint.so" "${2}"
             ;;
         odm/overlayfs/*/lib64/libfpservice.so)
-            if ! patchelf --print-needed "${2}" | grep "libbinder_shim.so" > /dev/null; then
-                patchelf --add-needed "libbinder_shim.so" "${2}"
-            fi
+            patchelf_add_needed "libbinder_shim.so" "${2}"
             ;;
         odm/overlayfs/*/lib64/hw/fingerprint.*_goodix.so)
             sed -i 's|libandroid_runtime.so|libshims_android.so\x00\x00|g' "${2}"
-            if ! patchelf --print-needed "${2}" | grep "libfakelogprint.so" > /dev/null; then
-                patchelf --add-needed "libfakelogprint.so" "${2}"
-            fi
+            patchelf_add_needed "libfakelogprint.so" "${2}"
             ;;
         odm/overlayfs/*/lib64/hw/gxfingerprint.*.so)
-            if ! patchelf --print-needed "${2}" | grep "libfakelogprint.so" > /dev/null; then
-                patchelf --add-needed "libfakelogprint.so" "${2}"
-            fi
+            patchelf_add_needed "libfakelogprint.so" "${2}"
             ;;
         # Fingerprint (ugg)
         odm/lib64/lib_fpc_tac_shared.so)
-            if ! "${PATCHELF}" --print-needed "${2}" | grep "libbinder_shim.so" > /dev/null; then
-                "${PATCHELF}" --add-needed "libbinder_shim.so" "${2}"
-            fi
+            patchelf_add_needed "libbinder_shim.so" "${2}"
             ;;
         odm/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so)
             "${PATCHELF_0_8}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
