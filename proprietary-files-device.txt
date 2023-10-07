@@ -73,7 +73,7 @@ lib64/lib_fpc_tac_shared.so:odm/lib64/lib_fpc_tac_shared.so
 # Fingerprint (Goodix) - land - from land
 bin/gx_fpcmd:odm/overlayfs/land/bin/gx_fpcmd|b4d35ff21b6a5f9842f9a1979f15828f2c2ae019|d9f79847413017db14492cf8f74150aeda6b66ad
 bin/gx_fpd:odm/overlayfs/land/bin/gx_fpd|c78f6fdb323fe4883ea495f97687e0cdfb8d5a09|b3e82247bfd106c121dff92e3bf2204d9bc2c8e4
-lib64/hw/fingerprint.goodix.so:odm/overlayfs/land/lib64/hw/fingerprint.land_goodix.so|775c7648c6e8334956b3edb03d4ce1f509460dc0|81250f79f2f0f5bfd6652ee1a0febcac323d2bb2|62a8c6edce8204b727dddd0d826c0141d66b3d77
+lib64/hw/fingerprint.goodix.so:odm/overlayfs/land/lib64/hw/fingerprint.land_goodix.so|775c7648c6e8334956b3edb03d4ce1f509460dc0|62a8c6edce8204b727dddd0d826c0141d66b3d77
 lib64/hw/gxfingerprint.default.so:odm/overlayfs/land/lib64/hw/gxfingerprint.land.so|63e1a095a6688137573b0b2d3503019497e0bb4b|d5c0bede7b1706f22bf128b523ed604a03dd7a7f
 lib64/libfp_client.so:odm/overlayfs/land/lib64/libfp_client.so|0930e81e4e7d551d499baf6e88e0c7f4c613acdd|1300e5d4c25504eb29f27e8d3467eaa0825acbef
 lib64/libfpnav.so:odm/overlayfs/land/lib64/libfpnav.so|588301735456b31b09aa0779a7f46481056868dd|588301735456b31b09aa0779a7f46481056868dd
