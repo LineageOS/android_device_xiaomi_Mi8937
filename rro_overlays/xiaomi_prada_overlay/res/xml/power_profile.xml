@@ -11,7 +11,7 @@
         <value>1094400</value>
         <value>1248000</value>
         <value>1344000</value>
-        <value>1401000</value>
+        <value>1401600</value>
     </array>
     <array name="cpu.core_power.cluster0">
         <value>59</value>
@@ -36,7 +36,7 @@
         <value>960000</value>
         <value>1094400</value>
         <value>1248000</value>
-        <value>1401000</value>
+        <value>1401600</value>
     </array>
     <array name="cpu.active">
         <value>255</value>
