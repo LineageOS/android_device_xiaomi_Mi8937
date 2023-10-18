@@ -1,0 +1,7 @@
+get_prop(hal_dumpstate_default, bootloader_prop)
+get_prop(hal_dumpstate_default, vendor_fingerprint_prop)
+r_dir_file(hal_dumpstate_default, sysctl_mi8937_ts)
+r_dir_file(hal_dumpstate_default, sysfs_camera_fusion_id)
+r_dir_file(hal_dumpstate_default, sysfs_mi8937_mach)
+r_dir_file(hal_dumpstate_default, sysfs_mi8937_ts)
+r_dir_file(hal_dumpstate_default, sysfs_virtualkeys)

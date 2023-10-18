@@ -6,3 +6,6 @@ type sysctl_mi8937_ts, fs_type, proc_type;
 
 # Mach
 type sysfs_mi8937_mach, fs_type, sysfs_type;
+
+# Touchscreen
+type sysfs_mi8937_ts, fs_type, sysfs_type;
