@@ -61,6 +61,10 @@ PRODUCT_PACKAGES += \
     camera.land
 endif
 
+# Dumpstate
+PRODUCT_PACKAGES += \
+    libdumpstate_device
+
 # Filesystem
 PRODUCT_PACKAGES += \
     e2fsck_ramdisk \
