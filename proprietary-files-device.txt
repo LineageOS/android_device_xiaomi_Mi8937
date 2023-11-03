@@ -95,6 +95,16 @@ lib64/hw/gxfingerprint.default.so:odm/overlayfs/santoni/lib64/hw/gxfingerprint.s
 lib64/libfp_client.so:odm/overlayfs/santoni/lib64/libfp_client.so|caea74b70684f31211d50a2b67d478c2414ed8f8|2851208e79ff8885b42552e6761a4bac76a3ebb0
 lib64/libfpservice.so:odm/overlayfs/santoni/lib64/libfpservice.so|ffd2488d0fc7a7e67579562af738d022119efd3e|41ae72b5becc99210d490680810a6f73dd4faa25
 
+# Fingerprint (Goodix) - ugg - from ugg
+etc/firmware/goodixfp.b00:odm/firmware/ugg/goodixfp.b00
+etc/firmware/goodixfp.b01:odm/firmware/ugg/goodixfp.b01
+etc/firmware/goodixfp.b02:odm/firmware/ugg/goodixfp.b02
+etc/firmware/goodixfp.b03:odm/firmware/ugg/goodixfp.b03
+etc/firmware/goodixfp.b04:odm/firmware/ugg/goodixfp.b04
+etc/firmware/goodixfp.b05:odm/firmware/ugg/goodixfp.b05
+etc/firmware/goodixfp.b06:odm/firmware/ugg/goodixfp.b06
+etc/firmware/goodixfp.mdt:odm/firmware/ugg/goodixfp.mdt
+
 # Fingerprint (Goodix) - ugg - from vince
 lib64/libgf_algo.so:odm/lib64/libgf_algo.so
 lib64/libgf_ca.so:odm/lib64/libgf_ca.so

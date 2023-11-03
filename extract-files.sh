@@ -64,6 +64,9 @@ function blob_fixup() {
         odm/lib64/lib_fpc_tac_shared.so)
             patchelf_add_needed "libbinder_shim.so" "${2}"
             ;;
+        odm/lib64/libgf_ca.so)
+            sed -i 's|/system/etc/firmware|////odm/firmware/ugg|g' "${2}"
+            ;;
         odm/lib64/libvendor.goodix.hardware.fingerprint@1.0.so)
             patchelf --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
