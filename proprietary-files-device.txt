@@ -96,7 +96,6 @@ lib64/libfp_client.so:odm/overlayfs/santoni/lib64/libfp_client.so|caea74b70684f3
 lib64/libfpservice.so:odm/overlayfs/santoni/lib64/libfpservice.so|ffd2488d0fc7a7e67579562af738d022119efd3e|41ae72b5becc99210d490680810a6f73dd4faa25
 
 # Fingerprint (Goodix) - ugg - from vince
-etc/firmware/goodix_firmware.bin:odm/firmware/goodix_firmware.bin
 lib64/libgf_algo.so:odm/lib64/libgf_algo.so
 lib64/libgf_ca.so:odm/lib64/libgf_ca.so
 lib64/libgf_hal.so:odm/lib64/libgf_hal.so
