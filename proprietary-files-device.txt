@@ -104,10 +104,10 @@ etc/firmware/goodixfp.b04:odm/firmware/ugg/goodixfp.b04
 etc/firmware/goodixfp.b05:odm/firmware/ugg/goodixfp.b05
 etc/firmware/goodixfp.b06:odm/firmware/ugg/goodixfp.b06
 etc/firmware/goodixfp.mdt:odm/firmware/ugg/goodixfp.mdt
+lib64/libgf_ca.so:odm/lib64/libgf_ca.so
 
 # Fingerprint (Goodix) - ugg - from vince
 lib64/libgf_algo.so:odm/lib64/libgf_algo.so
-lib64/libgf_ca.so:odm/lib64/libgf_ca.so
 lib64/libgf_hal.so:odm/lib64/libgf_hal.so
 
 # Fingerprint (Goodix HAL) - ugg - from daisy
