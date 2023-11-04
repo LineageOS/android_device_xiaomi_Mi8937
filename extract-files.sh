@@ -7,8 +7,10 @@
 #
 
 function patchelf_add_needed() {
-    if ! "${PATCHELF}" --print-needed "${2}" | grep -q "${1}"; then
-        "${PATCHELF}" --add-needed "${1}" "${2}"
+    local LOCAL_PATCHELF="${PATCHELF}"
+    [ -x "${3}" ] && LOCAL_PATCHELF="${3}"
+    if ! "${LOCAL_PATCHELF}" --print-needed "${2}" | grep -q "${1}"; then
+        "${LOCAL_PATCHELF}" --add-needed "${1}" "${2}"
     fi
 }
 
@@ -46,32 +48,32 @@ function blob_fixup() {
             ;;
         # Fingerprint (Legacy Goodix)
         odm/overlayfs/*/bin/gx_fpcmd|odm/overlayfs/*/bin/gx_fpd)
-            patchelf --remove-needed "libbacktrace.so" "${2}"
-            patchelf --remove-needed "libunwind.so" "${2}"
-            patchelf_add_needed "libfakelogprint.so" "${2}"
+            "${PATCHELF_0_17_2}" --remove-needed "libbacktrace.so" "${2}"
+            "${PATCHELF_0_17_2}" --remove-needed "libunwind.so" "${2}"
+            patchelf_add_needed "libfakelogprint.so" "${2}" "${PATCHELF_0_17_2}"
             ;;
         odm/overlayfs/*/lib64/libfpservice.so)
-            patchelf_add_needed "libbinder_shim.so" "${2}"
+            patchelf_add_needed "libbinder_shim.so" "${2}" "${PATCHELF_0_17_2}"
             ;;
         odm/overlayfs/*/lib64/hw/fingerprint.*_goodix.so)
             sed -i 's|libandroid_runtime.so|libshims_android.so\x00\x00|g' "${2}"
-            patchelf_add_needed "libfakelogprint.so" "${2}"
+            patchelf_add_needed "libfakelogprint.so" "${2}" "${PATCHELF_0_17_2}"
             ;;
         odm/overlayfs/*/lib64/hw/gxfingerprint.*.so)
-            patchelf_add_needed "libfakelogprint.so" "${2}"
+            patchelf_add_needed "libfakelogprint.so" "${2}" "${PATCHELF_0_17_2}"
             ;;
         # Fingerprint (ugg)
         odm/lib64/lib_fpc_tac_shared.so)
-            patchelf_add_needed "libbinder_shim.so" "${2}"
+            patchelf_add_needed "libbinder_shim.so" "${2}" "${PATCHELF_0_17_2}"
             ;;
         odm/lib64/libgf_ca.so)
             sed -i 's|/system/etc/firmware|////odm/firmware/ugg|g' "${2}"
             ;;
         odm/lib64/libvendor.goodix.hardware.fingerprint@1.0.so)
-            patchelf --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+            "${PATCHELF_0_17_2}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
         odm/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so)
-            "${PATCHELF_0_8}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
+            "${PATCHELF_0_17_2}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
             ;;
     esac
 }
