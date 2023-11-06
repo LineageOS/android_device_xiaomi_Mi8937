@@ -109,10 +109,8 @@ VENDOR_SECURITY_PATCH := 2017-04-01
 # SELinux
 BOARD_ODM_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/odm
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-ifeq ($(PRODUCT_HARDWARE),Mi8937)
 BOARD_ODM_SEPOLICY_DIRS += $(DEVICE_PATH)/biometrics/sepolicy-odm
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/biometrics/sepolicy
-endif
 
 # Inherit from the proprietary version
 ifeq ($(PRODUCT_HARDWARE),Mi8917)
