@@ -11,6 +11,7 @@
 #include "vendor_init.h"
 
 #include <android-base/file.h>
+#include <fstab/fstab.h>
 
 static const variant_info_t ugglite_info = {
     .brand = "xiaomi",
@@ -121,7 +122,15 @@ read_wingtech_board_id:
     return;
 }
 
+static void enable_gatekeeper_uid_offset() {
+    std::string boot_device = *android::fs_mgr::GetBootDevices().begin();
+    if (boot_device == "soc/7864900.sdhci") {
+        property_override("ro.gsid.image_running", "1");
+    }
+}
+
 void vendor_load_properties() {
     determine_device();
+    enable_gatekeeper_uid_offset();
     set_dalvik_heap();
 }
