@@ -8,6 +8,7 @@
 
 prebuilt_etc {
     name: "fstab.qcom",
+    required: ["fstab.external"],
     src: "etc/fstab.qcom",
     vendor: true,
 }
