@@ -132,5 +132,6 @@ static void enable_gatekeeper_uid_offset() {
 void vendor_load_properties() {
     determine_device();
     enable_gatekeeper_uid_offset();
+    set_bootloader_prop();
     set_dalvik_heap();
 }
