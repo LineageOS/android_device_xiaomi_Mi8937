@@ -14,20 +14,20 @@
 #include <fstab/fstab.h>
 
 static const variant_info_t ugglite_info = {
-    .brand = "xiaomi",
+    .brand = "Xiaomi",
     .device = "ugglite",
     .marketname = "",
     .model = "Redmi Note 5A",
-    .build_fingerprint = "",
+    .build_fingerprint = "xiaomi/ugglite/ugglite:7.1.2/N2G47H/V11.0.3.0.NDFMIXM:user/release-keys",
     .dpi = 260,
 };
 
 static const variant_info_t ugg_info = {
-    .brand = "xiaomi",
+    .brand = "Xiaomi",
     .device = "ugg",
     .marketname = "",
     .model = "Redmi Note 5A",
-    .build_fingerprint = "",
+    .build_fingerprint = "xiaomi/ugg/ugg:7.1.2/N2G47H/V11.0.2.0.NDKMIXM:user/release-keys",
     .dpi = 260,
 };
 
@@ -36,7 +36,7 @@ static const variant_info_t rolex_info = {
     .device = "rolex",
     .marketname = "",
     .model = "Redmi 4A",
-    .build_fingerprint = "",
+    .build_fingerprint = "Xiaomi/rolex/rolex:7.1.2/N2G47H/V10.2.3.0.NCCMIXM:user/release-keys",
     .dpi = 280,
 };
 
@@ -45,7 +45,7 @@ static const variant_info_t riva_info = {
     .device = "riva",
     .marketname = "",
     .model = "Redmi 5A",
-    .build_fingerprint = "",
+    .build_fingerprint = "Xiaomi/riva/riva:7.1.2/N2G47H/V10.1.1.0.NCKMIFI:user/release-keys", // Not latest
     .dpi = 280,
 };
 
@@ -54,7 +54,7 @@ static const variant_info_t land_info = {
     .device = "land",
     .marketname = "",
     .model = "Redmi 3S",
-    .build_fingerprint = "",
+    .build_fingerprint = "Xiaomi/land/land:6.0.1/MMB29M/V10.2.2.0.MALMIXM:user/release-keys",
     .dpi = 280,
 };
 
@@ -63,7 +63,7 @@ static const variant_info_t santoni_info = {
     .device = "santoni",
     .marketname = "",
     .model = "Redmi 4X",
-    .build_fingerprint = "",
+    .build_fingerprint = "Xiaomi/santoni/santoni:7.1.2/N2G47H/V11.0.2.0.NAMMIXM:user/release-keys",
     .dpi = 280,
 };
 
@@ -72,7 +72,7 @@ static const variant_info_t prada_info = {
     .device = "prada",
     .marketname = "",
     .model = "Redmi 4",
-    .build_fingerprint = "",
+    .build_fingerprint = "Xiaomi/prada/prada:6.0.1/MMB29M/V10.2.2.0.MCEMIXM:user/release-keys",
     .dpi = 280,
 };
 
