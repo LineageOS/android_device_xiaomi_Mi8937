@@ -48,6 +48,7 @@ TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_mi8937
 # Kernel
 BOARD_KERNEL_APPEND_DTBS := xiaomi-msm8937/*.dtb
 
+ifeq (0,1)
 ifeq ($(PRODUCT_HARDWARE),Mi8917)
 TARGET_KERNEL_CONFIG += \
     vendor/xiaomi/msm8937/common.config \
@@ -62,6 +63,7 @@ endif
 
 ifeq ($(MI8937_CAM_USE_LATEST_CAMERA_STACK),true)
 TARGET_KERNEL_CONFIG += vendor/xiaomi/msm8937/optional/latest-camera-stack.config
+endif
 endif
 
 # Partitions
