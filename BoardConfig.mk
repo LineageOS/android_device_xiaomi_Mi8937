@@ -46,6 +46,8 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_mi8937
 TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_mi8937
 
 # Kernel
+BOARD_KERNEL_APPEND_DTBS := xiaomi-msm8937/*.dtb
+
 ifeq ($(PRODUCT_HARDWARE),Mi8917)
 TARGET_KERNEL_CONFIG += \
     vendor/msm8937-legacy.config \
