@@ -52,15 +52,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_ODM)/bin/mm-qcamera-daemon \
     $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_ODM)/etc/camera/.placeholder
 
-PRODUCT_PACKAGES += \
-    camera.ulysse \
-    camera.wingtech
-
-ifeq ($(PRODUCT_HARDWARE),Mi8937)
-PRODUCT_PACKAGES += \
-    camera.land
-endif
-
 # Dumpstate
 PRODUCT_PACKAGES += \
     libdumpstate_device
