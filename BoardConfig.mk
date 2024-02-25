@@ -52,13 +52,11 @@ BOARD_KERNEL_APPEND_DTBS := xiaomi-msm8937/*.dtb
 
 ifeq ($(PRODUCT_HARDWARE),Mi8917)
 TARGET_KERNEL_CONFIG += \
-    vendor/msm8937-legacy.config \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/mi8917.config \
     vendor/feature/lineageos.config
 else
 TARGET_KERNEL_CONFIG += \
-    vendor/msm8937-legacy.config \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/mi8937_exclude_mi8917.config \
     vendor/feature/lineageos.config
