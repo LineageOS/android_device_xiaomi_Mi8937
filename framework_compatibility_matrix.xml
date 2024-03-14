@@ -1,0 +1,10 @@
+<compatibility-matrix version="2.0" type="framework">
+    <hal format="hidl" optional="true">
+        <name>_mi8937.hardware.radio.oldcfg</name>
+        <version>1.0</version>
+        <interface>
+            <name>IRadioOldcfg</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>
