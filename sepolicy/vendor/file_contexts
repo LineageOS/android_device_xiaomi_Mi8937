@@ -1,4 +1,5 @@
 # HALs
+/(vendor|system/vendor)/bin/hw/android\.hardware\.radio\.config@1\.1-service\.wrapper	u:object_r:hal_radio_config_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.xiaomi_mi8937	u:object_r:hal_lineage_touch_default_exec:s0
 
 # IR
