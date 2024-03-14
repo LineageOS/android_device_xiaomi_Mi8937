@@ -1,0 +1,1 @@
+add_hwservice(rild, vendor_hal_radio_oldcfg_hwservice)
