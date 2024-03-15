@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e93575a5_786736aa",
+        "filename": "extract-files.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2024-03-15T14:01:16Z",
+      "side": 1,
+      "message": "This will never work",
+      "range": {
+        "startLine": 81,
+        "startChar": 16,
+        "endLine": 81,
+        "endChar": 111
+      },
+      "revId": "1ba2a3288af7ac09d7e4ddd4906e0211012e3e3d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
