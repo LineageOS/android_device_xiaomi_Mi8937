@@ -1,4 +1,4 @@
-<manifest version="2.0" type="device">
+<manifest version="2.0" type="device" target-level="5">
     <hal format="hidl">
         <name>_mi8937.hardware.radio.oldcfg</name>
         <transport>hwbinder</transport>
