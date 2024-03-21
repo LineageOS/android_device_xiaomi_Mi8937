@@ -1,0 +1,16 @@
+# fastboot-info for Mi8937
+version 1
+
+update-super
+
+flash odm
+flash vendor
+flash system
+flash system_ext
+flash product
+
+flash boot
+
+if-wipe erase cache
+if-wipe erase userdata
+if-wipe erase oem
