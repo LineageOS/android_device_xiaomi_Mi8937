@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ff35f8e_08ba71b6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2024-03-24T20:58:52Z",
+      "side": 1,
+      "message": "https://review.lineageos.org/c/LineageOS/android_packages_apps_Settings/+/387049",
+      "revId": "356a9d84d95f14be41869c1b757bd6850399d1f2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
