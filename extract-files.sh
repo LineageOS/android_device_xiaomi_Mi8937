@@ -75,12 +75,6 @@ function blob_fixup() {
         odm/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so)
             "${PATCHELF_0_17_2}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
             ;;
-        # RIL
-        vendor/lib64/libril-qc-hal-qmi.so)
-            for v in 1.{0..2}; do
-                sed -i "s|android.hardware.radio.config@${v}.so|android.hardware.radio.c_shim@${v}.so|g" "${2}"
-            done
-            ;;
     esac
 
     # For all ELF files
