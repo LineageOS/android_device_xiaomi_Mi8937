@@ -49,9 +49,6 @@ vendor/etc/perf/targetresourceconfigs.xml
 # RIL (Data) - Netmgrd - from PAN
 vendor/etc/data/netmgr_config.xml:vendor/overlayfs/common/etc/data/netmgr_config.xml|b87b057d87139c7ac866dc5f75c498de1e8ab361|ba88986b26bd8391c022121bc502cb42beef02f7
 
-# RIL (QCRILD) - from FP3
-vendor/lib64/libril-qc-hal-qmi.so
-
 # Sensors - from PAN
 vendor/bin/sensors.qti
 vendor/lib/libsensor1.so
