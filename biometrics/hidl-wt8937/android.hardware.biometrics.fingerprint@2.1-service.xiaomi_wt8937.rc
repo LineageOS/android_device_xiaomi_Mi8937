@@ -70,7 +70,9 @@ on property:persist.sys.fp.vendor=goodix && property:persist.sys.fp.onstart=1 &&
     setprop ro.hardware.fingerprint ${ro.vendor.xiaomi.device}_goodix
     enable vendor.fps_hal.wt8937
 
-on property:ro.vendor.fingerprint.state=1 && property:ro.vendor.fingerprint.supported=1
+# FIXME
+#on property:ro.vendor.fingerprint.state=1 && property:ro.vendor.fingerprint.supported=1
+on property:ro.vendor.fingerprint.supported=1
     setprop ro.boot.product.hardware.sku fingerprint
 
 on property:ro.vendor.fingerprint.state=0 && property:ro.vendor.fingerprint.supported=1
