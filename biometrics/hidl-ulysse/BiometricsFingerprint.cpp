@@ -50,7 +50,7 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevi
     mDevice = openHal();
     if (!mDevice) {
         ALOGE("Can't open HAL module");
-        android::base::SetProperty("ro.vendor.fingerprint.failed", "1");
+        android::base::SetProperty("ro.vendor.fingerprint.state", "0");
     }
 }
 
