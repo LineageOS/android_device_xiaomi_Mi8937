@@ -21,5 +21,7 @@ on property:ro.vendor.xiaomi.device=ugglite
 on property:ro.vendor.fingerprint.state=0
     stop vendor.fps_hal.ulysse
 
-on property:ro.vendor.fingerprint.state=1
+# FIXME
+#on property:ro.vendor.fingerprint.state=1
+on property:ro.vendor.xiaomi.device=ugg
     setprop ro.boot.product.hardware.sku fingerprint
