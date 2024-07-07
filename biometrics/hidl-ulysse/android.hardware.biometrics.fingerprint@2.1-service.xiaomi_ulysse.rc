@@ -23,3 +23,6 @@ on property:ro.vendor.fingerprint.state=0
 
 on property:ro.vendor.fingerprint.state=1
     setprop ro.boot.product.hardware.sku fingerprint
+
+on load_bpf_programs && property:init.svc.vendor.fps_hal.ulysse=running
+    wait_for_prop ro.vendor.fingerprint.done 1

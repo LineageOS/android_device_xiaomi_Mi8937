@@ -76,3 +76,6 @@ on property:ro.vendor.fingerprint.state=1 && property:ro.vendor.fingerprint.supp
 on property:ro.vendor.fingerprint.state=0 && property:ro.vendor.fingerprint.supported=1
     stop vendor.fps_hal.wt8937
     stop vendor.gx_fpd
+
+on load_bpf_programs && property:init.svc.vendor.fps_hal.wt8937=running
+    wait_for_prop ro.vendor.fingerprint.done 1
