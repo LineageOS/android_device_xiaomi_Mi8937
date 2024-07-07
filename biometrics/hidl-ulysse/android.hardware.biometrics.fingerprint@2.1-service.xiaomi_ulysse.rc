@@ -10,10 +10,10 @@ service vendor.fps_hal.ulysse /vendor/bin/hw/android.hardware.biometrics.fingerp
 # property:ro.vendor.xiaomi.device=ugg == enable fingerprint
 # property:ro.vendor.xiaomi.device=ugglite == disable fingerprint
 
-on property:ro.vendor.xiaomi.device=ugg
+on nonencrypted && property:ro.vendor.xiaomi.device=ugg
     setprop ro.hardware.fingerprint ugg_fpc
     setprop ro.hardware.gf_fingerprint ugg
-    enable vendor.fps_hal.ulysse
+    start vendor.fps_hal.ulysse
 
 on property:ro.vendor.xiaomi.device=ugglite
     stop vendor.fps_hal.ulysse
@@ -23,3 +23,6 @@ on property:ro.vendor.fingerprint.state=0
 
 on property:ro.vendor.fingerprint.state=1
     setprop ro.boot.product.hardware.sku fingerprint
+
+on load_bpf_programs && property:init.svc.vendor.fps_hal.ulysse=running
+    wait_for_prop ro.vendor.fingerprint.done 1

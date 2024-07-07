@@ -54,6 +54,7 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevi
     } else {
         android::base::SetProperty("ro.vendor.fingerprint.state", "1");
     }
+    android::base::SetProperty("ro.vendor.fingerprint.done", "1");
 }
 
 BiometricsFingerprint::~BiometricsFingerprint() {

@@ -54,21 +54,21 @@ on property:ro.vendor.fingerprint.supported=0
     stop vendor.fps_hal.wt8937
     stop vendor.gx_fpd
 
-on property:ro.vendor.fingerprint.supported=1
+on nonencrypted && property:ro.vendor.fingerprint.supported=1
     setprop persist.sys.fp.vendor none
     setprop persist.sys.fp.onstart 0
     setprop ro.hardware.gxfingerprint ${ro.vendor.xiaomi.device}
     setprop ro.vendor.fingerprint.init 1
-    enable vendor.gx_fpd
+    start vendor.gx_fpd
 
 on property:persist.sys.fp.vendor=switchf && property:ro.vendor.fingerprint.init=1 && property:ro.vendor.fingerprint.supported=1
     stop vendor.gx_fpd
     setprop ro.hardware.fingerprint ${ro.vendor.xiaomi.device}_fpc
-    enable vendor.fps_hal.wt8937
+    start vendor.fps_hal.wt8937
 
 on property:persist.sys.fp.vendor=goodix && property:persist.sys.fp.onstart=1 && property:ro.vendor.fingerprint.init=1 && property:ro.vendor.fingerprint.supported=1
     setprop ro.hardware.fingerprint ${ro.vendor.xiaomi.device}_goodix
-    enable vendor.fps_hal.wt8937
+    start vendor.fps_hal.wt8937
 
 on property:ro.vendor.fingerprint.state=1 && property:ro.vendor.fingerprint.supported=1
     setprop ro.boot.product.hardware.sku fingerprint
@@ -76,3 +76,6 @@ on property:ro.vendor.fingerprint.state=1 && property:ro.vendor.fingerprint.supp
 on property:ro.vendor.fingerprint.state=0 && property:ro.vendor.fingerprint.supported=1
     stop vendor.fps_hal.wt8937
     stop vendor.gx_fpd
+
+on load_bpf_programs && property:init.svc.vendor.fps_hal.wt8937=running
+    wait_for_prop ro.vendor.fingerprint.done 1
