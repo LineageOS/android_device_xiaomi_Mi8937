@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8fd849c0_81187cb7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2024-09-06T08:13:11Z",
+      "side": 1,
+      "message": "At least `config_cleanupUnusedFingerprints` is still needed for santoni goodix",
+      "revId": "ff4af5a85f53d3de9052312fc1a65eec913a5f77",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
