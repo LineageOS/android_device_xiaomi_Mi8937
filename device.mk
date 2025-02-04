@@ -113,7 +113,7 @@ endif
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    fstab.qcom_ramdisk \
+    fstab.qcom.ramdisk \
     init.baseband.sh \
     init.xiaomi.device.rc \
     init.xiaomi.device.sh
