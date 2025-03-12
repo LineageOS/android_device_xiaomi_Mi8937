@@ -6,16 +6,16 @@
 # ugg Package version: ugg-user 7.1.2 N2G47H V11.0.2.0.NDKMIXM release-keys
 
 # ADSP modules - Dirac - from daisy
-vendor/lib/rfsa/adsp/dirac_resource.dar
-vendor/lib/rfsa/adsp/libdirac-capiv2.so
+-vendor/lib/rfsa/adsp/dirac_resource.dar;DISABLE_DEPS
+-vendor/lib/rfsa/adsp/libdirac-capiv2.so;DISABLE_DEPS
  
 # Audio dirac - from ugg
-lib/libDiracAPI_SHARED.so:vendor/lib/libDiracAPI_SHARED.so|42b49679d38eca93fead05ea06ddbdc8108fd4b1
-lib/soundfx/libdirac.so:vendor/lib/soundfx/libdirac.so|e92652ab578e90bb9e9b09553c3554f27cb7c07f
+-lib/libDiracAPI_SHARED.so:vendor/lib/libDiracAPI_SHARED.so;DISABLE_DEPS|42b49679d38eca93fead05ea06ddbdc8108fd4b1
+-lib/soundfx/libdirac.so:vendor/lib/soundfx/libdirac.so;DISABLE_DEPS|e92652ab578e90bb9e9b09553c3554f27cb7c07f
 vendor/etc/diracmobile.config|b99e9492e77e52ca3a511feae0409d59f6aebb87
 
 # Charger - from daisy
-vendor/bin/hvdcp_opti
+-vendor/bin/hvdcp_opti;DISABLE_DEPS
 
 # Firmware (GPU) - from PAN
 vendor/firmware/a506_zap.b00
@@ -27,15 +27,15 @@ vendor/firmware/a530_pfp.fw
 vendor/firmware/a530_pm4.fw
 
 # Gatekeeper - from olive
-vendor/lib64/hw/gatekeeper.msm8937.so
+-vendor/lib64/hw/gatekeeper.msm8937.so;DISABLE_DEPS
 
 # IMS (uceService) - from olive (Pie)
 -system/app/uceShimService/uceShimService.apk:system_ext/app/uceShimService/uceShimService.apk
 system/framework/com.qualcomm.qti.uceservice-V2.0-java.jar:system_ext/framework/com.qualcomm.qti.uceservice-V2.0-java.jar
-system/lib64/com.qualcomm.qti.uceservice@2.0.so:system_ext/lib64/com.qualcomm.qti.uceservice@2.0.so
+-system/lib64/com.qualcomm.qti.uceservice@2.0.so:system_ext/lib64/com.qualcomm.qti.uceservice@2.0.so;DISABLE_DEPS
 
 # Keystore - from olive
-vendor/lib64/hw/keystore.msm8937.so
+-vendor/lib64/hw/keystore.msm8937.so;DISABLE_DEPS
 
 # Perf configs - from PAN
 vendor/etc/perf/commonresourceconfigs.xml
@@ -50,10 +50,10 @@ vendor/etc/perf/targetresourceconfigs.xml
 vendor/etc/data/netmgr_config.xml:vendor/etc/overlayfs/common/data/netmgr_config.xml|b87b057d87139c7ac866dc5f75c498de1e8ab361|ba88986b26bd8391c022121bc502cb42beef02f7
 
 # Sensors - from PAN
-vendor/bin/sensors.qti
-vendor/lib/libsensor1.so
-vendor/lib64/libsensor1.so
+-vendor/bin/sensors.qti;DISABLE_DEPS
+-vendor/lib/libsensor1.so;DISABLE_DEPS
+-vendor/lib64/libsensor1.so;DISABLE_DEPS
 
 # Sensors (SSC) - from daisy
-vendor/lib64/libsensor_reg.so
-vendor/lib64/sensors.ssc.so
+-vendor/lib64/libsensor_reg.so;DISABLE_DEPS
+-vendor/lib64/sensors.ssc.so;DISABLE_DEPS
