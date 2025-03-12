@@ -38,9 +38,6 @@ TARGET_SCREEN_DENSITY := 280
 # Fastboot
 TARGET_BOARD_FASTBOOT_INFO_FILE := $(DEVICE_PATH)/fastboot-info.txt
 
-# Filesystem
-TARGET_FS_CONFIG_GEN += $(DEVICE_PATH)/config.fs
-
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
