@@ -32,7 +32,7 @@ vendor/firmware/a530_pm4.fw
 # IMS (uceService) - from olive (Pie)
 -system/app/uceShimService/uceShimService.apk:system_ext/app/uceShimService/uceShimService.apk
 system/framework/com.qualcomm.qti.uceservice-V2.0-java.jar:system_ext/framework/com.qualcomm.qti.uceservice-V2.0-java.jar
--system/lib64/com.qualcomm.qti.uceservice@2.0.so:system_ext/lib64/com.qualcomm.qti.uceservice@2.0.so;DISABLE_DEPS
+-system/lib64/com.qualcomm.qti.uceservice@2.0.so:system_ext/lib64/com.qualcomm.qti.uceservice@2.0.so;DISABLE_DEPS;MODULE_SUFFIX=-mi8937
 
 # Keystore - from olive
 -vendor/lib64/hw/keystore.msm8937.so;DISABLE_DEPS
