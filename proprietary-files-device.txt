@@ -116,10 +116,10 @@ vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so:odm/lib64/libv
 vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so:odm/lib64/libvendor.goodix.hardware.fingerprint@1.0.so|c9d0251df63d8e34b6d70a59ad7b774c9f640fa1|f6f8f46de0e094dc00912635b34af38cb0ec78e0
 
 # Sensor config (prada) - from prada
-etc/sensors/sensor_def_qcomdev.conf:vendor/overlayfs/prada/etc/sensors/sensor_def_qcomdev.conf
+etc/sensors/sensor_def_qcomdev.conf:vendor/etc/overlayfs/prada/sensors/sensor_def_qcomdev.conf
 
 # Sensor config (ulysse) - from ugg
-etc/sensors/sensor_def_qcomdev.conf:vendor/overlayfs/ulysse/etc/sensors/sensor_def_qcomdev.conf
+etc/sensors/sensor_def_qcomdev.conf:vendor/etc/overlayfs/ulysse/sensors/sensor_def_qcomdev.conf
 
 # Sensor config (Wingtech MSM8937) - from santoni
-etc/sensors/sensor_def_qcomdev.conf:vendor/overlayfs/wt8937/etc/sensors/sensor_def_qcomdev.conf
+etc/sensors/sensor_def_qcomdev.conf:vendor/etc/overlayfs/wt8937/sensors/sensor_def_qcomdev.conf
