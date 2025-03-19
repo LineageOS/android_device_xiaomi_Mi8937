@@ -77,15 +77,15 @@ on init
     # spidev
     chown system system /dev/spidev7.1
 
-on property:ro.vendor.xiaomi.device=rolex
+on early-boot && property:ro.vendor.xiaomi.device=rolex
     setprop ro.hardware.consumerir led
-on property:ro.vendor.xiaomi.series=wt8937
+on early-boot && property:ro.vendor.xiaomi.series=wt8937
     setprop ro.hardware.consumerir led
-on property:ro.vendor.xiaomi.device=prada
+on early-boot && property:ro.vendor.xiaomi.device=prada
     setprop ro.hardware.consumerir lirc
-on property:ro.vendor.xiaomi.series=ulysse
+on early-boot && property:ro.vendor.xiaomi.series=ulysse
     setprop ro.hardware.consumerir lirc
-on property:ro.vendor.xiaomi.device=riva
+on early-boot && property:ro.vendor.xiaomi.device=riva
     setprop ro.hardware.consumerir spidev
 
 # LiveDisplay
