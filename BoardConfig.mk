@@ -91,9 +91,7 @@ $(foreach p, $(call to-upper, $(SSI_PARTITIONS)), \
 BOARD_ODMIMAGE_EXTFS_INODE_COUNT := 512
 BOARD_VENDORIMAGE_EXTFS_INODE_COUNT := 4096
 
-$(foreach p, $(call to-upper, $(SSI_PARTITIONS)), \
-    $(eval BOARD_$(p)IMAGE_PARTITION_RESERVED_SIZE := 83886080)) # 80 MB
-$(foreach p, $(call to-upper, $(TREBLE_PARTITIONS)), \
+$(foreach p, $(call to-upper, $(ALL_PARTITIONS)), \
     $(eval BOARD_$(p)IMAGE_PARTITION_RESERVED_SIZE := 41943040)) # 40 MB
 
 ifneq ($(WITH_GMS),true)
