@@ -42,7 +42,7 @@ TARGET_BOARD_FASTBOOT_INFO_FILE := $(DEVICE_PATH)/fastboot-info.txt
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_mi8937
+$(call soong_config_set,libinit,vendor_init_lib,//$(DEVICE_PATH):init_xiaomi_mi8937)
 
 # Kernel
 ifeq ($(PRODUCT_HARDWARE),Mi8917)
