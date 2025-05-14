@@ -146,7 +146,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Touch HAL
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.xiaomi_mi8937
+    vendor.lineage.touch-service.xiaomi_mi8937
 
 # Wifi
 ifeq ($(PRODUCT_HARDWARE),Mi8937)
