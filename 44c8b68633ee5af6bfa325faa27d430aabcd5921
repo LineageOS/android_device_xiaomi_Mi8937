@@ -48,6 +48,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fcf0e57_b094c9f5",
+        "filename": "touch/keydisabler_hal.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2025-05-14T18:00:40Z",
+      "side": 1,
+      "message": "let\u0027s keep it to support cases which the sysfs node doesn\u0027t exist",
+      "parentUuid": "5df28634_fe6377bf",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 63
+      },
+      "revId": "44c8b68633ee5af6bfa325faa27d430aabcd5921",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "995d9b14_1a1b5652",
@@ -119,6 +143,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c715256_96061c25",
+        "filename": "touch/keydisabler_hal.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2025-05-14T18:00:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c59b314f_d68c080f",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 25
+      },
+      "revId": "44c8b68633ee5af6bfa325faa27d430aabcd5921",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "25308afe_c960a3ab",
@@ -156,6 +204,30 @@
       "side": 1,
       "message": "Acknowledged",
       "parentUuid": "25308afe_c960a3ab",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 22
+      },
+      "revId": "44c8b68633ee5af6bfa325faa27d430aabcd5921",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6098b29f_fb821d85",
+        "filename": "touch/keydisabler_hal.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2025-05-14T18:00:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dbd94cdd_b5774be6",
       "range": {
         "startLine": 57,
         "startChar": 0,
