@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5df28634_fe6377bf",
+        "filename": "touch/keydisabler_hal.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2025-05-14T15:22:17Z",
+      "side": 1,
+      "message": "All the devices has keys and has this sysfs node in normal case\n\nCommon answer to all the comments: I\u0027m 1:1 converting the old HAL logic to this, and the old HAL was kanged from xiaomi msm8996-common",
+      "parentUuid": "857f2924_e82ccb40",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 63
+      },
+      "revId": "44c8b68633ee5af6bfa325faa27d430aabcd5921",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "995d9b14_1a1b5652",
         "filename": "touch/keydisabler_hal.rs",
         "patchSetId": 2
@@ -49,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d6c0fb36_4b0cf6bd",
+        "filename": "touch/keydisabler_hal.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2025-05-14T15:22:17Z",
+      "side": 1,
+      "message": "The old HIDL HAL does not return error when error occurs, so idk if returning error now would be bad (like, I was returning error in LiveDisplay HAL and the system can\u0027t boot in case of receiving error from it)",
+      "parentUuid": "995d9b14_1a1b5652",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 25
+      },
+      "revId": "44c8b68633ee5af6bfa325faa27d430aabcd5921",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "25308afe_c960a3ab",
         "filename": "touch/keydisabler_hal.rs",
         "patchSetId": 2
@@ -60,6 +108,30 @@
       "writtenOn": "2025-05-14T15:14:35Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 22
+      },
+      "revId": "44c8b68633ee5af6bfa325faa27d430aabcd5921",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dbd94cdd_b5774be6",
+        "filename": "touch/keydisabler_hal.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2025-05-14T15:22:17Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "25308afe_c960a3ab",
       "range": {
         "startLine": 57,
         "startChar": 0,
