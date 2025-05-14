@@ -9,13 +9,4 @@
         <transport>hwbinder</transport>
         <fqname>@2.0::IReadingEnhancement/default</fqname>
     </hal>
-    <hal format="hidl">
-        <name>vendor.lineage.touch</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IKeyDisabler</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
 </manifest>
