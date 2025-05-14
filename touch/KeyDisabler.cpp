@@ -47,7 +47,7 @@ Return<bool> KeyDisabler::isEnabled() {
         return false;
     }
 
-    return Trim(buf) == "0";
+    return Trim(buf) == "1";
 }
 
 Return<bool> KeyDisabler::setEnabled(bool enabled) {
