@@ -72,6 +72,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb99fe33_d8c5f07a",
+        "filename": "touch/keydisabler_hal.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2025-05-14T18:23:40Z",
+      "side": 1,
+      "message": "returning err seems fine, so accepting this suggestion now...",
+      "parentUuid": "3fcf0e57_b094c9f5",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 63
+      },
+      "revId": "44c8b68633ee5af6bfa325faa27d430aabcd5921",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "995d9b14_1a1b5652",
