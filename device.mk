@@ -108,6 +108,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_ODM)/bin/.placeholder \
     $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_ODM)/lib64/.placeholder
 
+# Power
+$(call soong_config_set,qtipower,tap_to_wake_node,/proc/sys/dev/xiaomi_msm8937_touchscreen/enable_dt2w)
+
 # Recovery
 ifeq ($(PRODUCT_HARDWARE),Mi8937)
 PRODUCT_COPY_FILES += \
