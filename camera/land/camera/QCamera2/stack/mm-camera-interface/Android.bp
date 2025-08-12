@@ -1,0 +1,48 @@
+
+
+cc_library_shared {
+    name: "libLmcamera_interface",
+    compile_multilib: "32",
+    cflags: [
+        "-DSYSTEM_HEADER_PREFIX=sys",
+        "-DCONFIG_MACH_XIAOMI_MSM8937",
+        "-DCONFIG_MACH_XIAOMI_LAND",
+        "-DUSE_ION",
+        "-DVENUS_PRESENT",
+        "-D_ANDROID_",
+        "-DQCAMERA_REDEFINE_LOG",
+        "-DCAMERA_ION_HEAP_ID=ION_IOMMU_HEAP_ID",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+    include_dirs: [
+        "device/xiaomi/Mi8937/camera/land/camera/QCamera2/stack/common",
+        "hardware/libhardware/include/hardware",
+        "hardware/qcom-caf/msm8953/media/mm-core/inc",
+        "system/media/camera/include",
+    ],
+    local_include_dirs: ["inc"],
+    header_libs: [
+        "libhardware_headers",
+        "land_camera_common_headers",
+        "media_plugin_headers",
+        "generated_kernel_headers",
+    ],
+
+    device_specific: true,
+
+    shared_libs: [
+        "libdl",
+        "libcutils",
+        "liblog",
+    ],
+    srcs: [
+        "src/mm_camera_interface.c",
+        "src/mm_camera.c",
+        "src/mm_camera_channel.c",
+        "src/mm_camera_stream.c",
+        "src/mm_camera_thread.c",
+        "src/mm_camera_sock.c",
+    ],
+}

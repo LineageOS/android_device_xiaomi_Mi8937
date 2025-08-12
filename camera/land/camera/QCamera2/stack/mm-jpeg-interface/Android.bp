@@ -1,0 +1,53 @@
+
+
+cc_library_shared {
+    name: "libLmjpeg_interface",
+    compile_multilib: "32",
+    cflags: [
+        "-D_ANDROID_",
+        "-DQCAMERA_REDEFINE_LOG",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-DUSE_ION",
+        "-DMM_JPEG_CONCURRENT_SESSIONS_COUNT=1",
+        "-DSYSTEM_HEADER_PREFIX=sys",
+        "-DCONFIG_MACH_XIAOMI_MSM8937",
+        "-DCONFIG_MACH_XIAOMI_LAND",
+    ],
+    include_dirs: [
+        "system/memory/libion/kernel-headers",
+        "system/memory/libion/include",
+        "frameworks/native/headers/media_plugin/media/openmax",
+        "device/xiaomi/Mi8937/camera/land/camera/QCamera2/stack/common",
+        "device/xiaomi/Mi8937/camera/land/camera/QCamera2/stack/mm-camera-interface/inc",
+        "device/xiaomi/Mi8937/camera/land/camera",
+        "device/xiaomi/Mi8937/camera/land/camera/mm-image-codec/qexif",
+        "device/xiaomi/Mi8937/camera/land/camera/mm-image-codec/qomx_core",
+    ],
+    local_include_dirs: ["inc"],
+    header_libs: ["generated_kernel_headers"],
+
+    device_specific: true,
+
+    shared_libs: [
+        "libdl",
+        "libcutils",
+        "liblog",
+        "libLomx_core",
+        "libLmcamera_interface",
+        "libutils",
+        "libion",
+    ],
+    srcs: [
+        "src/mm_jpeg_queue.c",
+        "src/mm_jpeg_exif.c",
+        "src/mm_jpeg.c",
+        "src/mm_jpeg_interface.c",
+        "src/mm_jpeg_ionbuf.c",
+        "src/mm_jpegdec_interface.c",
+        "src/mm_jpegdec.c",
+        "src/mm_jpeg_mpo_composer.c",
+    ],
+}
