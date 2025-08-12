@@ -1,0 +1,25 @@
+
+
+cc_library_shared {
+    name: "libLomx_core",
+    compile_multilib: "32",
+    cflags: [
+        "-Werror",
+        "-g",
+        "-O0",
+    ],
+    include_dirs: [
+        "frameworks/native/headers/media_plugin/media/openmax",
+        "device/xiaomi/Mi8937/camera/land/camera/mm-image-codec/qexif",
+    ],
+
+    device_specific: true,
+
+    shared_libs: [
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libutils",
+    ],
+    srcs: ["qomx_core.c"],
+}

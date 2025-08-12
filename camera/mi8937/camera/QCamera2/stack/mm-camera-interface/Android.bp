@@ -1,0 +1,93 @@
+
+
+cc_library_shared {
+    name: "libWmcamera_interface",
+    compile_multilib: "32",
+    cflags: [
+        "-DDAEMON_PRESENT",
+        "-DSYSTEM_HEADER_PREFIX=sys",
+        "-DUSE_ION",
+        "-DVENUS_PRESENT",
+        "-D_ANDROID_",
+        "-DQCAMERA_REDEFINE_LOG",
+        "-DCAMERA_ION_HEAP_ID=ION_IOMMU_HEAP_ID",
+        "-Wall",
+        "-Wextra",
+        "-Wno-error",
+        "-Wno-implicit-function-declaration",
+        "-DODM_WINGTECH",
+    ],
+    include_dirs: [
+        "device/xiaomi/Mi8937/camera/mi8937/camera/QCamera2/stack/common",
+        "system/media/camera/include",
+    ],
+    local_include_dirs: ["inc"],
+    header_libs: [
+        "libhardware_headers",
+        "media_plugin_headers",
+        "mi8937_camera_common_headers",
+        "generated_kernel_headers",
+    ],
+
+    device_specific: true,
+
+    shared_libs: [
+        "libdl",
+        "libcutils",
+        "liblog",
+    ],
+    srcs: [
+        "src/mm_camera_interface.c",
+        "src/mm_camera.c",
+        "src/mm_camera_channel.c",
+        "src/mm_camera_stream.c",
+        "src/mm_camera_thread.c",
+        "src/mm_camera_sock.c",
+    ],
+}
+
+cc_library_shared {
+    name: "libUmcamera_interface",
+    compile_multilib: "32",
+    cflags: [
+        "-DDAEMON_PRESENT",
+        "-DSYSTEM_HEADER_PREFIX=sys",
+        "-DUSE_ION",
+        "-DVENUS_PRESENT",
+        "-D_ANDROID_",
+        "-DQCAMERA_REDEFINE_LOG",
+        "-DCAMERA_ION_HEAP_ID=ION_IOMMU_HEAP_ID",
+        "-Wall",
+        "-Wextra",
+        "-Wno-error",
+        "-Wno-implicit-function-declaration",
+        "-DDEVICE_ULYSSE",
+    ],
+    include_dirs: [
+        "device/xiaomi/Mi8937/camera/mi8937/camera/QCamera2/stack/common",
+        "system/media/camera/include",
+    ],
+    local_include_dirs: ["inc"],
+    header_libs: [
+        "libhardware_headers",
+        "media_plugin_headers",
+        "mi8937_camera_common_headers",
+        "generated_kernel_headers",
+    ],
+
+    device_specific: true,
+
+    shared_libs: [
+        "libdl",
+        "libcutils",
+        "liblog",
+    ],
+    srcs: [
+        "src/mm_camera_interface.c",
+        "src/mm_camera.c",
+        "src/mm_camera_channel.c",
+        "src/mm_camera_stream.c",
+        "src/mm_camera_thread.c",
+        "src/mm_camera_sock.c",
+    ],
+}
