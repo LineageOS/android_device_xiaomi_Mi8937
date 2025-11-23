@@ -101,7 +101,7 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/keylayout/msm8952-snd-card-mtp_Button_Jack.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/$(f))
 
 # LiveDisplay
-$(call soong_config_set,livedisplay_sysfs,enable_re,true)
+$(call soong_config_set_bool,livedisplay_sysfs,enable_re,true)
 
 # Placeholder
 PRODUCT_COPY_FILES += \
