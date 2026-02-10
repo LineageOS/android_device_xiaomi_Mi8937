@@ -1,5 +1,0 @@
-service vendor.touch-hal-xiaomi_mi8937 /vendor/bin/hw/vendor.lineage.touch-service.xiaomi_mi8937
-    interface aidl vendor.lineage.touch.IKeyDisabler/default
-    class hal
-    user system
-    group system

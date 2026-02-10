@@ -1,2 +1,0 @@
-allow hal_lineage_touch_default sysctl_mi8937_ts:dir r_dir_perms;
-allow hal_lineage_touch_default sysctl_mi8937_ts:file rw_file_perms;
