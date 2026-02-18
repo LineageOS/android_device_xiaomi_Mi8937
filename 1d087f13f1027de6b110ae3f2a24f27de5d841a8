@@ -34,6 +34,24 @@
       "parentUuid": "4e710962_34d35caa",
       "revId": "1d087f13f1027de6b110ae3f2a24f27de5d841a8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5a4dde2_8a286b78",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-02-18T09:25:51Z",
+      "side": 1,
+      "message": "I mean, was this discussed in our discord at any point? Was there some attempt to fix frameworks support?",
+      "parentUuid": "66088d58_b800383a",
+      "revId": "1d087f13f1027de6b110ae3f2a24f27de5d841a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
