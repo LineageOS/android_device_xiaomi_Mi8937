@@ -68,7 +68,7 @@ cc_library_shared {
         "libqservice",
         "libbinder",
         "libion",
-        "android.frameworks.displayservice@1.0",
+        "lineage.frameworks.displayservice@1.0",
         "libhidlbase",
 
         "libts_face_beautify_hal",
